@@ -30,7 +30,7 @@ ENTITY alu IS
 		B_in : IN std_logic_vector (31 DOWNTO 0);
 		O_out : OUT std_logic_vector (31 DOWNTO 0);
 		Branch_out : OUT std_logic;
-		Jump_out : OUT std_logic
+		Jump_out : OUT std_logic;
 	);
 END alu ;
 
@@ -136,6 +136,10 @@ begin
 				end if;
 				Branch_out <= '0';
 				Jump_out <= '0';
+				
+			-- LUI
+			when "000000" =>
+				O_out <= B_in sll 16;
 			
 			when others =>
 				O_out <= zero;
