@@ -42,7 +42,7 @@ initial begin
 	#20;
 	reset = 0;
 	#2000;
-
+	$finish
 
 end
 endmodule
