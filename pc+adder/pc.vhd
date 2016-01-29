@@ -59,7 +59,7 @@ begin
 				end loop;
 			end if;
 		else 
-			temp := temp + addr_in);
+			temp := temp + addr_in;
 		end if;
 
 
