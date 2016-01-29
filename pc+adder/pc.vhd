@@ -59,7 +59,7 @@ begin
 				end loop;
 			end if;
 		else 
-			temp := std_logic_vector(unsigned(temp) + addr_in);
+			temp := temp + addr_in);
 		end if;
 
 
