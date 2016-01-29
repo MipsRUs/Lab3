@@ -49,7 +49,7 @@ begin
 	PROCESS (clk)
 
 		--defining variable temp (used as temporary storage)
-		VARIABLE temp : std_logic_vector (0 to NBIT-1);		
+		variable temp : std_logic_vector (0 to NBIT-1);		
 	BEGIN
 
 		if(clk'event and clk='1') THEN
