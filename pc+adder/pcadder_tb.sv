@@ -42,7 +42,7 @@ initial begin
 	#20;
 	rst = 0;
 	#200;
-	$finish
+	//$finish
 
 end
 endmodule
