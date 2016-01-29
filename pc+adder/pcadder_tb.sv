@@ -23,8 +23,8 @@ module pcadder_tb;
 	
   timeunit 1ns;
 
-  logic ref_clk;
-  logic reset;
+  logic clk;
+  logic rst;
   
 processor L1(
           .clk(clk)
