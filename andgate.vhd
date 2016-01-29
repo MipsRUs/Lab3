@@ -10,7 +10,7 @@
 --		Linda Vang (ID# 71434490)
 --
 -- Description:
---		This is an ALU
+--		This is an and gate
 --
 -- History:
 -- 		Date		Update Description			Developer
