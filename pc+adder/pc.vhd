@@ -1,4 +1,4 @@
--------------------------------------------------------------------
+---------------------------------------------------------------------
 -- Copyright MIPS_R_US 2016 - All Rights Reserved 
 --
 -- File: pc.vhd
@@ -31,7 +31,7 @@ use ieee.numeric_std.all;
 ENTITY pc IS
 	
 	-- program counter is set to 32 for this 32-bit ALU
-	GENERIC (--NBIT: INTEGER := 32;
+	--GENERIC (--NBIT: INTEGER := 32;
 				--STEP: INTEGER := 1);
 	PORT (clk: in STD_LOGIC;
       		rst: in STD_LOGIC;
