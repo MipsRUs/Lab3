@@ -26,7 +26,7 @@ module pcadder_tb;
   logic clk;
   logic rst;
   
-processor L1(
+pcadder L1(
           .clk(clk)
          ,.rst(rst)
          );
