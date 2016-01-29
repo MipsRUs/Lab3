@@ -49,7 +49,10 @@ begin
 	PROCESS (clk)
 
 		--defining variable temp (used as temporary storage)
+
 		VARIABLE temp : INTEGER;		
+
+
 	BEGIN
 
 		if(clk'event and clk='1') THEN
