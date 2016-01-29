@@ -49,17 +49,18 @@ begin
 	PROCESS (clk)
 
 		--defining variable temp (used as temporary storage)
-		VARIABLE temp : std_logic_vector (0 to NBIT-1);		
+		VARIABLE temp : INTEGER;		
 	BEGIN
 
 		if(clk'event and clk='1') THEN
-			if (rst='1') THEN										
-				L1: for i in addr_in'RANGE LOOP
-					temp(i):='0';
-				end loop;
+			if (rst='1') THEN	
+				temp = 0;									
+				--L1: for i in addr_in'RANGE LOOP
+				--	temp(i):='0';
+				--end loop;
 			end if;
 		else 
-			temp := std_logic_vector((to_integer(unsigned(temp))) + (to_integer(unsigned(addr_in))));
+			temp := temp + (to_integer(signed(addr_in)));
 		end if;
 
 
@@ -84,7 +85,7 @@ begin
 		--end if;
 		
 	-- output the values
-	addr_out <= temp;														
+	addr_out <= std_logic_vector(temp);														
 	end process;
 
 end logic;
