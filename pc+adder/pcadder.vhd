@@ -67,7 +67,7 @@ signal ov0: std_logic;
 begin
 
 	pcx : 	pc port map (clk=>clk0, rst=>rst0, addr_in=>addr_in0, addr_out=>addr_out0);
-	adderx: adder32 port map(a_32=>addr_out0, b_32=>b_320, cin=>cin0, sub=>sub0
+	adderx: adder32 port map(a_32=>addr_out0, b_32=>b_320, cin=>cin0, sub=>sub0,
 		sum_32=>addr_in0, cout=>cout0, ov=>ov0)
 
 end architecture; --architecture logic
