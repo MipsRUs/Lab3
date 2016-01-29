@@ -59,7 +59,7 @@ begin
 				end loop;
 			end if;
 		else 
-			temp := std_logic_vector(to_integer(unsigned(temp)) + to_integer(unsigned(addr_in)));
+			temp := std_logic_vector((to_integer(unsigned(temp))) + (to_integer(unsigned(addr_in))));
 		end if;
 
 
