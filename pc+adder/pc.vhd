@@ -50,21 +50,13 @@ begin
 
 		--defining variable temp (used as temporary storage)
 
-		VARIABLE temp : INTEGER;		
+	
 
 
 	BEGIN
 
-		if(clk'event and clk='1') THEN
-			if (rst='1') THEN	
-				temp = 0;									
-				--L1: for i in addr_in'RANGE LOOP
-				--	temp(i):='0';
-				--end loop;
-			end if;
-		else 
-			temp := temp + (to_integer(signed(addr_in)));
-		end if;
+
+		
 
 
 
@@ -88,7 +80,8 @@ begin
 		--end if;
 		
 	-- output the values
-	addr_out <= std_logic_vector(signed(temp));														
+	addr_out <= (others=>'0') when (clk'event AND clk='1' AND rst='1') else 
+				addr_in;														
 	end process;
 
 end logic;
