@@ -52,22 +52,22 @@ component pc
 end component;
 
 
-signal cin_ :std_logic := '0';
-signal sub_ : std_logic := '0';
+signal cin0 :std_logic := '0';
+signal sub0 : std_logic := '0';
 --signal a_32_ : std_logic_vector(31 downto 0);
-signal b_32_ : std_logic_vector(31 downto 0) := "00000000000000000000000000000100";
-signal clk_ : std_logic;
-signal rst_ : std_logic;
-signal addr_in_ : std_logic_vector(31 DOWNTO 0);
-signal addr_out_ : std_logic_vector(31 DOWNTO 0);
-signal cout_ : std_logic;
-signal ov_: std_logic;
+signal b_320 : std_logic_vector(31 downto 0) := "00000000000000000000000000000100";
+signal clk0 : std_logic;
+signal rst0 : std_logic;
+signal addr_in0 : std_logic_vector(31 DOWNTO 0);
+signal addr_out0 : std_logic_vector(31 DOWNTO 0);
+signal cout0 : std_logic;
+signal ov0: std_logic;
 
 
 begin
 
-	pcx : 	pc port map (clk=>clk_, rst=>rst_, addr_in=>addr_in_, addr_out=>addr_out_);
-	adderx: adder32 port map(a_32=>addr_out_, b_32=>b_32_, cin=>cin_, sub=>sub_
-		sum_32=>addr_in_, cout=>cout_, ov=>ov_)
+	pcx : 	pc port map (clk=>clk0, rst=>rst0, addr_in=>addr_in0, addr_out=>addr_out0);
+	adderx: adder32 port map(a_32=>addr_out0, b_32=>b_320, cin=>cin0, sub=>sub0
+		sum_32=>addr_in0, cout=>cout0, ov=>ov0)
 
 end architecture; --architecture logic
