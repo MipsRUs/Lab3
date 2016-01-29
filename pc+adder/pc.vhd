@@ -85,7 +85,7 @@ begin
 		--end if;
 		
 	-- output the values
-	addr_out <= std_logic_vector(temp);														
+	addr_out <= std_logic_vector(signed(temp));														
 	end process;
 
 end logic;
