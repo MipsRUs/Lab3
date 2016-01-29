@@ -59,7 +59,7 @@ begin
 				end loop;
 			end if;
 		else 
-			temp := to_integer(unsigned(temp)) + to_integer(unsigned(addr_in));
+			temp := std_logic_vector(to_integer(unsigned(temp)) + to_integer(unsigned(addr_in)));
 		end if;
 
 
@@ -84,7 +84,7 @@ begin
 		--end if;
 		
 	-- output the values
-	addr_out <= std_logic_vector(temp);														
+	addr_out <= temp;														
 	end process;
 
 end logic;
