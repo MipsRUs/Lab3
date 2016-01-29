@@ -46,14 +46,14 @@ architecture logic of pc is
 begin
 
 	-- SC 2016-01-15: Added the following code 
-	PROCESS (clk)
+	--PROCESS (clk)
 
 		--defining variable temp (used as temporary storage)
 
 	
 
 
-	BEGIN
+	--BEGIN
 
 
 		
@@ -82,7 +82,7 @@ begin
 	-- output the values
 	addr_out <= (others=>'0') when (clk'event AND clk='1' AND rst='1') else 
 				addr_in;														
-	end process;
+	--end process;
 
 end logic;
 
