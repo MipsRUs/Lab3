@@ -21,7 +21,8 @@
 -- 		Date		Update Description			Developer
 --	-----------   ----------------------   	  -------------
 --	1/13/2016		Created						TH, NS, LV, SC
---
+--	1/29/2016		Changed pc implementation	SC
+--						+ changed to "when-else"
 -------------------------------------------------------------------
 
 library ieee;
@@ -32,58 +33,22 @@ ENTITY pc IS
 	
 	-- program counter is set to 32 for this 32-bit ALU
 	GENERIC (NBIT: INTEGER := 32);
-				--STEP: INTEGER := 1);
-	PORT (clk: in STD_LOGIC;
-      		rst: in STD_LOGIC;
-      		-- this is set to '1' if there is a branch
-      		--isBranch: in STD_LOGIC;  
-			addr_in: in STD_LOGIC_VECTOR(31 DOWNTO 0);
-			addr_out: out STD_LOGIC_VECtOR(31 DOWNTO 0)
+			
+	PORT (
+		clk: in STD_LOGIC;
+      	rst: in STD_LOGIC;  
+		addr_in: in STD_LOGIC_VECTOR(NBIT DOWNTO 0);
+		addr_out: out STD_LOGIC_VECtOR(NBIT DOWNTO 0)
 	);
 end pc;
       
 architecture logic of pc is
 begin
-
-	-- SC 2016-01-15: Added the following code 
-	--PROCESS (clk)
-
-		--defining variable temp (used as temporary storage)
-
 	
-
-
-	--BEGIN
-
-
-		
-
-
-
-
-
-		-- SC 2016-01-29: commented out
-		--if(clk'event and clk='1') THEN
-
-		--	-- synchronous reset
-		--	if (rst='1') THEN										
-		--		L1: for i in addr_in'RANGE LOOP
-		--			temp(i):='0';
-		--		end loop;
-
-		--	-- load values from addr_in to temp
-		--	elsif (isBranch='1') THEN								
-		--		temp := addr_in;
-		--	else										
-		--		temp := std_logic_vector(unsigned(temp)+STEP);
-		--	end if;
-		--end if;
-		
-	-- output the values
+	-- if reset is '1' set the values to 0's else output the addr_in
 	addr_out <= (others=>'0') when (clk'event AND clk='1' AND rst='1') else 
 				addr_in when (clk'event AND clk='1' AND rst='0');														
-	--end process;
-
+	
 end logic;
 
 

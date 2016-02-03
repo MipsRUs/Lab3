@@ -54,11 +54,13 @@ initial begin
 	#10 clk = 0;
 	#10 clk = 1;
 	#10 clk = 0;
+	rst = 1;
 	#10 clk = 1;
 	#10 clk = 0;
 	#10 clk = 1;
 	#10 clk = 0;
 	#10 clk = 1;
+	rst = 0;
 	#10 clk = 0;
 	#10 clk = 1;
 	#10 clk = 0;
