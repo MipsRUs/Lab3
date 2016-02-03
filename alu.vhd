@@ -31,7 +31,7 @@ ENTITY alu IS
 		shamt_in : IN std_logic_vector (4 DOWNTO 0);
 		O_out : OUT std_logic_vector (31 DOWNTO 0);
 		Branch_out : OUT std_logic;
-		Jump_out : OUT std_logic;
+		Jump_out : OUT std_logic
 	);
 END alu ;
 

@@ -1,4 +1,4 @@
--------------------------------------------------------------------
+---------------------------------------------------------------------
 -- Copyright MIPS_R_US 2016 - All Rights Reserved 
 --
 -- File: pc.vhd
@@ -31,7 +31,7 @@ use ieee.numeric_std.all;
 ENTITY pc IS
 	
 	-- program counter is set to 32 for this 32-bit ALU
-	GENERIC (NBIT: INTEGER := 32;
+	GENERIC (NBIT: INTEGER := 32);
 				--STEP: INTEGER := 1);
 	PORT (clk: in STD_LOGIC;
       		rst: in STD_LOGIC;
@@ -46,21 +46,17 @@ architecture logic of pc is
 begin
 
 	-- SC 2016-01-15: Added the following code 
-	PROCESS (clk)
+	--PROCESS (clk)
 
 		--defining variable temp (used as temporary storage)
-		VARIABLE temp : std_logic_vector (0 to NBIT-1);		
-	BEGIN
 
-		if(clk'event and clk='1') THEN
-			if (rst='1') THEN										
-				L1: for i in addr_in'RANGE LOOP
-					temp(i):='0';
-				end loop;
-			end if;
-		else 
-			temp := std_logic_vector(unsigned(temp) + addr_in);
-		end if;
+	
+
+
+	--BEGIN
+
+
+		
 
 
 
@@ -84,8 +80,9 @@ begin
 		--end if;
 		
 	-- output the values
-	addr_out <= temp;														
-	end process;
+	addr_out <= (others=>'0') when (clk'event AND clk='1' AND rst='1') else 
+				addr_in;														
+	--end process;
 
 end logic;
 

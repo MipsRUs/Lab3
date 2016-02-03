@@ -10,34 +10,35 @@
 --		Linda Vang (ID# 71434490)
 --
 -- Description:
---		This is a mux/ 2-bit selecter. Two muxes are being used in this 
---		processor implementation
---
--- History:
+--		This is a mux or a 4 to 1 selector.
+--History:
 -- 		Date		Update Description			Developer
 --	-----------   ----------------------   	  -------------
---	1/20/2016		Created						TH, NS, LV, SC
---	1/27/2016		Updating to With/Select		LV
+--	1/29/2016		Created						TH, NS, LV, SC
+--	
 --
 -------------------------------------------------------------------
-
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity mux is
-	port( in0: in std_logic_vector(31 downto 0);
-		in1: in std_logic_vector(31 downto 0);
-		sel: in std_logic;
-		outb: out std_logic_vector(31 downto 0)
-	);
-end mux;
+entity mux4 is
+port(   in0: in std_logic_vector(31 downto 0);
+	in1: in std_logic_vector(31 downto 0);
+	in2: in std_logic_vector(31 downto 0);
+	in3: in std_logic_vector(31 downto 0);		
+	sel: in std_logic_vector(1 downto 0);
+	mux4out: out std_logic_vector(31 downto 0)
+);
+end mux4;
 
-architecture behavior of mux is
+architecture logic of mux4 is
 begin
-	with sel select outb <=
-		in0 when '0',
-		in1 when OTHERS;
+
+	mux4out <=	in0 when sel = "00" else
+			in1 when sel = "01" else
+			in2 when sel = "10" else
+			in3 when sel = "11";
 --process(in0, in1, sel)
 --begin
 	--if(sel = '0') then
@@ -46,5 +47,5 @@ begin
 		--outb<= in1;
 	--end if;
 --end process;
-end behavior;
-	
+
+end logic;

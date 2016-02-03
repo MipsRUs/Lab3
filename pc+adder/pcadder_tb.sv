@@ -19,30 +19,30 @@
 //
 /***************************************************************/
 
-module processor_tb;
+module pcadder_tb;
 	
   timeunit 1ns;
 
-  logic ref_clk;
-  logic reset;
+  logic clk;
+  logic rst;
   
-processor L1(
-          .ref_clk(ref_clk)
-         ,.reset(reset)
+pcadder L1(
+          .clk(clk)
+         ,.rst(rst)
          );
 
 always begin
-	#5 ref_clk = 1;
-	#5 ref_clk = 0;
+	#5 clk = 1;
+	#5 clk = 0;
 end
 
 initial begin
 
-	reset = 1;
+	rst = 1;
 	#20;
-	reset = 0;
-	#2000;
-	$finish
+	rst = 0;
+	#200;
+	//$finish
 
 end
 endmodule

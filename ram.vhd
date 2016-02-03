@@ -16,6 +16,8 @@
 -- 		Date		Update Description			Developer
 --	-----------   ----------------------   	  -------------
 --	1/16/2016		Created						TH, NS, LV, SC
+--	1/27/2016		Updating to With/Select		LV
+--	1/31/2016		Modified to byte addressable	LV
 --
 -------------------------------------------------------------------
 
@@ -40,27 +42,33 @@ END ram;
 
 architecture behavior of ram is
 
-subtype word is std_logic_vector(31 DOWNTO 0);
+subtype byte is std_logic_vector(7 DOWNTO 0);
 
 -- change this depending of the size of the RAM
--- the ram is supposed to be 32 by 2**9, but because of instructions giving 
--- 		overflow, we changed it to 2**14 to not deal with this complications
-type memory is array (0 to (2**14)-1) of word;
+-- the ram is supposed to be 32 by 2**9, but because of instructions giving
+--              overflow, we changed it to 2**14 to not deal with this complications
+type memory is array (0 to (2**11)-1) of byte;  --size: 8 x 2048
 
 begin
-	ram_process: process (clk, we, addr, dataI)
-	variable mem_var:memory;
-	begin
-	if(clk'event and clk='1') then
-		if(we='1') then
-			mem_var(to_integer(unsigned(addr))) := dataI;
-		else
-			dataO <= mem_var(to_integer(unsigned(addr)));
-		end if;
-	end if;
+        ram_process: process (clk, we, addr, dataI)
+        variable mem_var:memory;
+        begin
+        if(clk'event and clk='1') then
+                if(we='1') then
+                        mem_var(to_integer(unsigned(addr))) := dataI(31 downto 24);
+                        mem_var(to_integer(unsigned(addr))+1) := dataI(23 downto 16);
+                        mem_var(to_integer(unsigned(addr))+2) := dataI(15 downto 8);
+                        mem_var(to_integer(unsigned(addr))+3) := dataI(7 downto 0);
 
-	end process;
+                else
+                        dataO <= mem_var(to_integer(unsigned(addr))) &  mem_var(to_integer(unsigned(addr))+1)
+                                & mem_var(to_integer(unsigned(addr))+2) & mem_var(to_integer(unsigned(addr))+3);
+                end if;
+        end if;
+
+        end process;
 end behavior;
+
 
 
 
