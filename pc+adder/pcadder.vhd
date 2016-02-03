@@ -56,8 +56,8 @@ signal cin0 :std_logic := '0';
 signal sub0 : std_logic := '0';
 --signal a_32_ : std_logic_vector(31 downto 0);
 signal b_320 : std_logic_vector(31 downto 0) := "00000000000000000000000000000100";
-signal clk0 : std_logic;
-signal rst0 : std_logic;
+--signal clk0 : std_logic;
+--signal rst0 : std_logic;
 signal addr_in0 : std_logic_vector(31 DOWNTO 0);
 signal addr_out0 : std_logic_vector(31 DOWNTO 0);
 signal cout0 : std_logic;
@@ -65,8 +65,8 @@ signal ov0: std_logic;
 
 
 begin
-
-	pcx : 	pc port map (clk=>clk0, rst=>rst0, addr_in=>addr_in0, addr_out=>addr_out0);
+	
+	pcx : 	pc port map (clk=>clk, rst=>rst, addr_in=>addr_in0, addr_out=>addr_out0);
 	adderx: adder32 port map(a_32=>addr_out0, b_32=>b_320, cin=>cin0, sub=>sub0,
 		sum_32=>addr_in0, cout=>cout0, ov=>ov0);
 
