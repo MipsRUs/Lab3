@@ -28,6 +28,7 @@ ENTITY alu IS
 		Func_in : IN std_logic_vector (5 DOWNTO 0);
 		A_in : IN std_logic_vector (31 DOWNTO 0);
 		B_in : IN std_logic_vector (31 DOWNTO 0);
+		shamt_in : IN std_logic_vector (4 DOWNTO 0);
 		O_out : OUT std_logic_vector (31 DOWNTO 0);
 		Branch_out : OUT std_logic;
 		Jump_out : OUT std_logic;
@@ -140,6 +141,74 @@ begin
 			-- LUI
 			when "000000" =>
 				O_out <= B_in sll 16;
+				
+			--shift instr
+			--SLL
+			when "" =>
+				O_out <= A_in sll shamt_in;
+				Branch_out <= '0';
+				Jump_out <= '0';
+				
+			--SRL
+			when "" =>
+				O_out <= A_in srl shamt_in;
+				Branch_out <= '0';
+				Jump_out <= '0';
+				
+			--SRA
+			when "" =>
+				O_out <= A_in sra shamt_in;
+				Branch_out <= '0';
+				Jump_out <= '0';
+
+			--SLLV
+			when "" =>
+				O_out <= A_in sll B_in;
+				Branch_out <= '0';
+				Jump_out <= '0';
+				
+			--SRLV
+			when "" =>
+				O_out <= A_in srl B_in;
+				Branch_out <= '0';
+				Jump_out <= '0';
+				
+			--SRAV
+			when "" =>
+				O_out <= A_in sra B_in;
+				Branch_out <= '0';
+				Jump_out <= '0';
+				
+			--branch
+			--BLTZ
+			when "111000" =>
+				O_out <= A_in;
+				Branch_out <= A_in < zero;
+				
+			--BGEZ
+			when "111001" =>
+				O_out <= A_in;
+				Branch_out <= A_in >= zero;
+				
+			--BEQ
+			when "111100" =>
+				O_out <= A_in;
+				Branch_out <= A_in == B_in;
+				
+			--BNE
+			when "111101" =>
+				O_out <= A_in;
+				Branch_out <= A_in != B_in;
+				
+			--BLEZ
+			when "111110" =>
+				O_out <= A_in;
+				Branch_out <= A_in <= zero;
+			
+			--BGTZ
+			when "111111" =>
+				O_out <= A_in;
+				Branch_out <= A_in > zero;
 			
 			when others =>
 				O_out <= zero;
