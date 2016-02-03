@@ -113,9 +113,12 @@ begin
 	-----------------------------------------------
 	--------------- Control Enables ---------------
 	-----------------------------------------------
-	RegWrite <= '0' when (clk'event AND clk='0' AND -- instruction goes here) 
-				else 
-				'1' when 
+	RegWrite <= '0' when ((clk'event AND clk='0') else
+				'1' when ((clk'event AND clk='1') AND
+					(
+						(instruction(31 DOWNTO 26="000000")) OR
+						
+					))
 
 	ALUSrc:
 		
