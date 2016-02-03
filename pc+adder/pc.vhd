@@ -37,8 +37,8 @@ ENTITY pc IS
 	PORT (
 		clk: in STD_LOGIC;
       	rst: in STD_LOGIC;  
-		addr_in: in STD_LOGIC_VECTOR(NBIT DOWNTO 0);
-		addr_out: out STD_LOGIC_VECtOR(NBIT DOWNTO 0)
+		addr_in: in STD_LOGIC_VECTOR(NBIT-1 DOWNTO 0);
+		addr_out: out STD_LOGIC_VECtOR(NBIT-1 DOWNTO 0)
 	);
 end pc;
       
