@@ -28,22 +28,19 @@ ENTITY control IS
 		clk : IN std_logic;
 		instruction : IN std_logic_vector (31 DOWNTO 0);
 
-		-- selecting rs or rd
-		--RegDst: OUT std_logic;
-
-		-- Branch is not used in this single cycle processor
-		--Branch: OUT std_logic;
-
+		-----------------------------------------------
+		--------------- Control Enables ---------------
+		-----------------------------------------------
 		-- write enable for regfile
 		-- '0' if read, '1' if write
 		RegWrite: OUT std_logic;
 
-		-- func
-		ALUControl: OUT std_logic_vector(5 DOWNTO 0);
-
-		-- selecting sign extend of raddr_2
+		-- selecting sign extend OR raddr_2
 		-- '0' if raddr_2 result, '1' if sign extend result
 		ALUSrc: OUT std_logic;
+
+		-- func for ALU
+		ALUControl: OUT std_logic_vector(5 DOWNTO 0);
 
 		-- write ebable for data memory
 		-- '0' if not writing to mem, '1' if writing to mem
@@ -52,6 +49,35 @@ ENTITY control IS
 		-- selecting output data from memory OR ALU result
 		-- '0' if ALU result, '1' if mem result
 		MemToReg: OUT std_logic;
+
+		-- selecting if 'rs' or 'rt' is selected to write destination (regfile)
+		-- '0' if rd, '1' if rt
+		RegDst: OUT std_logic;
+
+		-- '1' if branching, '0' if not branching
+		Branch: OUT std_logic;
+
+		-- '1' if jump instruction, else '0' 
+		Jump: OUT std_logic;
+
+		-- '1' if JR instruction, else '0'
+		JRControl: OUT std_logic;
+
+		-- '1' if JAL instruction else '0' save current address to register '31'
+		JALAddr: OUT std_logic;
+
+		-- "00" (LB/LH, and whatever comes out from memReg)
+		-- "01" for LUI instruction,
+		-- "10" for JAL, saves data of current instruction (or the next one)		 
+		JALData: OUT std_logic_vector(1 DOWNTO 0);
+
+		-- '1' if shift, else '0'
+		ShiftControl: OUT std_logic;
+
+		-- "000" if LB; "001" if LH; "010" if LBU; "011" if LHU; 
+		-- "100" if normal, (don't do any manipulation to input) 
+		LoadControl: OUT std_logic_vector(2 DOWNTO 0);
+
 
 		-- to regfile
 		-- operand A
@@ -71,155 +97,29 @@ END control;
 architecture behavior of control is
 
 begin
+	
+	-- Operand A
+	rs <= instruction(25 DOWNTO 21);
 
-	funct: process(clk, instruction)
+	-- Operand B
+	rt <= instruction(20 DOWNTO 16);
 
-	begin
+	-- write destination
+	rd <= instruction(15 DOWNTO 11);
 
-		-- if clk='0' then read
-		if(clk'event and clk='1') then
+	-- immediant, (rd+shamt+func)
+	imm <= instruction(15 DOWNTO 0);
 
-			imm <= instruction(15 DOWNTO 0);
+	-----------------------------------------------
+	--------------- Control Enables ---------------
+	-----------------------------------------------
+	RegWrite <= '0' when (clk'event AND clk='0' AND -- instruction goes here) 
+				else 
+				'1' when 
 
-			-- operand A
-			rs <= instruction(25 DOWNTO 21);
-
-			-- operand B
-			rt <= instruction(20 DOWNTO 16);
-
-			-- func
-			ALUControl <= instruction(5 DOWNTO 0);
-
-			-- write address
-			rd <= instruction(15 DOWNTO 11);
-
-			-- reading from register
-			RegWrite <= '0';
-
-			-- R-type, if opcode="000000"
-			if(instruction(31 DOWNTO 26)= "000000") then
-
-				-- R-Type, not reading anything from memory
-				MemWrite <= '0';
-
-				-- R-type, not selecting data from mem, but from ALU result
-				MemToReg <= '0';
-
-				-- I-type, addi and subi
-				if((instruction(5 DOWNTO 0)="100001") OR 
-						(instruction(5 DOWNTO 0)="100011")) then
-
-					-- selecting result from sign extend
-					ALUSrc <= '1';
-
-				-- R-type,
-				else
-
-					-- selecting result from raddr_2
-					ALUSrc <= '0'; 
-				end if;
-
-			-- Load instruction, if opcode="100011"
-			elsif (instruction(31 DOWNTO 26)="100011") then 
-
-				-- not writing to mem, only reading from it
-				MemWrite <= '0';
-
-				-- selecting result coming out from mem
-				MemToReg <= '1';
-
-				-- selecting from sign extend
-				ALUSrc <= '1'; 
-
-			-- Store instruction, if opcode="101011"
-			elsif(instruction(31 DOWNTO 26)="101011") then
-
-				-- writing to mem
-				MemWrite <= '1';
-
-				-- doesn't matter what comes out, will not write it to mem
-				MemToReg <= '0';
-
-				-- selecting from sign extend
-				ALUSrc <= '1'; 
-			end if; -- R-type, Load, store instruction
-
-
-		-- if clk='1' then write to regfile (except for store instruction)
-		elsif(clk'event and clk='0') then
-
-			imm <= instruction(15 DOWNTO 0);
-
-			-- operand A
-			rs <= instruction(25 DOWNTO 21);
-
-			-- operand B
-			rt <= instruction(20 DOWNTO 16);
-
-			-- func
-			ALUControl <= instruction(5 DOWNTO 0);
-
-			-- write address
-			rd <= instruction(15 DOWNTO 11);
-
-			-- R-type, if opcode="000000"
-			if(instruction(31 DOWNTO 26)= "000000") then
-
-				-- writing to register
-				RegWrite <= '1';
-
-				-- R-Type, not reading anything from memory
-				MemWrite <= '0';
-
-				-- R-type, not selecting data from mem, but from ALU result
-				MemToReg <= '0';
-
-				-- I-type, addi and subi
-				if((instruction(5 DOWNTO 0)="100001") OR 
-						(instruction(5 DOWNTO 0)="100011")) then
-
-					-- selecting result from sign extend
-					ALUSrc <= '1';
-
-				-- R-type,
-				else
-
-					-- selecting result from raddr_2
-					ALUSrc <= '0'; 
-				end if;
-
-			-- Load instruction, if opcode="100011"
-			elsif (instruction(31 DOWNTO 26)="100011") then 
-
-				-- writing to register
-				RegWrite <= '1';
-
-				-- not writing to mem, only reading from it
-				MemWrite <= '0';
-
-				-- selecting result coming out from mem
-				MemToReg <= '1';
-
-				-- selecting from sign extend
-				ALUSrc <= '1'; 
-
-			-- Store instruction, if opcode="101011"
-			elsif(instruction(31 DOWNTO 26)="101011") then
-
-				-- not writing to register so set it to '0'
-				RegWrite <= '0';
-
-				-- writing to mem
-				MemWrite <= '1';
-
-				-- doesn't matter what comes out, will not write it to mem
-				MemToReg <= '0';
-
-				-- selecting from sign extend
-				ALUSrc <= '1'; 
-			end if; -- R-type, Load, store instruction
-		end if; -- if clk
-	end process;
+	ALUSrc:
+		
+	
 
 end behavior;
 
