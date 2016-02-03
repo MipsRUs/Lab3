@@ -31,17 +31,37 @@ pcadder L1(
          ,.rst(rst)
          );
 
-always begin
+/*always begin
 	#5 clk = 1;
 	#5 clk = 0;
 end
+*/
+
 
 initial begin
 
 	rst = 1;
-	#20;
+	#10 clk = 1;
+	#10 clk = 0;
+	#10 clk = 1;
+	#10 clk = 0;
 	rst = 0;
-	#200;
+	#10 clk = 1;
+	#10 clk = 0;
+	#10 clk = 1;
+	#10 clk = 0;
+	#10 clk = 1;
+	#10 clk = 0;
+	#10 clk = 1;
+	#10 clk = 0;
+	#10 clk = 1;
+	#10 clk = 0;
+	#10 clk = 1;
+	#10 clk = 0;
+	#10 clk = 1;
+	#10 clk = 0;
+	#10 clk = 1;
+	#10 clk = 0;
 	//$finish
 
 end
