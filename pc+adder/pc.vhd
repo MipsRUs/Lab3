@@ -81,7 +81,7 @@ begin
 		
 	-- output the values
 	addr_out <= (others=>'0') when (clk'event AND clk='1' AND rst='1') else 
-				addr_in;														
+				addr_in when (clk'event AND clk='1' AND rst='0');														
 	--end process;
 
 end logic;
