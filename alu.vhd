@@ -28,10 +28,8 @@ ENTITY alu IS
 		Func_in : IN std_logic_vector (5 DOWNTO 0);
 		A_in : IN std_logic_vector (31 DOWNTO 0);
 		B_in : IN std_logic_vector (31 DOWNTO 0);
-		shamt_in : IN std_logic_vector (4 DOWNTO 0);
 		O_out : OUT std_logic_vector (31 DOWNTO 0);
 		Branch_out : OUT std_logic;
-		Jump_out : OUT std_logic
 	);
 END alu ;
 
@@ -53,129 +51,97 @@ begin
 			when "100000" =>
 				O_out <= std_logic_vector(signed(A_in) + signed(B_in));
 				Branch_out <= '0';
-				Jump_out <= '0';
 				
 				
-			--ADDi
+			--ADDU
 			when "100001" => 
-				O_out <= std_logic_vector(signed(A_in) + signed(B_in));
+				O_out <= std_logic_vector(unsigned(A_in) + unsigned(B_in));
 				Branch_out <= '0';
-				Jump_out <= '0';
 
 			-- SUB
 			when "100010" =>
-				--O_out <= std_logic_vector(signed(A_in) - signed(B_in));
-				if (A_in >= B_in) then
-					O_out <= std_logic_vector(unsigned(A_in) - unsigned(B_in));
-					--overflow   <= '0';
-					--equal <= '0';
-						else
-					O_out <= std_logic_vector(unsigned(B_in) - unsigned(A_in));
-					--overflow   <= '1';
-					--equal <= '0';
-						end if;
+				O_out <= std_logic_vector(signed(A_in) - signed(B_in));
 				Branch_out <= '0';
-				Jump_out <= '0';
 			
 
-			-- SUBi
+			-- SUBU
 			when "100011" =>
-				--O_out <= std_logic_vector(signed(A_in) - signed(B_in));
-				if (A_in >= B_in) then
-					O_out <= std_logic_vector(unsigned(A_in) - unsigned(B_in));
-					--overflow   <= '0';
-					--equal <= '0';
-						else
-					O_out <= std_logic_vector(unsigned(B_in) - unsigned(A_in));
-					--overflow   <= '1';
-					--equal <= '0';
-						end if;
+				O_out <= std_logic_vector(unsigned(A_in) - unsigned(B_in));
 				Branch_out <= '0';
-				Jump_out <= '0';
 				
 
 			-- AND
 			when "100100" =>
 				O_out <= A_in AND B_in;
 				Branch_out <= '0';
-				Jump_out <= '0';
 
 			-- OR
 			when "100101" =>
 				O_out <= A_in OR B_in;
 				Branch_out <= '0';
-				Jump_out <= '0';
 
 			-- XOR
 			when "100110" =>
 				O_out <= A_in XOR B_in;
 				Branch_out <= '0';
-				Jump_out <= '0';
 
 			-- NOR
 			when "100111" =>
 				O_out <= A_in NOR B_in;
 				Branch_out <= '0';
-				Jump_out <= '0';
 
 			-- SLT (signed)
-			when "101000" =>
+			when "101010" =>
 				if (signed(A_in) < signed(B_in)) then
 					O_out <= one;
 				else 
 					O_out <= zero;
 				end if;
 				Branch_out <= '0';
-				Jump_out <= '0';
 				
 			-- SLT(unsigned)
-			when "101001" =>
+			when "101011" =>
 				if(unsigned(A_in) < unsigned(B_in)) then
 					O_out <= one;
 				else 
 					O_out <= zero;
 				end if;
 				Branch_out <= '0';
-				Jump_out <= '0';
 				
 			-- LUI
-			when "000000" =>
+			when "XXXXXX" =>
 				O_out <= B_in sll 16;
 				
 			--shift instr
 			--SLL
-			when "" =>
-				O_out <= A_in sll shamt_in;
+			when "000000" =>
+				O_out <= B_in sll A_in;
 				Branch_out <= '0';
-				Jump_out <= '0';
 				
 			--SRL
-			when "" =>
-				O_out <= A_in srl shamt_in;
+			when "000010" =>
+				O_out <= B_in srl A_in;
 				Branch_out <= '0';
-				Jump_out <= '0';
 				
 			--SRA
-			when "" =>
-				O_out <= A_in sra shamt_in;
+			when "000011" =>
+				O_out <= B_in sra A_in;
 				Branch_out <= '0';
-				Jump_out <= '0';
 
 			--SLLV
-			when "" =>
-				O_out <= A_in sll B_in;
+			when "000100" =>
+				O_out <= B_in sll A_in;
 				Branch_out <= '0';
-				Jump_out <= '0';
 				
 			--SRLV
-			when "" =>
-				O_out <= A_in srl B_in;
+			when "000110" =>
+				O_out <= B_in srl A_in;
 				Branch_out <= '0';
 				Jump_out <= '0';
 				
 			--SRAV
-			when "" =>
-				O_out <= A_in sra B_in;
+			when "000111" =>
+				O_out <= B_in sra A_in;
 				Branch_out <= '0';
 				Jump_out <= '0';
 				
@@ -213,7 +179,6 @@ begin
 			when others =>
 				O_out <= zero;
 				Branch_out <= '0';
-				Jump_out <= '0';
 
 
 		end case;
