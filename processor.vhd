@@ -16,7 +16,8 @@
 -- 		Date		Update Description			Developer
 --	-----------   ----------------------   	  -------------
 --	1/19/2016		Created						TH, NS, LV, SC
---
+--	2/5/2016		Updated to work with		SC 
+--					assignment 31
 -------------------------------------------------------------------
 
 library ieee;

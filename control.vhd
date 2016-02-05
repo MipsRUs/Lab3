@@ -464,11 +464,5 @@ begin
 				  		)	else 
 				  (instruction(5 DOWNTO 0));
 
-
-
-
-		 
-	
-
 end behavior;
 
