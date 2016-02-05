@@ -113,14 +113,33 @@ begin
 	-----------------------------------------------
 	--------------- Control Enables ---------------
 	-----------------------------------------------
-	RegWrite <= '0' when ((clk'event AND clk='0') else
-				'1' when ((clk'event AND clk='1') AND
+	RegWrite <= '0' when ((clk'event AND clk='1') else
+				'1' when ((clk'event AND clk='0') AND
 					(
-						(instruction(31 DOWNTO 26="000000")) OR
-						
+						-- if not BEQ
+						NOT(instruction(31 DOWNTO 26)="000100") AND
+
+						-- if not BNE
+						NOT(instruction(31 DOWNTO 26)="000101") AND
+
+						-- if not BLTZ or BGEZ
+						NOT(instruction(31 DOWNTO 26)="000001") AND
+
+						-- if not BLEZ
+						NOT(instruction(31 DOWNTO 26)="000110") AND
+
+						-- if not BGTZ
+						NOT(instruction(31 DOWNTO 26)="000111") AND
+
+						-- if not JUMP
+						NOT(instruction(31 DOWNTO 26)="000010") AND
+
+						-- if not JR
+						NOT((instruction(31 DOWNTO 26)="000000") AND
+								(instruction(5 DOWNTO 0)="001000"))
 					))
 
-	ALUSrc:
+	ALUSrc <= '0' when 
 		
 	
 

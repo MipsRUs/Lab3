@@ -20,8 +20,6 @@
 /***************************************************************/
 
 module processor_tb;
-	
-  timeunit 1ns;
 
   logic ref_clk;
   logic reset;
@@ -31,18 +29,14 @@ processor L1(
          ,.reset(reset)
          );
 
-always begin
-	#5 ref_clk = 1;
-	#5 ref_clk = 0;
-end
+always #1 ref_clk = ~ ref_clk;
 
 initial begin
-
+    ref_clk = 1;
 	reset = 1;
-	#20;
-	reset = 0;
+	#2 reset = 0;
 	#2000;
-	$finish
+	$finish;
 
 end
 endmodule
