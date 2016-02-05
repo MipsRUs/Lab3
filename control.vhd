@@ -25,7 +25,8 @@ use ieee.numeric_std.all;
 
 ENTITY control IS
 	PORT (
-		clk : IN std_logic;
+		-- SC: i don't think we need clock 
+		--clk : IN std_logic;
 		instruction : IN std_logic_vector (31 DOWNTO 0);
 
 		-----------------------------------------------
@@ -39,15 +40,12 @@ ENTITY control IS
 		-- '0' if raddr_2 result, '1' if sign extend result
 		ALUSrc: OUT std_logic;
 
-		-- func for ALU
-		ALUControl: OUT std_logic_vector(5 DOWNTO 0);
-
 		-- write ebable for data memory
 		-- '0' if not writing to mem, '1' if writing to mem
 		MemWrite: OUT std_logic;
 
 		-- selecting output data from memory OR ALU result
-		-- '0' if ALU result, '1' if mem result
+		-- '1' if ALU result, '0' if mem result
 		MemToReg: OUT std_logic;
 
 		-- selecting if 'rs' or 'rt' is selected to write destination (regfile)
@@ -77,6 +75,9 @@ ENTITY control IS
 		-- "000" if LB; "001" if LH; "010" if LBU; "011" if LHU; 
 		-- "100" if normal, (don't do any manipulation to input) 
 		LoadControl: OUT std_logic_vector(2 DOWNTO 0);
+
+		-- func for ALU
+		ALUControl: OUT std_logic_vector(5 DOWNTO 0);
 
 
 		-- to regfile
@@ -113,9 +114,8 @@ begin
 	-----------------------------------------------
 	--------------- Control Enables ---------------
 	-----------------------------------------------
-	RegWrite <= '0' when ((clk'event AND clk='1') else
-				'1' when ((clk'event AND clk='0') AND
-					(
+	RegWrite <= '1' when ( 
+					
 						-- if not BEQ
 						NOT(instruction(31 DOWNTO 26)="000100") AND
 
@@ -136,10 +136,125 @@ begin
 
 						-- if not JR
 						NOT((instruction(31 DOWNTO 26)="000000") AND
-								(instruction(5 DOWNTO 0)="001000"))
-					))
+								(instruction(5 DOWNTO 0)="001000")) AND
 
-	ALUSrc <= '0' when 
+						-- if not SB
+						NOT(instruction(31 DOWNTO 26)="101000") AND
+						
+						-- if not SH
+						NOT(instruction(31 DOWNTO 26)="101001")
+					) 	else 
+				'0';
+
+	ALUSrc <= '1' when (	
+
+						-- addi
+						(instruction(31 DOWNTO 26) = "001000") OR
+
+						-- ADDIU or JALR(can be anything)
+						(instruction(31 DOWNTO 26) = "001001") OR
+
+						-- SUBi and SubUi need to do...
+
+						-- ANDI
+						(instruction(31 DOWNTO 26) = "001100") OR
+
+						-- ORI
+						(instruction(31 DOWNTO 26) = "001101") OR
+
+						-- XORI
+						(instruction(31 DOWNTO 26) = "001110") OR
+
+						-- SLTI
+						(instruction(31 DOWNTO 26) = "001010") OR
+
+						-- SLTUI
+						(instruction(31 DOWNTO 26) = "001011") OR
+
+						-- LUI
+						(instruction(31 DOWNTO 26) = "001111") OR
+
+						-- BLTZ or BGEZ
+						(instruction(31 DOWNTO 26) = "000001") OR
+
+						-- BLEZ
+						(instruction(31 DOWNTO 26) = "000110") OR
+
+						-- BGTZ
+						(instruction(31 DOWNTO 26) = "000111") OR
+
+						-- LB
+						(instruction(31 DOWNTO 26) = "100000") OR
+
+						-- LH
+						(instruction(31 DOWNTO 26) = "100001") OR
+
+						-- SB
+						(instruction(31 DOWNTO 26) = "101000") OR
+
+						-- SH
+						(instruction(31 DOWNTO 26) = "101001") OR
+
+						-- LBU
+						(instruction(31 DOWNTO 26) = "100100") OR
+
+						-- LHU
+						(instruction(31 DOWNTO 26) = "100101") OR
+
+						-- LW
+						(instruction(31 DOWNTO 26) = "100011") OR
+
+						-- SW
+						(instruction(31 DOWNTO 26) = "101011") OR
+
+						)	else 
+				'0';
+
+	MemWrite <= '1' when (
+
+						-- SB
+						(instruction(31 DOWNTO 26) = "101000") OR
+
+						-- SH
+						(instruction(31 DOWNTO 26) = "101001") OR
+
+						-- SW
+						(instruction(31 DOWNTO 26) = "101011")
+					)	else 
+				'0';
+
+	MemToReg <= '0' when (
+
+						-- LB
+						(instruction(31 DOWNTO 26) = "100000") OR
+
+						-- LH
+						(instruction(31 DOWNTO 26) = "100001") OR
+
+						-- SB
+						(instruction(31 DOWNTO 26) = "101000") OR
+
+						-- SH
+						(instruction(31 DOWNTO 26) = "101001") OR
+
+						-- LBU
+						(instruction(31 DOWNTO 26) = "100100") OR
+
+						-- LHU
+						(instruction(31 DOWNTO 26) = "100101") OR
+
+						-- LW
+						(instruction(31 DOWNTO 26) = "100011") OR
+
+						-- SW
+						(instruction(31 DOWNTO 26) = "101011") OR
+					)	else 
+				'1';
+
+		
+
+						
+
 		
 	
 
