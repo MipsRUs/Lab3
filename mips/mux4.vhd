@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 -- Copyright MIPS_R_US 2016 - All Rights Reserved 
 --
--- File: mux.vhd
+-- File: mux4.vhd
 -- Team: MIPS_R_US
 -- Members:
 -- 		Stefan Cao (ID# 79267250)
@@ -39,13 +39,4 @@ begin
 			in1 when sel = "01" else
 			in2 when sel = "10" else
 			in3 when sel = "11";
---process(in0, in1, sel)
---begin
-	--if(sel = '0') then
-		--outb<= in0;
-	--else
-		--outb<= in1;
-	--end if;
---end process;
-
 end logic;
