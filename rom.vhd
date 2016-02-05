@@ -39,7 +39,7 @@ variable L: line;
 variable ch: character;
 variable i, index, result: integer;
 
-type ramtype is array (2**16 downto 0) of STD_LOGIC_VECTOR(31 downto 0);
+type ramtype is array (2**16 downto 0) of STD_LOGIC_VECTOR(7 downto 0);
 
 variable mem: ramtype;
 begin
@@ -62,13 +62,21 @@ result := 0;
 		else report "Format error on line" & integer'
 			image(index) severity error;
 		end if;
-	mem(index)(35-i*4 DOWNTO 32-i*4) := to_std_logic_vector(result,4);
+		if (i = 1 OR i = 2) then
+		mem(index)(11-i*4 DOWNTO 8-i*4) := to_std_logic_vector(result,4);
+		elsif (i = 3 OR i = 4) then
+		mem(index + 1)(19-i*4 DOWNTO 16-i*4) := to_std_logic_vector(result,4);
+		elsif (i = 5 OR i = 6) then
+		mem(index + 2)(27-i*4 DOWNTO 24-i*4) := to_std_logic_vector(result,4);
+		elsif (i = 7 OR i = 8) then
+		mem(index + 3)(35-i*4 DOWNTO 32-i*4) := to_std_logic_vector(result,4);
+		end if;
 	end loop; -- end for loop
-index := index + 1;
+index := index + 4;
 end loop; -- end while
 ------------------------new loop-----------------------------
 loop
-dataOut<= mem(to_integer(addr));
+dataOut<= mem(to_integer(addr)) & mem(to_integer(addr) + 1) & mem(to_integer(addr) +2) & mem(to_integer(addr) + 3);
 wait on addr;
 end loop;
 end process;
