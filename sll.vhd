@@ -20,7 +20,7 @@ begin
 	
 	begin
 	
-		O_out <= to_stdlogicvector(to_bitvector(A_in) sll 2);
+		O_out <= std_logic_vector(unsigned(A_in) sll 2);
 		
 		
 	end process;
