@@ -5,9 +5,9 @@ use ieee.numeric_std.all;
 
 ENTITY concatination IS
 	PORT (
-		A_in : IN std_logic_vector (31 DOWNTO 0);
+		A_in : IN std_logic_vector (27 DOWNTO 0);
 		B_in : IN std_logic_vector (31 DOWNTO 0);
-		O_out : OUT std_logic_vector (31 DOWNTO 0);
+		O_out : OUT std_logic_vector (31 DOWNTO 0)
 	);
 END concatination ;
 

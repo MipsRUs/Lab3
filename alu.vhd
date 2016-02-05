@@ -29,7 +29,7 @@ ENTITY alu IS
 		A_in : IN std_logic_vector (31 DOWNTO 0);
 		B_in : IN std_logic_vector (31 DOWNTO 0);
 		O_out : OUT std_logic_vector (31 DOWNTO 0);
-		Branch_out : OUT std_logic;
+		Branch_out : OUT std_logic
 	);
 END alu ;
 
