@@ -71,7 +71,7 @@ ENTITY control IS
 		-- "10" for JAL, saves data of current instruction (or the next one)		 
 		JALData: OUT std_logic_vector(1 DOWNTO 0);
 
-		-- '1' if shift, else '0'
+		-- '1' if shift, else '0' (SLL, SRL, SRA ONLY)
 		ShiftControl: OUT std_logic;
 
 		-- "000" if LB; "001" if LH; "010" if LBU; "011" if LHU; 
@@ -315,7 +315,159 @@ begin
 					)	else 
 				'0';
 
-		
+	JALData <= "10" when(
+
+						-- JAL
+						(instruction(31 DOWNTO 26) = "000011") OR
+
+						-- JALR
+						((instruction(31 DOWNTO 26) = "000000") AND
+							(instruction(5 DOWNTO 0) = "001001"))
+					)	else 
+				"01" when (
+
+						-- LUI
+						(instruction(31 DOWNTO 26) = "001111")
+					)	else 
+				"00";
+
+	ShiftControl <= '1' when (
+
+							-- SLL
+							((instruction(31 DOWNTO 26) = "000000") AND
+								(instruction(5 DOWNTO 0) = "000000"))
+
+							-- SRL
+							((instruction(31 DOWNTO 26) = "000000") AND
+								(instruction(5 DOWNTO 0) = "000010"))
+
+							-- SRA
+							((instruction(31 DOWNTO 26) = "000000") AND
+								(instruction(5 DOWNTO 0) = "000011"))
+						)	else 
+					'0';
+
+	LoadControl <= "000" when(
+
+							-- LB
+							(instruction(31 DOWNTO 26) = "100000")
+						) 	else 
+					"001" when (
+
+							-- LH
+							(instruction(31 DOWNTO 26) = "100001")
+						) 	else 
+					"010" when (
+
+							-- LBU
+							(instruction(31 DOWNTO 26) = "100100")
+						) 	else 
+					"011" when (
+
+							-- LHU
+							(instruction(31 DOWNTO 26) = "100101")
+						)	else 
+					"100";
+
+	ALUControl <= "100000" when (
+
+							-- ADDI
+							(instruction(31 DOWNTO 26) = "001000")
+						)	else 
+				  "100001" when (
+
+				  			-- ADDUI
+				  			(instruction(31 DOWNTO 26) = "001001") OR
+
+				  			-- LB
+				  			(instruction(31 DOWNTO 26) = "100000") OR
+
+				  			-- LH
+				  			(instruction(31 DOWNTO 26) = "100001") OR
+
+				  			-- SB
+				  			(instruction(31 DOWNTO 26) = "101000") OR
+
+				  			-- SH
+				  			(instruction(31 DOWNTO 26) = "101001") OR
+
+				  			-- LBU 
+				  			(instruction(31 DOWNTO 26) = "100100") OR
+
+				  			-- LHU
+				  			(instruction(31 DOWNTO 26) = "100101") OR
+
+				  			-- LW
+				  			(instruction(31 DOWNTO 26) = "100011") OR
+
+				  			-- SW
+				  			(instruction(31 DOWNTO 26) = "101011") OR
+
+
+				  		)	else 
+				  "100100" when (
+
+				  			-- ANDI
+				  			(instruction(31 DOWNTO 26) = "001100")
+				  		)	else 
+				  "100101" when (
+
+				  			-- ORI
+				  			(instruction(31 DOWNTO 26) = "001101")
+				  		)	else
+				  "100110" when (
+
+				  			-- XORI
+				  			(instruction(31 DOWNTO 26) = "001110")
+				  		)	else 
+				  "101010" when (
+
+				  			-- SLTI
+				  			(instruction(31 DOWNTO 26) = "001010")
+				  		)	else
+				  "101011" when (
+
+				  			-- SLTIU
+				  			(instruction(31 DOWNTO 26) = "001011")
+				  		)	else 
+				  "111100" when (
+
+				  			-- BEQ
+				  			(instruction(31 DOWNTO 26) = "000100")
+				  		)	else
+				  "111101" when (
+
+				  			-- BNE
+				  			(instruction(31 DOWNTO 26) = "000101")
+				  		)	else 
+				  "111000" when (
+
+				  			-- BLTZ
+				  			(instruction(31 DOWNTO 26) = "000001") AND
+				  			(instruction(20 DOWNTO 16) = "00000")	
+				  		)	else 
+				  "111001" when (
+
+				  			-- BGEZ
+				  			(instruction(31 DOWNTO 26) = "000001") AND
+				  			(instruction(20 DOWNTO 16) = "00001")	
+				  		)	else 
+				  "111110" when (
+
+				  			-- BLEZ
+				  			(instruction(31 DOWNTO 26) = "000110")	
+				  		)	else
+				  "111111" when (
+
+				  			-- BGTZ
+				  			(instruction(31 DOWNTO 26) = "000111")
+				  		)	else 
+				  (instruction(5 DOWNTO 0));
+
+
+
+
+		 
 	
 
 end behavior;
