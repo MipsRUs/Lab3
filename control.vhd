@@ -16,7 +16,9 @@
 -- 		Date		Update Description			Developer
 --	-----------   ----------------------   	  -------------
 --	1/19/2016		Created						TH, NS, LV, SC
---
+--	2/4/2016		Updated to work with 		SC 
+--					new instructions for
+--					Lab3				
 -------------------------------------------------------------------
 
 library ieee;
@@ -49,7 +51,7 @@ ENTITY control IS
 		MemToReg: OUT std_logic;
 
 		-- selecting if 'rs' or 'rt' is selected to write destination (regfile)
-		-- '0' if rd, '1' if rt
+		-- '1' if rd, '0' if rt
 		RegDst: OUT std_logic;
 
 		-- '1' if branching, '0' if not branching
@@ -61,7 +63,7 @@ ENTITY control IS
 		-- '1' if JR instruction, else '0'
 		JRControl: OUT std_logic;
 
-		-- '1' if JAL instruction else '0' save current address to register '31'
+		-- '1' if JAL instruction and saves current address to register '31' else '0' 
 		JALAddr: OUT std_logic;
 
 		-- "00" (LB/LH, and whatever comes out from memReg)
@@ -205,7 +207,7 @@ begin
 						(instruction(31 DOWNTO 26) = "100011") OR
 
 						-- SW
-						(instruction(31 DOWNTO 26) = "101011") OR
+						(instruction(31 DOWNTO 26) = "101011") 
 
 						)	else 
 				'0';
@@ -247,13 +249,71 @@ begin
 						(instruction(31 DOWNTO 26) = "100011") OR
 
 						-- SW
-						(instruction(31 DOWNTO 26) = "101011") OR
+						(instruction(31 DOWNTO 26) = "101011") 
 					)	else 
 				'1';
 
-		
+	RegDst <= '1' 	when (
 
-						
+						-- R-type and instruction with opcode "000000"
+						-- 		all take RegDst='1'
+						(instruction(31 DOWNTO 26) = "000000") 
+					) 	else 
+				'0';
+		
+	Branch <= '1' 	when (
+
+						-- BEQ
+						(instruction(31 DOWNTO 26) = "000100") OR
+
+						-- BNE
+						(instruction(31 DOWNTO 26) = "000101") OR
+
+						-- BLTZ or BGEZ
+						(instruction(31 DOWNTO 26) = "000001") OR
+
+						-- BLEZ
+						(instruction(31 DOWNTO 26) = "000110") OR
+
+						-- BGTZ
+						(instruction(31 DOWNTO 26) = "000111") 
+					)	else 
+				'0';
+
+	Jump <= '1'		when (
+
+						-- JUMP
+						(instruction(31 DOWNTO 26) = "000010") OR
+
+						-- JR or JALR
+						((instruction(31 DOWNTO 26) = "000000") AND
+							((instruction(5 DOWNTO 0) = "001000") OR
+							  (instruction(5 DOWNTO 0) = "001001"))) OR
+
+						-- JAL
+						(instruction(31 DOWNTO 26) = "000011") 
+					)	else
+				'0'; 
+
+	JRControl <= '1' when (
+
+						-- JR or JALR
+						((instruction(31 DOWNTO 26) = "000000") AND
+							((instruction(5 DOWNTO 0) = "001000") OR
+							  (instruction(5 DOWNTO 0) = "001001"))) 
+					)	else 
+				'0';	
+
+	JALAddr <= '1'	when (
+
+						-- JAL
+						(instruction(31 DOWNTO 26) = "000011") OR
+
+						-- JALR
+						((instruction(31 DOWNTO 26) = "000000") AND
+							(instruction(5 DOWNTO 0) = "001001"))
+					)	else 
+				'0';
 
 		
 	
