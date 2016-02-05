@@ -16,7 +16,7 @@
 -- History:
 -- 		Date		Update Description			Developer
 --	-----------   ----------------------   	  -------------
---	1/18/2016		Created						TH, NS, LV, SC
+--	2/5/2016		Created						TH, NS, LV, SC
 --
 -------------------------------------------------------------------
 
@@ -24,12 +24,12 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity sign_extension is
+entity sign_extension_5bit is
 	PORT(
-		immediate : IN std_logic_vector(15 DOWNTO 0);
+		shamt : IN std_logic_vector(4 DOWNTO 0);
 		sign_extension_out : OUT std_logic_vector(31 DOWNTO 0)
 	);
-end sign_extension;
+end sign_extension_5bit;
 
 architecture Behavioral of sign_extension is
 
