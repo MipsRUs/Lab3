@@ -179,9 +179,9 @@ end component;
 -- regfile
 component regfile
 	PORT (
-		clk : IN std_logic ;
-		rst_s : IN std_logic ; 
-		we : IN std_logic ; -- write enable
+		clk : IN std_logic;
+		rst_s : IN std_logic; 
+		we : IN std_logic; -- write enable
 		raddr_1 : IN std_logic_vector (4 DOWNTO 0); -- read address 1
 		raddr_2 : IN std_logic_vector (4 DOWNTO 0); -- read address 2
 		waddr : IN std_logic_vector (4 DOWNTO 0); -- write address
