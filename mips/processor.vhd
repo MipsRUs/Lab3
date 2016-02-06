@@ -329,7 +329,7 @@ signal rom_out: std_logic_vector(31 DOWNTO 0);
 signal jumpshiftleft_out: std_logic_vector(25 DOWNTO 0);
 
 -- shiftleft1x_out: PORT_OUT->O_out(shiftleft1x), PORT_IN->A_in(concatinationx)
-signal shiftleft1x_out: std_logic_vector(31 DOWNTO 0);
+signal shiftleft1x_out: std_logic_vector(27 DOWNTO 0);
 -----------------------------------------------------------
 
 ------------------ concatination signal ---------------------
@@ -438,7 +438,7 @@ signal MemRegMux_out: std_logic_vector(31 DOWNTO 0);
 ------------------- begin --------------------- 
 begin
 
-	pcx:			pc PORT MAP(clk=>ref_clk, rst=>resest, addr_in=>JumpMux2PC, addr_out=>PCOut);	
+	pcx:			pc PORT MAP(clk=>ref_clk, rst=>reset, addr_in=>JumpMux2PC, addr_out=>PCOut);	
 	
 	adder1x:		adder32 PORT MAP(a_32=>PCOut, b_32=>adder_b_32, cin=>adder1_cin, sub=>adder1_sub, 
 								sum_32=>adder1x_out, cout=>adder1_cout, ov=>adder1_ov);
@@ -492,7 +492,7 @@ begin
 
 	ramx:			ram PORT MAP(clk=>ref_clk, we=>MemToReg_out, addr=>alu_out, dataI=>rdata_2_out, dataO=>mem_data_out);
 
-	ShiftandExtendx: shiftextend PORT MAP(loadcontrol=>LoadControl_out, in32=>MemToReg_out, out32=>ShiftAndExtend_out);
+	ShiftandExtendx: shiftextend PORT MAP(loadcontrol=>LoadControl_out, in32=>MemRegMux_out, out32=>ShiftAndExtend_out);
 
 	MemRegMuxx: 	mux PORT MAP(in0=>mem_data_out, in1=>alu_out, sel=>MemToReg_out, outb=>MemRegMux_out);
 
