@@ -411,9 +411,7 @@ begin
 				  			(instruction(31 DOWNTO 26) = "100011") OR
 
 				  			-- SW
-				  			(instruction(31 DOWNTO 26) = "101011") OR
-
-
+				  			(instruction(31 DOWNTO 26) = "101011") 
 				  		)	else 
 				  "100100" when (
 
