@@ -11,16 +11,9 @@ ENTITY concatination IS
 	);
 END concatination ;
 
-architecture behavior of alu is
+architecture behavior of concatination is
 
 begin
-	funct: process(A_in, B_in)
-	
-	
-	begin
-	
 	O_out <= A_in & B_in;
-	
-	end process;
 	
 end behavior;
