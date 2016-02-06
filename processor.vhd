@@ -265,10 +265,36 @@ end component;
 -----------------------------------------------
 
 ------------------ pc signal ------------------
---JumpMux2PC: PORT_IN->add_in(pcx), PORT_OUT->
-signal 
+-- JumpMux2PC: PORT_IN->add_in(pcx), PORT_OUT->outb(JumpMuxx)
+signal JumpMux2PC: std_logic_vector (31 DOWNTO 0);
 
+-- PCOut: PORT_IN->a_32(adder1x) and PORT_IN->addr(romx)
+signal PCOut: std_logic_vector (31 DOWNTO 0);
+-----------------------------------------------
 
+------------------ adder signal ------------------
+-- adder_b_32: PORT_IN->b_32(adder1x) value '4'
+signal adder_b_32: std_logic_vector (31 DOWNTO 0) := "00000000000000000000000000000100";
+
+--	adder_cin: PORT_IN->cin(adder1x) value'0'
+signal adder_cin: std_logic := '0';
+
+-- adder_sub: PORT_IN->sub(adder1x) value '0'
+signal adder_sub: std_logic := '0';
+
+-- adder_out: PORT_OUT->sum_32(adder1x)
+signal adder_out: std_logic_vector (31 DOWNTO 0);
+
+-- adder_cout: PORT_INOUT->cout(adder1x)
+signal adder_cout: std_logic;
+
+-- adder_ov: PORT_OUT->ov(adderx)
+signal adder_ov: std_logic;
+---------------------------------------------------
+
+------------------ rom signal ---------------------
+-- rom_out: PORT_OUT->dataOut(romx), PORT_IN->
+signal rom_out: std_logic_vector(31 DOWNTO 0);
 
 
 
@@ -365,11 +391,12 @@ signal mux2out:				std_logic_vector (31 DOWNTO 0);
 ------------------- begin --------------------- 
 begin
 
-	pcx:			pc PORT MAP();	
+	pcx:			pc PORT MAP(clk=>ref_clk, rst=>resest, addr_in=>JumpMux2PC, addr_out=>PCOut);	
 	
-	adder1x:		adder32 PORT MAP();
+	adder1x:		adder32 PORT MAP(a_32=>PCOut, b_32=>adder_b_32, cin=>adder_cin, sub=>adder_sub, 
+								sum_32=>adder_out, cout=>adder_cout, ov=>adder_ov);
 
-	romx: 			rom PORT MAP();
+	romx: 			rom PORT MAP(addr=>PCOut, dataOut=>);
 
 	shiftleft1x: 	shiftll PORT MAP();
 
