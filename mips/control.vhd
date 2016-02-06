@@ -345,11 +345,11 @@ begin
 
 							-- SLL
 							((instruction(31 DOWNTO 26) = "000000") AND
-								(instruction(5 DOWNTO 0) = "000000"))
+								(instruction(5 DOWNTO 0) = "000000")) OR
 
 							-- SRL
 							((instruction(31 DOWNTO 26) = "000000") AND
-								(instruction(5 DOWNTO 0) = "000010"))
+								(instruction(5 DOWNTO 0) = "000010")) OR
 
 							-- SRA
 							((instruction(31 DOWNTO 26) = "000000") AND
