@@ -35,7 +35,7 @@ architecture Behavioral of sign_extension is
 
 begin
 
-	sign_extension_out <= std_logic_vector(resize(signed(immediate), 32));
+	sign_extension_out <= std_logic_vector(resize(signed(shamt), 32));
 
 end Behavioral;
 
