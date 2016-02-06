@@ -95,6 +95,9 @@ ENTITY control IS
 		-- immediant, (rd+shamt+func)
 		imm: OUT std_logic_vector(15 DOWNTO 0);
 
+		-- shamt
+		shamt: OUT std_logic_vector(4 DOWNTO 0);
+
 		-- jump shift left
 		jumpshiftleft: OUT std_logic_vector(25 DOWNTO 0)
 	);
@@ -115,6 +118,8 @@ begin
 
 	-- immediant, (rd+shamt+func)
 	imm <= instruction(15 DOWNTO 0);
+
+	shamt <= instruction(10 DOWNTO 6);
 
 	jumpshiftleft <= instruction(25 DOWNTO 0);
 

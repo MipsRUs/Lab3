@@ -118,6 +118,9 @@ component control
 		-- immediant, (rd+shamt+func)
 		imm: OUT std_logic_vector(15 DOWNTO 0);
 
+		-- shamt
+		shamt: OUT std_logic_vector(4 DOWNTO 0);
+
 		-- jump shift left
 		jumpshiftleft: OUT std_logic_vector(25 DOWNTO 0)
 	);
@@ -252,12 +255,12 @@ end component;
 component shiftll
 	PORT (
 		A_in : IN std_logic_vector (25 DOWNTO 0);
-		O_out: OUT std_logic_vector (31 DOWNTO 0)
+		O_out: OUT std_logic_vector (27 DOWNTO 0)
 	);
 end component;
 
 ----------------------------------------------------------TAKE A LOOOKK THIS HAS NOT BEEN DONE WHEN I CREATED THE PROCRESSOR ------------------------
-component shiftll2
+component shiftll32
 	PORT (
 		A_in: IN std_logic_vector(31 DOWNTO 0);
 		O_out: OUT std_logic_vector(31 DOWNTO 0)
@@ -302,19 +305,19 @@ signal PCOut: std_logic_vector (31 DOWNTO 0);
 signal adder_b_32: std_logic_vector (31 DOWNTO 0) := "00000000000000000000000000000100";
 
 --	adder_cin: PORT_IN->cin(adder1x) value'0'
-signal adder_cin: std_logic := '0';
+signal adder1_cin: std_logic := '0';
 
 -- adder_sub: PORT_IN->sub(adder1x) value '0'
-signal adder_sub: std_logic := '0';
+signal adder1_sub: std_logic := '0';
 
 -- adder1x_out: PORT_OUT->sum_32(adder1x)
 signal adder1x_out: std_logic_vector (31 DOWNTO 0);
 
 -- adder_cout: PORT_INOUT->cout(adder1x)
-signal adder_cout: std_logic;
+signal adder1_cout: std_logic;
 
 -- adder_ov: PORT_OUT->ov(adderx)
-signal adder_ov: std_logic;
+signal adder1_ov: std_logic;
 ---------------------------------------------------
 
 ------------------ rom signal ---------------------
@@ -353,6 +356,7 @@ signal ALUControl_out: std_logic_vector(5 DOWNTO 0);
 signal rs_out: std_logic_vector(4 DOWNTO 0);
 signal rt_out: std_logic_vector(4 DOWNTO 0);
 signal rd_out: std_logic_vector(4 DOWNTO 0);
+signal shamt_out: std_logic_vector(4 DOWNTO 0);
 signal imm_out: std_logic_vector(15 DOWNTO 0);
 ---------------------------------------------------------
 
@@ -370,16 +374,75 @@ signal ShiftAndExtend_out: std_logic_vector(31 DOWNTO 0);
 signal ShiftAndExtendLUI_out: std_logic_vector(31 DOWNTO 0);
 signal emptyWire: std_logic_vector(31 DOWNTO 0);
 signal JalDataMux2Reg: std_logic_vector(31 DOWNTO 0);
+-----------------------------------------------------------
 
+------------------ regfile signal ---------------------
+signal rdata_1_out: std_logic_vector(31 DOWNTO 0);
+signal rdata_2_out: std_logic_vector(31 DOWNTO 0);
+-------------------------------------------------------
 
+------------------ sign extension 16 bit signal ---------------------
+signal SignExtensionImm_out: std_logic_vector(31 DOWNTO 0);
+----------------------------------------------------------------------
+
+------------------ sign extension 5 bit signal ---------------------
+signal SignExtensionShamt_out: std_logic_vector(31 DOWNTO 0);
+---------------------------------------------------------------------
+
+------------------ shift left (2) signal ---------------------
+signal shiftleft2x_out: std_logic_vector(31 DOWNTO 0);
+--------------------------------------------------------------
+
+------------------ alu signal ---------------------
+signal alu_b_in: std_logic_vector(31 DOWNTO 0);
+signal alu_a_in: std_logic_vector(31 DOWNTO 0);
+signal alu_out: std_logic_vector(31 DOWNTO 0);
+signal alu_branch_out: std_logic;
+----------------------------------------------------
+
+------------------ adder2 signal ---------------------
+--	adder_cin: PORT_IN->cin(adder1x) value'0'
+signal adder2_cin: std_logic := '0';
+
+-- adder_sub: PORT_IN->sub(adder1x) value '0'
+signal adder2_sub: std_logic := '0';
+
+-- adder1x_out: PORT_OUT->sum_32(adder1x)
+signal adder2x_out: std_logic_vector (31 DOWNTO 0);
+
+-- adder_cout: PORT_INOUT->cout(adder1x)
+signal adder2_cout: std_logic;
+
+-- adder_ov: PORT_OUT->ov(adderx)
+signal adder2_ov: std_logic;
+------------------------------------------------------
+
+------------------ andgate signal ---------------------
+signal andgate_out: std_logic;
+-------------------------------------------------------
+
+------------------ Branch Mux signal ---------------------
+signal JumpMux_in0: std_logic_vector(31 DOWNTO 0);
+-------------------------------------------------------
+
+------------------ Jump Mux signal ---------------------
+JRControlMux_out: std_logic_vector(31 DOWNTO 0);
+-------------------------------------------------------
+
+------------------ ram signal ---------------------
+signal mem_data_out: std_logic_vector(31 DOWNTO 0);
+-------------------------------------------------------
+
+------------------ MemReg mux signal ---------------------
+signal MemRegMux_out: std_logic_vector(31 DOWNTO 0);
 
 ------------------- begin --------------------- 
 begin
 
 	pcx:			pc PORT MAP(clk=>ref_clk, rst=>resest, addr_in=>JumpMux2PC, addr_out=>PCOut);	
 	
-	adder1x:		adder32 PORT MAP(a_32=>PCOut, b_32=>adder_b_32, cin=>adder_cin, sub=>adder_sub, 
-								sum_32=>adder1x_out, cout=>adder_cout, ov=>adder_ov);
+	adder1x:		adder32 PORT MAP(a_32=>PCOut, b_32=>adder_b_32, cin=>adder1_cin, sub=>adder1_sub, 
+								sum_32=>adder1x_out, cout=>adder1_cout, ov=>adder1_ov);
 
 	romx: 			rom PORT MAP(addr=>PCOut, dataOut=>rom_out);
 
@@ -397,39 +460,42 @@ begin
 	controlx:		control PORT MAP(instruction=>rom_out, RegWrite=>RegWrite_out, ALUSrc=>ALUSrc_out, MemWrite=>MemWrite_out,
 								MemToReg=>MemToReg_out, RegDst=>RegDst_out, Branch=>Branch_out, Jump=>Jump_out, JRControl=>JRControl_out,
 								JALAddr=>JALAddr_out, JALData=>JALData_out, ShiftControl=>ShiftControl_out, LoadControl=>LoadControl_out,
-								ALUControl=>ALUControl_out, rs=>rs_out, rt=>rt_out, rd=>rd_out, imm=>imm_out, jumpshiftleft=>jumpshiftleft_out);
+								ALUControl=>ALUControl_out, rs=>rs_out, rt=>rt_out, rd=>rd_out, imm=>imm_out, shamt=>shamt_out,
+								jumpshiftleft=>jumpshiftleft_out);
 
-	regfilex:		regfile PORT MAP(clk=>ref_clk, rst_s=>reset, we=>RegWrite_out, raddr_1=>rs_out, raddr_2=>rt_out);
+	regfilex:		regfile PORT MAP(clk=>ref_clk, rst_s=>reset, we=>RegWrite_out, raddr_1=>rs_out, raddr_2=>rt_out, waddr=>JALaddrMux2Waddr,
+								rdata_1=>rdata_1_out, rdata_2=>rdata_2_out, wdata=>JalDataMux2Reg);
 
-	SignExtensionImmx: sign_extension_16bit PORT MAP();
+	SignExtensionImmx: sign_extension_16bit PORT MAP(immediate=>imm_out, sign_extension_out=>SignExtensionImm_out);
 
-	SignExtensionShamtx: sign_extension_5bit PORT MAP();
+	SignExtensionShamtx: sign_extension_5bit PORT MAP(shamt=>shamt_out, sign_extension_out=>SignExtensionShamt_out);
 
-	shiftleft2x: 	shiftll2 PORT MAP();
+	shiftleft2x: 	shiftll32 PORT MAP(A_in=>SignExtensionImm_out, O_out=>shiftleft2x_out);
 
-	AluSrcMuxx:		mux PORT MAP();
+	AluSrcMuxx:		mux PORT MAP(in0=>rdata_2_out, in1=>SignExtensionImm_out, sel=>ALUSrc_out, outb=>alu_b_in);
 
-	ShiftControlMuxx:	mux PORT MAP();
+	ShiftControlMuxx:	mux PORT MAP(in0=>rdata_1_out, in1=>SignExtensionShamt_out, sel=>ShiftControl_out, outb=>alu_a_in);
 
-	ShiftandExtendLUI: 	shiftlui PORT MAP();
+	ShiftandExtendLUI: 	shiftlui PORT MAP(in32=>SignExtensionImm_out, out32=>ShiftAndExtendLUI_out);
 
-	adder2x:		adder32 PORT MAP();
+	adder2x:		adder32 PORT MAP(a_32=>adder1x_out, b_32=>shiftleft2x_out, cin=>adder2_cin, sub=>adder2_sub, sum_32=>adder2x_out, 
+									cout=>adder2_cout, ov=>adder2_ov);
 
-	alux: 			alu PORT MAP();
+	alux: 			alu PORT MAP(Func_in=>ALUControl_out, A_in=>alu_a_in, B_in=>alu_b_in, O_out=>alu_out, Branch_out=>alu_branch_out);
 
-	BranchMuxx:		mux PORT MAP();
+	BranchMuxx:		mux PORT MAP(in0=>adder1x_out, in1=>adder2x_out, sel=>andgate_out, outb=>JumpMux_in0);
 
-	BranchAndx:		andgate PORT MAP();
+	BranchAndx:		andgate PORT MAP(IN1=>Branch_out, IN2=>alu_branch_out, OUT1=>andgate_out);
 
-	JumpMuxx:		mux PORT MAP();
+	JumpMuxx:		mux PORT MAP(in0=>JumpMux_in0, in1=>JRControlMux_out, sel=>Jump_out, outb=>JumpMux2PC);
 
-	JRControlMuxx: 	mux PORT MAP();
+	JRControlMuxx: 	mux PORT MAP(in0=>concatination_out, in1=>rdata_1_out, sel=>JRControl_out, outb=>JRControlMux_out);
 
-	ramx:			ram PORT MAP();
+	ramx:			ram PORT MAP(clk=>ref_clk, we=>MemToReg_out, addr=>alu_out, dataI=>rdata_2_out, dataO=>mem_data_out);
 
-	ShiftandExtendx: shiftextend PORT MAP();
+	ShiftandExtendx: shiftextend PORT MAP(loadcontrol=>LoadControl_out, in32=>MemToReg_out, out32=>ShiftAndExtend_out);
 
-	MemRegMuxx: 	mux PORT MAP();
+	MemRegMuxx: 	mux PORT MAP(in0=>mem_data_out, in1=>alu_out, sel=>MemToReg_out, outb=>MemRegMux_out);
 
 
 
