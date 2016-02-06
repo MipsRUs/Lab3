@@ -116,7 +116,10 @@ component control
 		rd: OUT std_logic_vector(4 DOWNTO 0);
 
 		-- immediant, (rd+shamt+func)
-		imm: OUT std_logic_vector(15 DOWNTO 0)
+		imm: OUT std_logic_vector(15 DOWNTO 0);
+
+		-- jump shift left
+		jumpshiftleft: OUT std_logic_vector(25 DOWNTO 0)
 	);
 end component;
 
@@ -135,6 +138,16 @@ component mux
 		in1: in std_logic_vector(31 downto 0);
 		sel: in std_logic;
 		outb: out std_logic_vector(31 downto 0)
+	);
+end component;
+
+-- mux 5 bit
+component mux_5bit
+	port( 
+		in0: in std_logic_vector(4 downto 0);
+		in1: in std_logic_vector(4 downto 0);
+		sel: in std_logic;
+		outb: out std_logic_vector(4 downto 0)
 	);
 end component;
 
@@ -238,9 +251,21 @@ end component;
 -- shiftleft
 component shiftll
 	PORT (
-		A_in : IN std_logic_vector (31 DOWNTO 0)
+		A_in : IN std_logic_vector (25 DOWNTO 0);
+		O_out: OUT std_logic_vector (31 DOWNTO 0)
 	);
 end component;
+
+----------------------------------------------------------TAKE A LOOOKK THIS HAS NOT BEEN DONE WHEN I CREATED THE PROCRESSOR ------------------------
+component shiftll2
+	PORT (
+		A_in: IN std_logic_vector(31 DOWNTO 0);
+		O_out: OUT std_logic_vector(31 DOWNTO 0)
+	)
+end component;
+
+
+
 
 -- shiftlui
 component shiftlui
@@ -282,8 +307,8 @@ signal adder_cin: std_logic := '0';
 -- adder_sub: PORT_IN->sub(adder1x) value '0'
 signal adder_sub: std_logic := '0';
 
--- adder_out: PORT_OUT->sum_32(adder1x)
-signal adder_out: std_logic_vector (31 DOWNTO 0);
+-- adder1x_out: PORT_OUT->sum_32(adder1x)
+signal adder1x_out: std_logic_vector (31 DOWNTO 0);
 
 -- adder_cout: PORT_INOUT->cout(adder1x)
 signal adder_cout: std_logic;
@@ -293,99 +318,46 @@ signal adder_ov: std_logic;
 ---------------------------------------------------
 
 ------------------ rom signal ---------------------
--- rom_out: PORT_OUT->dataOut(romx), PORT_IN->
+-- rom_out: PORT_OUT->dataOut(romx), PORT_IN->instructio(controlx)
 signal rom_out: std_logic_vector(31 DOWNTO 0);
+---------------------------------------------------
 
+------------------ shiftleft1x signal ---------------------
+-- jumpshiftleft_out: PORT_OUT->jumpshiftleft(controlx), PORT_IN->A_in(shiftleft1x)
+signal jumpshiftleft_out: std_logic_vector(25 DOWNTO 0);
 
+-- shiftleft1x_out: PORT_OUT->O_out(shiftleft1x), PORT_IN->A_in(concatinationx)
+signal shiftleft1x_out: std_logic_vector(31 DOWNTO 0);
+-----------------------------------------------------------
 
--- pcbranch: Port_IN->isBranch(pcx) (set to 0 because no branch)
-signal pcbranch:			std_logic := '0';	
+------------------ concatination signal ---------------------
+-- concatination_out: PORT_OUT->O_out(concatinationx), PORT_IN->in0(JRControlMuxx)
+signal concatination_out: std_logic_vector(31 DOWNTO 0);
+-------------------------------------------------------------
 
--- pcadder: Port_IN->addr_in(pcx) (not using branch so set to 0's)
-signal pcadder:				std_logic_vector (31 DOWNTO 0) := (others=>'0'); 
+------------------ control signal ---------------------
 
--- pcadderout: Port_OUT->addr_out(pcx), Port_IN->addr(romx)
-signal pcadderout:			std_logic_vector (31 DOWNTO 0);
------------------------------------------------
+signal RegWrite_out: std_logic;
+signal ALUSrc_out: std_logic;
+signal MemWrite_out: std_logic;
+signal MemToReg_out: std_logic;
+signal RegDst_out: std_logic;
+signal Branch_out: std_logic;
+signal Jump_out: std_logic;
+signal JRControl_out: std_logic;
+signal JALAddr_out: std_logic;
+signal JALData_out: std_logic_vector(1 DOWNTO 0);
+signal ShiftControl_out: std_logic;
+signal LoadControl_out: std_logic_vector(2 DOWNTO 0);
+signal ALUControl_out: std_logic_vector(5 DOWNTO 0);
+signal rs_out: std_logic_vector(4 DOWNTO 0);
+signal rt_out: std_logic_vector(4 DOWNTO 0);
+signal rd_out: std_logic_vector(4 DOWNTO 0);
+signal imm_out: std_logic_vector(15 DOWNTO 0);
+---------------------------------------------------------
 
-
----------------- rom signal -------------------
------------------------------------------------
-
-
---------------- control signals ---------------
-
--- cinstruction: Port_OUT->dataOut(romx), Port_In->instruction(controlx)
-signal cinstruction:		std_logic_vector (31 DOWNTO 0);
-
--- cregwrite: Port_OUT-> RegWrite(romx), Port_In->we(regfilex)
-signal cregwrite:			std_logic;
-
--- calucontrol: Port_OUT->ALUControl(controlx), Port_In->Func_in(alux)
-signal calucontrol:			std_logic_vector (5 DOWNTO 0);
-
--- calusrc: Port_OUT->ALUSrc(controlx), Port_In->sel(mux1)
-signal calusrc:				std_logic;
-
--- cmemwrite: Port_OUT->MemWrite(controlx), Port_In->we(ramx)
-signal cmemwrite:			std_logic;
-
--- cmemtoreg: Port_OUT->MemToReg(controlx), Port_In->sel(mux2)
-signal cmemtoreg:			std_logic;
-
--- crs: Port_OUT->rs(controlx), Port_In->raddr_1(regfilex)
--- crt: Port_OUT->rt(controlx), Port_In->raddr_2(regfilex)
--- crd: Port_OUT->rd(controlx), Port_In->waddr(regfilex)
-signal crs, crt, crd:		std_logic_vector (4 DOWNTO 0);
-
--- cimm: Port_OUT->imm(controlx), Port_In->immediate(signextensionx)
-signal cimm:				std_logic_vector (15 DOWNTO 0);
------------------------------------------------
-
-
---------- sign_extension signals --------------
-
--- signextendout: Port_OUT->sign_extension_out(signextensionx), Port_In->in1(mux1)
-signal signextendout:		std_logic_vector (31 DOWNTO 0);
------------------------------------------------
-
-
------------------ mux1 signals ----------------
-
--- mux1ina: Port_OUT->rdata_2(regfile), Port_In->in0(mux1), Port_In->dataI(ramx)
-signal mux1ina:	std_logic_vector (31 DOWNTO 0);
------------------------------------------------
-
-
----------------- alu signals ------------------
-
--- operanda: Port_OUT->rdata_1(regfile), Port_In->A_in(alux)
--- operandb: Port_OUT->outb(mux1x), Port_In->B_in(alux)
-signal operanda, operandb:	std_logic_vector (31 DOWNTO 0);
-
--- aluout: Port_OUT->, Port_In->
-signal aluout:				std_logic_vector (31 DOWNTO 0);
-
--- aluresult: Port_OUT->O_out(alux), Port_In->addr(ramx), Port_IN->in1(mux2x)
-signal aluresult:			std_logic_vector (31 DOWNTO 0);
-
--- alubranchout: Port_OUT->Branch_out, Port_In->
-signal alubranchout:		std_logic;
-
--- alujumpout: Port_OUT->Jump_out, Port_In->  
-signal alujumpout:			std_logic;
------------------------------------------------
-
-
------------------ mux2 signals ----------------
-
--- mux2ina: Port_OUT->dataO(ramx), Port_In->in0(mux2x)
-signal mux2ina:	std_logic_vector (31 DOWNTO 0);
-
--- mux2out: Port_OUT->outb(mux2x), Port_In->wdata(regfilex)
-signal mux2out:				std_logic_vector (31 DOWNTO 0);
------------------------------------------------
-
+------------------ RegDstMux signal ---------------------
+signal RegDst2JALaddr: std_logic_vector;
 
 
 ------------------- begin --------------------- 
@@ -396,13 +368,13 @@ begin
 	adder1x:		adder32 PORT MAP(a_32=>PCOut, b_32=>adder_b_32, cin=>adder_cin, sub=>adder_sub, 
 								sum_32=>adder_out, cout=>adder_cout, ov=>adder_ov);
 
-	romx: 			rom PORT MAP(addr=>PCOut, dataOut=>);
+	romx: 			rom PORT MAP(addr=>PCOut, dataOut=>rom_out);
 
-	shiftleft1x: 	shiftll PORT MAP();
+	shiftleft1x: 	shiftll PORT MAP(A_in=>jumpshiftleft_out, O_out=>shiftleft1x_out);
 
-	concatinationx:	concatination PORT MAP();
+	concatinationx:	concatination PORT MAP(A_in=>shiftleft1x_out, B_in=>adder1x_out, O_out=>concatination_out);
 
-	RegDstMuxx:		mux PORT MAP();
+	RegDstMuxx:		mux PORT MAP(in0=>rt_out, in1=>rd_out, sel=>RegDst_out, outb=>);
 
 	JalAddrMuxx:	mux PORT MAP();
 
@@ -416,7 +388,7 @@ begin
 
 	SignExtensionShamtx: sign_extension_5bit PORT MAP();
 
-	shiftleft2x: 	shiftll PORT MAP();
+	shiftleft2x: 	shiftll2 PORT MAP();
 
 	AluSrcMuxx:		mux PORT MAP();
 
@@ -444,41 +416,6 @@ begin
 
 
 
-
-
-
-
-	--pcx:			pc port map (clk=>ref_clk, rst=>reset, isBranch=>pcbranch,
-	--					addr_in=>pcadder, addr_out=>pcadderout);
-
-	--romx:			rom port map (addr=>pcadderout, dataOut=>cinstruction);
-
-	--controlx:		control port map (clk=>ref_clk, instruction=>cinstruction,
-	--					RegWrite=>cregwrite, ALUControl=>calucontrol, 
-	--					ALUSrc=>calusrc, MemWrite=>cmemwrite, 
-	--					MemToReg=>cmemtoreg, rs=>crs, rt=>crt, rd=>crd, 
-	--					imm=>cimm);
-
-	--signextensionx:	sign_extension port map (immediate=>cimm, 
-	--					sign_extension_out=>signextendout);
-
-	--regfilex:		regfile port map (clk=>ref_clk, rst_s=>reset, 
-	--					we=>cregwrite, raddr_1=>crs, raddr_2=>crt, 
-	--					waddr=>crd, rdata_1=>operanda, rdata_2=>mux1ina, 
-	--					wdata=>mux2out);
-
-	--mux1x:			mux port map (in0=>mux1ina, in1=>signextendout, 
-	--					sel=>calusrc, outb=>operandb);
-
-	--alux:			alu port map (Func_in=>calucontrol, A_in=>operanda, 
-	--					B_in=>operandb, O_out=>aluresult, 
-	--					Branch_out=>alubranchout, Jump_out=>alujumpout);
-
-	--ramx:			ram port map (clk=>ref_clk, we=>cmemwrite, 
-	--					addr=>aluresult, dataI=>mux1ina, dataO=>mux2ina);
-	
-	--mux2x:			mux port map (in0=>aluresult, in1=>mux2ina, 
-	--					sel=>cmemtoreg, outb=>mux2out);	
 	
 end behavior;
 
