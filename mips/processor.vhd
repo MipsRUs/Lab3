@@ -156,8 +156,7 @@ end component;
 
 -- pc
 component pc
-	PORT (
-		PORT (clk: in STD_LOGIC;
+	PORT (clk: in STD_LOGIC;
   		rst: in STD_LOGIC;
   		-- this is set to '1' if there is a branch
   		--isBranch: in STD_LOGIC;  
