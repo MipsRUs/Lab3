@@ -31,7 +31,7 @@ entity sign_extension_16bit is
 	);
 end sign_extension_16bit;
 
-architecture Behavioral of sign_extension is
+architecture Behavioral of sign_extension_16bit is
 
 begin
 

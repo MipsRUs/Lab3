@@ -31,7 +31,7 @@ entity sign_extension_5bit is
 	);
 end sign_extension_5bit;
 
-architecture Behavioral of sign_extension is
+architecture Behavioral of sign_extension_5bit is
 
 begin
 
