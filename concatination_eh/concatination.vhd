@@ -14,7 +14,6 @@ END concatination ;
 architecture behavior of concatination is
 
 begin
---edit these two lines by EH
 	O_out(31 downto 28) <= B_in(31 downto 28);
 	O_out(27 downto 0 ) <= A_in(27 downto 0);
 	
