@@ -176,10 +176,18 @@ component regfile
 	);
 end component;
 
--- sign extension
-component sign_extension
+-- sign extension 16 bit to 32 bits
+component sign_extension_16bit
 	PORT(
 		immediate : IN std_logic_vector(15 DOWNTO 0);
+		sign_extension_out : OUT std_logic_vector(31 DOWNTO 0)
+	);
+end component;
+
+-- sign extension 5 bits to 32 bits
+component sign_extension_5bit
+	PORT(
+		shamt : IN std_logic_vector(4 DOWNTO 0);
 		sign_extension_out : OUT std_logic_vector(31 DOWNTO 0)
 	);
 end component;
@@ -257,6 +265,12 @@ end component;
 -----------------------------------------------
 
 ------------------ pc signal ------------------
+--JumpMux2PC: PORT_IN->add_in(pcx), PORT_OUT->
+signal 
+
+
+
+
 
 -- pcbranch: Port_IN->isBranch(pcx) (set to 0 because no branch)
 signal pcbranch:			std_logic := '0';	
@@ -350,37 +364,94 @@ signal mux2out:				std_logic_vector (31 DOWNTO 0);
 
 ------------------- begin --------------------- 
 begin
-	pcx:			pc port map (clk=>ref_clk, rst=>reset, isBranch=>pcbranch,
-						addr_in=>pcadder, addr_out=>pcadderout);
 
-	romx:			rom port map (addr=>pcadderout, dataOut=>cinstruction);
-
-	controlx:		control port map (clk=>ref_clk, instruction=>cinstruction,
-						RegWrite=>cregwrite, ALUControl=>calucontrol, 
-						ALUSrc=>calusrc, MemWrite=>cmemwrite, 
-						MemToReg=>cmemtoreg, rs=>crs, rt=>crt, rd=>crd, 
-						imm=>cimm);
-
-	signextensionx:	sign_extension port map (immediate=>cimm, 
-						sign_extension_out=>signextendout);
-
-	regfilex:		regfile port map (clk=>ref_clk, rst_s=>reset, 
-						we=>cregwrite, raddr_1=>crs, raddr_2=>crt, 
-						waddr=>crd, rdata_1=>operanda, rdata_2=>mux1ina, 
-						wdata=>mux2out);
-
-	mux1x:			mux port map (in0=>mux1ina, in1=>signextendout, 
-						sel=>calusrc, outb=>operandb);
-
-	alux:			alu port map (Func_in=>calucontrol, A_in=>operanda, 
-						B_in=>operandb, O_out=>aluresult, 
-						Branch_out=>alubranchout, Jump_out=>alujumpout);
-
-	ramx:			ram port map (clk=>ref_clk, we=>cmemwrite, 
-						addr=>aluresult, dataI=>mux1ina, dataO=>mux2ina);
+	pcx:			pc PORT MAP();	
 	
-	mux2x:			mux port map (in0=>aluresult, in1=>mux2ina, 
-						sel=>cmemtoreg, outb=>mux2out);	
+	adder1x:		adder32 PORT MAP();
+
+	romx: 			rom PORT MAP();
+
+	shiftleft1x: 	shiftll PORT MAP();
+
+	concatinationx:	concatination PORT MAP();
+
+	RegDstMuxx:		mux PORT MAP();
+
+	JalAddrMuxx:	mux PORT MAP();
+
+	JalDataMuxx: 	mux4 PORT MAP();
+
+	controlx:		control PORT MAP();
+
+	regfilex:		regfile PORT MAP();
+
+	SignExtensionImmx: sign_extension_16bit PORT MAP();
+
+	SignExtensionShamtx: sign_extension_5bit PORT MAP();
+
+	shiftleft2x: 	shiftll PORT MAP();
+
+	AluSrcMuxx:		mux PORT MAP();
+
+	ShiftControlMuxx:	mux PORT MAP();
+
+	ShiftandExtendLUI: 	shiftlui PORT MAP();
+
+	adder2x:		adder32 PORT MAP();
+
+	alux: 			alu PORT MAP();
+
+	BranchMuxx:		mux PORT MAP();
+
+	BranchAndx:		andgate PORT MAP();
+
+	JumpMuxx:		mux PORT MAP();
+
+	JRControlMuxx: 	mux PORT MAP();
+
+	ramx:			ram PORT MAP();
+
+	ShiftandExtendx: shiftextend PORT MAP();
+
+	MemRegMuxx: 	mux PORT MAP();
+
+
+
+
+
+
+
+	--pcx:			pc port map (clk=>ref_clk, rst=>reset, isBranch=>pcbranch,
+	--					addr_in=>pcadder, addr_out=>pcadderout);
+
+	--romx:			rom port map (addr=>pcadderout, dataOut=>cinstruction);
+
+	--controlx:		control port map (clk=>ref_clk, instruction=>cinstruction,
+	--					RegWrite=>cregwrite, ALUControl=>calucontrol, 
+	--					ALUSrc=>calusrc, MemWrite=>cmemwrite, 
+	--					MemToReg=>cmemtoreg, rs=>crs, rt=>crt, rd=>crd, 
+	--					imm=>cimm);
+
+	--signextensionx:	sign_extension port map (immediate=>cimm, 
+	--					sign_extension_out=>signextendout);
+
+	--regfilex:		regfile port map (clk=>ref_clk, rst_s=>reset, 
+	--					we=>cregwrite, raddr_1=>crs, raddr_2=>crt, 
+	--					waddr=>crd, rdata_1=>operanda, rdata_2=>mux1ina, 
+	--					wdata=>mux2out);
+
+	--mux1x:			mux port map (in0=>mux1ina, in1=>signextendout, 
+	--					sel=>calusrc, outb=>operandb);
+
+	--alux:			alu port map (Func_in=>calucontrol, A_in=>operanda, 
+	--					B_in=>operandb, O_out=>aluresult, 
+	--					Branch_out=>alubranchout, Jump_out=>alujumpout);
+
+	--ramx:			ram port map (clk=>ref_clk, we=>cmemwrite, 
+	--					addr=>aluresult, dataI=>mux1ina, dataO=>mux2ina);
+	
+	--mux2x:			mux port map (in0=>aluresult, in1=>mux2ina, 
+	--					sel=>cmemtoreg, outb=>mux2out);	
 	
 end behavior;
 
