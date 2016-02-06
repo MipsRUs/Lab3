@@ -4,14 +4,14 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-ENTITY shiftll IS
+ENTITY shiftll32 IS
 	PORT (
-		A_in : IN std_logic_vector (32 DOWNTO 0);
-		O_out: OUT std_logic_vector (32 DOWNTO 0)
+		A_in : IN std_logic_vector (31 DOWNTO 0);
+		O_out: OUT std_logic_vector (31 DOWNTO 0)
 	);
-END shiftll ;
+END shiftll32 ;
 
-architecture behavior of shiftll is
+architecture behavior of shiftll32 is
 
 
 begin
