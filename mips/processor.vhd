@@ -263,7 +263,7 @@ component shiftll32
 	PORT (
 		A_in: IN std_logic_vector(31 DOWNTO 0);
 		O_out: OUT std_logic_vector(31 DOWNTO 0)
-	)
+	);
 end component;
 
 
@@ -425,7 +425,7 @@ signal JumpMux_in0: std_logic_vector(31 DOWNTO 0);
 -------------------------------------------------------
 
 ------------------ Jump Mux signal ---------------------
-JRControlMux_out: std_logic_vector(31 DOWNTO 0);
+signal JRControlMux_out: std_logic_vector(31 DOWNTO 0);
 -------------------------------------------------------
 
 ------------------ ram signal ---------------------
