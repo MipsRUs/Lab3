@@ -33,39 +33,35 @@ END processor;
 
 architecture behavior of processor is
 
+---------------------------------------
 -------------- components -------------
+---------------------------------------
 -- ALU
 component alu
-	PORT(
+	PORT (
 		Func_in : IN std_logic_vector (5 DOWNTO 0);
 		A_in : IN std_logic_vector (31 DOWNTO 0);
 		B_in : IN std_logic_vector (31 DOWNTO 0);
 		O_out : OUT std_logic_vector (31 DOWNTO 0);
-		Branch_out : OUT std_logic;
-		Jump_out : OUT std_logic
+		Branch_out : OUT std_logic
 	);
 end component;
 
 -- control
 component control
-	PORT(
-		clk : IN std_logic;
+	PORT (
+		-- SC: i don't think we need clock 
+		--clk : IN std_logic;
 		instruction : IN std_logic_vector (31 DOWNTO 0);
 
-		-- selecting rs or rd
-		--RegDst: OUT std_logic;
-
-		-- Branch is not used in this single cycle processor
-		--Branch: OUT std_logic;
-
+		-----------------------------------------------
+		--------------- Control Enables ---------------
+		-----------------------------------------------
 		-- write enable for regfile
 		-- '0' if read, '1' if write
 		RegWrite: OUT std_logic;
 
-		-- func
-		ALUControl: OUT std_logic_vector(5 DOWNTO 0);
-
-		-- selecting sign extend of raddr_2
+		-- selecting sign extend OR raddr_2
 		-- '0' if raddr_2 result, '1' if sign extend result
 		ALUSrc: OUT std_logic;
 
@@ -74,8 +70,40 @@ component control
 		MemWrite: OUT std_logic;
 
 		-- selecting output data from memory OR ALU result
-		-- '0' if ALU result, '1' if mem result
+		-- '1' if ALU result, '0' if mem result
 		MemToReg: OUT std_logic;
+
+		-- selecting if 'rs' or 'rt' is selected to write destination (regfile)
+		-- '1' if rd, '0' if rt
+		RegDst: OUT std_logic;
+
+		-- '1' if branching, '0' if not branching
+		Branch: OUT std_logic;
+
+		-- '1' if jump instruction, else '0' 
+		Jump: OUT std_logic;
+
+		-- '1' if JR instruction, else '0'
+		JRControl: OUT std_logic;
+
+		-- '1' if JAL instruction and saves current address to register '31' else '0' 
+		JALAddr: OUT std_logic;
+
+		-- "00" (LB/LH, and whatever comes out from memReg)
+		-- "01" for LUI instruction,
+		-- "10" for JAL, saves data of current instruction (or the next one)		 
+		JALData: OUT std_logic_vector(1 DOWNTO 0);
+
+		-- '1' if shift, else '0' (SLL, SRL, SRA ONLY)
+		ShiftControl: OUT std_logic;
+
+		-- "000" if LB; "001" if LH; "010" if LBU; "011" if LHU; 
+		-- "100" if normal, (don't do any manipulation to input) 
+		LoadControl: OUT std_logic_vector(2 DOWNTO 0);
+
+		-- func for ALU
+		ALUControl: OUT std_logic_vector(5 DOWNTO 0);
+
 
 		-- to regfile
 		-- operand A
@@ -87,16 +115,16 @@ component control
 		-- write address
 		rd: OUT std_logic_vector(4 DOWNTO 0);
 
-		-- immediante, (rd+shamt+func)
+		-- immediant, (rd+shamt+func)
 		imm: OUT std_logic_vector(15 DOWNTO 0)
 	);
 end component;
 
 -- rom: instruction memory
 component rom
-	PORT(
-		addr : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		dataOut : INOUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+	port(
+		addr: IN STD_LOGIC_VECTOR(31 downto 0); 
+		dataOut: OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 	);
 end component;
 
@@ -113,12 +141,12 @@ end component;
 -- pc
 component pc
 	PORT (
-			clk: in STD_LOGIC;
-      		rst: in STD_LOGIC;
-      		-- this is set to '1' if there is a branch
-      		isBranch: in STD_LOGIC; 
-			addr_in: in STD_LOGIC_VECTOR(31 DOWNTO 0);
-			addr_out: out STD_LOGIC_VECtOR(31 DOWNTO 0)
+		PORT (clk: in STD_LOGIC;
+  		rst: in STD_LOGIC;
+  		-- this is set to '1' if there is a branch
+  		--isBranch: in STD_LOGIC;  
+		addr_in: in STD_LOGIC_VECTOR(31 DOWNTO 0);
+		addr_out: out STD_LOGIC_VECtOR(31 DOWNTO 0)
 	);
 end component;
 
@@ -155,6 +183,74 @@ component sign_extension
 		sign_extension_out : OUT std_logic_vector(31 DOWNTO 0)
 	);
 end component;
+
+-- 32-bit adder
+component adder32
+	port(
+		a_32    : in  std_logic_vector(31 downto 0);
+        b_32    : in  std_logic_vector(31 downto 0);
+		cin	: in std_logic;
+		sub	: in std_logic;
+		sum_32	: out std_logic_vector(31 downto 0);
+		cout	: inout std_logic;
+		ov	: out std_logic
+	);
+end component;
+
+-- andgate
+component andgate
+	Port (
+		IN1 : in STD_LOGIC; -- and gate input
+    	IN2 : in STD_LOGIC; -- and gate input
+		OUT1 : out STD_LOGIC
+	); 
+end component;
+
+-- mux4
+component mux4
+	port(   
+		in0: in std_logic_vector(31 downto 0);
+		in1: in std_logic_vector(31 downto 0);
+		in2: in std_logic_vector(31 downto 0);
+		in3: in std_logic_vector(31 downto 0);		
+		sel: in std_logic_vector(1 downto 0);
+		mux4out: out std_logic_vector(31 downto 0)
+	);
+end component;
+
+-- concatination
+component concatination
+	PORT (
+		A_in : IN std_logic_vector (31 DOWNTO 0);
+		B_in : IN std_logic_vector (31 DOWNTO 0);
+		O_out : OUT std_logic_vector (31 DOWNTO 0)
+	);
+end component;
+
+-- shiftleft
+component shiftll
+	PORT (
+		A_in : IN std_logic_vector (31 DOWNTO 0)
+	);
+end component;
+
+-- shiftlui
+component shiftlui
+	port(
+		in32: IN std_logic_vector (31 downto 0);
+		out32: OUT std_logic_vector (31 downto 0)
+	);
+end component;
+
+-- shiftextend
+component shiftextend
+	port(
+		loadcontrol:	IN std_logic_vector(2 downto 0);
+		in32:		IN std_logic_vector (31 downto 0);	
+		out32:		OUT std_logic_vector(31 downto 0)
+	);
+end component;
+
 
 -----------------------------------------------
 -------------- signals ------------------------
