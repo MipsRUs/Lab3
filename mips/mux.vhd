@@ -38,13 +38,6 @@ begin
 	with sel select outb <=
 		in0 when '0',
 		in1 when OTHERS;
---process(in0, in1, sel)
---begin
-	--if(sel = '0') then
-		--outb<= in0;
-	--else
-		--outb<= in1;
-	--end if;
---end process;
+
 end behavior;
 	

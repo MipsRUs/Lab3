@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 -- Copyright MIPS_R_US 2016 - All Rights Reserved 
 --
--- File: mux.vhd
+-- File: mux_5bit.vhd
 -- Team: MIPS_R_US
 -- Members:
 -- 		Stefan Cao (ID# 79267250)
@@ -10,8 +10,7 @@
 --		Linda Vang (ID# 71434490)
 --
 -- Description:
---		This is a mux/ 2-bit selecter. Two muxes are being used in this 
---		processor implementation
+--		2 bit mux that takes a 5 bit input
 --
 -- History:
 -- 		Date		Update Description			Developer
@@ -39,13 +38,6 @@ begin
 	with sel select outb <=
 		in0 when '0',
 		in1 when OTHERS;
---process(in0, in1, sel)
---begin
-	--if(sel = '0') then
-		--outb<= in0;
-	--else
-		--outb<= in1;
-	--end if;
---end process;
+
 end behavior;
 	

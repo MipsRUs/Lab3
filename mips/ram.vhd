@@ -26,12 +26,6 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 ENTITY ram IS 
-	-- TH commented the generic 1/21/16
-	--GENERIC (NBIT: INTEGER := 32;
-
-		-- 2**9=512
-	--	NSEL: INTEGER := 9);
-
 	port (
 		clk : IN std_logic;
 		we : IN std_logic;
@@ -53,7 +47,9 @@ begin
         ram_process: process (clk, we, addr, dataI)
         variable mem_var:memory;
         begin
-        if(clk'event and clk='1') then
+
+        -- SC (2016-02-06: changed clk='0')
+        if(clk'event and clk='0') then
                 if(we='1') then
                         mem_var(to_integer(unsigned(addr))) := dataI(31 downto 24);
                         mem_var(to_integer(unsigned(addr))+1) := dataI(23 downto 16);

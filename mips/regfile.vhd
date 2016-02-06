@@ -24,12 +24,6 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 ENTITY regfile IS
-	-- TH commented generic for processor
-	--GENERIC (
-	--	NBIT: INTEGER := 32;
-
-		-- NSEL may be changes, not sure how many registers there are
-	--	NSEL : INTEGER := 5);
 
 	PORT (
 		clk : IN std_logic ;
@@ -76,14 +70,21 @@ begin
 			rdata1_var := mem_var(to_integer(unsigned(raddr_1)));
 			rdata2_var := mem_var(to_integer(unsigned(raddr_2)));
 
-			-- if write enable, write to regfile
+			
+		end if;
+		rdata_1 <= rdata1_var;
+		rdata_2 <=rdata2_var;
+
+	-- SC 2016-02-06: Added, need to be tested
+	elsif(clk='0') then 
+
+		-- if write enable, write to regfile
 			if (we='1') then
 				mem_var(to_integer(unsigned(waddr))) := wdata;
 			end if;
-		end if;
+
 	end if;
-	rdata_1 <= rdata1_var;
-	rdata_2 <=rdata2_var;
+	
 	end process;
 
 end behavior;

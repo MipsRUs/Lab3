@@ -27,7 +27,7 @@ entity andgate is
 		IN1 : in STD_LOGIC; -- and gate input
     	IN2 : in STD_LOGIC; -- and gate input
 		OUT1 : out STD_LOGIC
-); 
+	); 
 end andgate;
 
 architecture Behavioral of andgate is
