@@ -357,7 +357,20 @@ signal imm_out: std_logic_vector(15 DOWNTO 0);
 ---------------------------------------------------------
 
 ------------------ RegDstMux signal ---------------------
-signal RegDst2JALaddr: std_logic_vector;
+signal RegDst2JALaddr: std_logic_vector (4 DOWNTO 0);
+---------------------------------------------------------
+
+------------------ JALaddr signal ---------------------
+signal in32: std_logic_vector(4 DOWNTO 0) := "11111";
+signal JALaddrMux2Waddr: std_logic_vector(4 DOWNTO 0);
+--------------------------------------------------------
+
+------------------ JalDataMux signal ---------------------
+signal ShiftAndExtend_out: std_logic_vector(31 DOWNTO 0);
+signal ShiftAndExtendLUI_out: std_logic_vector(31 DOWNTO 0);
+signal emptyWire: std_logic_vector(31 DOWNTO 0);
+signal JalDataMux2Reg: std_logic_vector(31 DOWNTO 0);
+
 
 
 ------------------- begin --------------------- 
@@ -366,7 +379,7 @@ begin
 	pcx:			pc PORT MAP(clk=>ref_clk, rst=>resest, addr_in=>JumpMux2PC, addr_out=>PCOut);	
 	
 	adder1x:		adder32 PORT MAP(a_32=>PCOut, b_32=>adder_b_32, cin=>adder_cin, sub=>adder_sub, 
-								sum_32=>adder_out, cout=>adder_cout, ov=>adder_ov);
+								sum_32=>adder1x_out, cout=>adder_cout, ov=>adder_ov);
 
 	romx: 			rom PORT MAP(addr=>PCOut, dataOut=>rom_out);
 
@@ -374,15 +387,19 @@ begin
 
 	concatinationx:	concatination PORT MAP(A_in=>shiftleft1x_out, B_in=>adder1x_out, O_out=>concatination_out);
 
-	RegDstMuxx:		mux PORT MAP(in0=>rt_out, in1=>rd_out, sel=>RegDst_out, outb=>);
+	RegDstMuxx:		mux_5bit PORT MAP(in0=>rt_out, in1=>rd_out, sel=>RegDst_out, outb=>RegDst2JALaddr);
 
-	JalAddrMuxx:	mux PORT MAP();
+	JalAddrMuxx:	mux_5bit PORT MAP(in0=>RegDst2JALaddr, in1=>in32, sel=>JALAddr_out, outb=>JALaddrMux2Waddr);
 
-	JalDataMuxx: 	mux4 PORT MAP();
+	JalDataMuxx: 	mux4 PORT MAP(in0=>ShiftAndExtend_out, in1=>ShiftAndExtendLUI_out, in2=>adder1x_out, in3=>emptyWire, 
+							sel=>JALData_out, mux4out=>JalDataMux2Reg);
 
-	controlx:		control PORT MAP();
+	controlx:		control PORT MAP(instruction=>rom_out, RegWrite=>RegWrite_out, ALUSrc=>ALUSrc_out, MemWrite=>MemWrite_out,
+								MemToReg=>MemToReg_out, RegDst=>RegDst_out, Branch=>Branch_out, Jump=>Jump_out, JRControl=>JRControl_out,
+								JALAddr=>JALAddr_out, JALData=>JALData_out, ShiftControl=>ShiftControl_out, LoadControl=>LoadControl_out,
+								ALUControl=>ALUControl_out, rs=>rs_out, rt=>rt_out, rd=>rd_out, imm=>imm_out, jumpshiftleft=>jumpshiftleft_out);
 
-	regfilex:		regfile PORT MAP();
+	regfilex:		regfile PORT MAP(clk=>ref_clk, rst_s=>reset, we=>RegWrite_out, raddr_1=>rs_out, raddr_2=>rt_out);
 
 	SignExtensionImmx: sign_extension_16bit PORT MAP();
 
