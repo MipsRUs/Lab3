@@ -20,7 +20,7 @@ begin
 	
 	begin
 	
-		O_out <= std_logic_vector(unsigned(A_in) sll 2);
+		O_out <= A_in & "00";
 		
 		
 	end process;

@@ -20,7 +20,7 @@ begin
 	
 	begin
 	
-		O_out <= A_in sll 2;
+		O_out <= A_in(29 downto 0) & "00";
 		
 		
 	end process;
