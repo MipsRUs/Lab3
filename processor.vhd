@@ -156,8 +156,7 @@ end component;
 
 -- pc
 component pc
-	PORT (
-		PORT (clk: in STD_LOGIC;
+	PORT (clk: in STD_LOGIC;
   		rst: in STD_LOGIC;
   		-- this is set to '1' if there is a branch
   		--isBranch: in STD_LOGIC;  
@@ -264,7 +263,7 @@ component shiftll32
 	PORT (
 		A_in: IN std_logic_vector(31 DOWNTO 0);
 		O_out: OUT std_logic_vector(31 DOWNTO 0)
-	)
+	);
 end component;
 
 
@@ -426,7 +425,7 @@ signal JumpMux_in0: std_logic_vector(31 DOWNTO 0);
 -------------------------------------------------------
 
 ------------------ Jump Mux signal ---------------------
-JRControlMux_out: std_logic_vector(31 DOWNTO 0);
+signal JRControlMux_out: std_logic_vector(31 DOWNTO 0);
 -------------------------------------------------------
 
 ------------------ ram signal ---------------------
@@ -439,7 +438,7 @@ signal MemRegMux_out: std_logic_vector(31 DOWNTO 0);
 ------------------- begin --------------------- 
 begin
 
-	pcx:			pc PORT MAP(clk=>ref_clk, rst=>resest, addr_in=>JumpMux2PC, addr_out=>PCOut);	
+	pcx:			pc PORT MAP(clk=>ref_clk, rst=>reset, addr_in=>JumpMux2PC, addr_out=>PCOut);	
 	
 	adder1x:		adder32 PORT MAP(a_32=>PCOut, b_32=>adder_b_32, cin=>adder1_cin, sub=>adder1_sub, 
 								sum_32=>adder1x_out, cout=>adder1_cout, ov=>adder1_ov);
