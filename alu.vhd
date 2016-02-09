@@ -109,9 +109,9 @@ begin
 				end if;
 				Branch_out <= '0';
 				
-			-- LUI
-			when "XXXXXX" =>
-				O_out <= std_logic_vector(unsigned(B_in) sll to_integer(unsigned(sixteen)));
+			-- LUI MOVED TO OTHERS
+			--when "XXXXXX" =>
+			--	O_out <= std_logic_vector(unsigned(B_in) sll to_integer(unsigned(sixteen)));
 				
 			--shift instr
 			--SLL
@@ -180,8 +180,9 @@ begin
 				O_out <= A_in;
 				Branch_out <= A_in > zero;
 			
+			--LUI
 			when others =>
-				O_out <= zero;
+				O_out <= std_logic_vector(unsigned(B_in) sll to_integer(unsigned(sixteen)));
 				Branch_out <= '0';
 
 
