@@ -35,8 +35,6 @@ architecture behavior of shiftll32 is
 
 begin
 
-	begin
-	
 		O_out <= A_in(29 downto 0) & "00";
 
 end behavior;
