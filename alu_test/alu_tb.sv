@@ -21,11 +21,11 @@
 
 module alu_tb;
 
-  wire Func_in;
-  wire A_in;
-  wire B_in;
-  wire O_out;
-  wire Branch_out;
+  logic Func_in;
+  logic A_in;
+  logic B_in;
+  logic O_out;
+  logic Branch_out;
   
 alu L1(
           .Func_in(Func_in)
