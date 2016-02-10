@@ -56,7 +56,7 @@ begin
         if(clk'event and clk='0') then
 
         		-- making sure that the address is not negative
-                if(addr > "") then 
+                if(addr > zero) then 
 					if(we='1') then
                         mem_var(to_integer(unsigned(addr))) := dataI(31 downto 24);
                         mem_var(to_integer(unsigned(addr))+1) := dataI(23 downto 16);
