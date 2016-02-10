@@ -181,7 +181,7 @@ begin
 			--BEQ
 			when "111100" =>
 				O_out <= A_in;
-				if(A_in = B) then 
+				if(A_in = B_in) then 
 					Branch_out <= '1';
 				else 
 					Branch_out <= '0';
