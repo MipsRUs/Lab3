@@ -21,10 +21,10 @@
 
 module alu_tb;
 
-  logic Func_in;
-  logic A_in;
-  logic B_in;
-  logic O_out;
+  logic[5:0] Func_in;
+  logic[31:0] A_in;
+  logic[31:0] B_in;
+  logic[31:0] O_out;
   logic Branch_out;
   
 alu L1(
