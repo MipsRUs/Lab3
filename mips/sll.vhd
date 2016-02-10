@@ -33,14 +33,7 @@ END shiftll ;
 architecture behavior of shiftll is
 
 begin
-	funct: process(A_in)
-	
-	
-	begin
-	
+
 		O_out <= A_in & "00";
-		
-		
-	end process;
-	
+
 end behavior;
