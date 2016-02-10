@@ -110,8 +110,8 @@ begin
 				Branch_out <= '0';
 				
 			-- LUI
-			when "XXXXXX" =>
-				O_out <= std_logic_vector(unsigned(B_in) sll to_integer(unsigned(sixteen)));
+			--when "XXXXXX" =>
+				--O_out <= std_logic_vector(unsigned(B_in) sll to_integer(unsigned(sixteen)));
 				
 			--shift instr
 			--SLL
@@ -128,7 +128,7 @@ begin
 			--SRA
 			when "000011" =>
 				--O_out <= B_in sra A_in;
-				O_out <= std_logic_vector(unsigned(B_in) sra to_integer(unsigned(A_in)));
+				O_out <= std_logic_vector(unsigned(B_in) ror to_integer(unsigned(A_in)));
 				Branch_out <= '0';
 
 			--SLLV
@@ -153,7 +153,8 @@ begin
 			--BLTZ
 			when "111000" =>
 				O_out <= A_in;
-				Branch_out <= A_in < zero;
+				Branch_out <= '1' when (A_in < zero) else 
+								'0';
 				
 			--BGEZ
 			when "111001" =>
