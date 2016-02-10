@@ -1,7 +1,7 @@
 set PathSeparator .
 
 set WLFFilename waveform.wlf
-log -r pcadder_tb.*
+log -r alu_tb.*
 
 
 #log -r /* 
