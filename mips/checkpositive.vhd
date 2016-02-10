@@ -34,7 +34,7 @@ end checkpositive;
 architecture behavior of checkpositive is
 begin
 
-	outb <= in0 when (signed(in0) > "00000000000000000000000000000000") else 
+	outb <= in0 when (std_logic_vector(signed(in0)) > "00000000000000000000000000000000") else 
 			"00000000000000000000000000000000";
 
 end behavior;
