@@ -35,9 +35,9 @@ end mux_5bit;
 
 architecture behavior of mux is
 begin
-	with sel select outb <=
-		in0 when '0',
-		in1 when OTHERS;
+	
+	outb <= in0 when (sel = '0') else 
+			in1;
 
 end behavior;
 	
