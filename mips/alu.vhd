@@ -41,6 +41,7 @@ begin
 
 	variable one : std_logic_vector (31 DOWNTO 0) := "00000000000000000000000000000001";
 	variable zero : std_logic_vector (31 DOWNTO 0) := "00000000000000000000000000000000";
+	variable sixteen : std_logic_vector (31 downto 0) := "00000000000000000000000000010000"
 
 	
 	begin
@@ -110,40 +111,43 @@ begin
 				
 			-- LUI
 			when "XXXXXX" =>
-				O_out <= B_in sll 16;
+				O_out <= std_logic_vector(unsigned(B_in) sll to_integer(unsigned(sixteen)));
 				
 			--shift instr
 			--SLL
 			when "000000" =>
-				O_out <= B_in sll A_in;
+				O_out <= std_logic_vector(unsigned(B_in) sll to_integer(unsigned(A_in)));
 				Branch_out <= '0';
 				
 			--SRL
 			when "000010" =>
-				O_out <= B_in srl A_in;
+				--O_out <= B_in srl A_in;
+				O_out <= std_logic_vector(unsigned(B_in) srl to_integer(unsigned(A_in)));
 				Branch_out <= '0';
 				
 			--SRA
 			when "000011" =>
-				O_out <= B_in sra A_in;
+				--O_out <= B_in sra A_in;
+				O_out <= std_logic_vector(unsigned(B_in) sra to_integer(unsigned(A_in)));
 				Branch_out <= '0';
 
 			--SLLV
 			when "000100" =>
-				O_out <= B_in sll A_in;
+				--O_out <= B_in sll A_in;
+				O_out <= std_logic_vector(unsigned(B_in) sll to_integer(unsigned(A_in)));
 				Branch_out <= '0';
 				
 			--SRLV
 			when "000110" =>
-				O_out <= B_in srl A_in;
+				--O_out <= B_in srl A_in;
+				O_out <= std_logic_vector(unsigned(B_in) srl to_integer(unsigned(A_in)));
 				Branch_out <= '0';
-				Jump_out <= '0';
 				
 			--SRAV
 			when "000111" =>
-				O_out <= B_in sra A_in;
+				--O_out <= B_in sra A_in;
+				O_out <= std_logic_vector(unsigned(B_in) srl to_integer(unsigned(A_in)));
 				Branch_out <= '0';
-				Jump_out <= '0';
 				
 			--branch
 			--BLTZ
