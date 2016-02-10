@@ -175,7 +175,7 @@ begin
 				if(A_in >= zero) then 
 					Branch_out <= '1';
 				else 
-					Branch_out <= '0'
+					Branch_out <= '0';
 				end if;
 				
 			--BEQ
