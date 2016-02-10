@@ -34,14 +34,9 @@ architecture behavior of shiftll32 is
 
 
 begin
-	funct: process(A_in)
-	
-	
+
 	begin
 	
 		O_out <= A_in(29 downto 0) & "00";
-		
-		
-	end process;
-	
+
 end behavior;
