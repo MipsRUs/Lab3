@@ -153,8 +153,12 @@ begin
 			--BLTZ
 			when "111000" =>
 				O_out <= A_in;
-				Branch_out <= '1' when (A_in < zero) else 
-								'0';
+				if(A_in < zero) then 
+					Branch_out <= '1';
+				else 
+					Branch_out <= '0';
+				end if;
+
 				
 			--BGEZ
 			when "111001" =>
