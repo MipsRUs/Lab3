@@ -286,6 +286,16 @@ component shiftextend
 	);
 end component;
 
+-- checkpositive
+component checkpositive
+	port( 
+		in0: in std_logic_vector(31 downto 0);
+		outb: out std_logic_vector(31 downto 0)
+	);
+end component;
+
+
+
 
 -----------------------------------------------
 -------------- signals ------------------------
@@ -435,6 +445,9 @@ signal mem_data_out: std_logic_vector(31 DOWNTO 0);
 ------------------ MemReg mux signal ---------------------
 signal MemRegMux_out: std_logic_vector(31 DOWNTO 0);
 
+signal checkpositive_out: std_logic_vector(31 DOWNTO 0);
+
+
 ------------------- begin --------------------- 
 begin
 
@@ -490,7 +503,9 @@ begin
 
 	JRControlMuxx: 	mux PORT MAP(in0=>concatination_out, in1=>rdata_1_out, sel=>JRControl_out, outb=>JRControlMux_out);
 
-	ramx:			ram PORT MAP(clk=>ref_clk, we=>MemWrite_out, addr=>alu_out, dataI=>rdata_2_out, dataO=>mem_data_out);
+	ramx:			ram PORT MAP(clk=>ref_clk, we=>MemWrite_out, addr=>checkpositive_out, dataI=>rdata_2_out, dataO=>mem_data_out);
+
+	checkpositivex: checkpositive PORT MAP(in0=>alu_out, outb=>checkpositive_out);
 
 	ShiftandExtendx: shiftextend PORT MAP(loadcontrol=>LoadControl_out, in32=>MemRegMux_out, out32=>ShiftAndExtend_out);
 
