@@ -19,23 +19,37 @@
 //
 /***************************************************************/
 
-module processor_tb;
+module alu_tb;
 
   logic ref_clk;
   logic reset;
   
 processor L1(
-          .ref_clk(ref_clk)
-         ,.reset(reset)
+          .Func_in(Func_in)
+         ,.A_in(A_in)
+         ,.B_in(B_in)
+         ,.O_out(O_out)
+         ,.Branch_out(Branch_out)
          );
 
-always #1 ref_clk = ~ ref_clk;
+
 
 initial begin
-    ref_clk = 1;
-	reset = 1;
-	#2 reset = 0;
-	#36;
+
+    A_in = 32b'00000000000000000000000000000001;
+    B_in = 32b'00000000000000000000000000000011;
+    
+    #2 Func_in = 6b'000000;
+    #2 Func_in = 6b'000010;
+
+    #2 Func_in = 6b'000011;
+
+    #2 Func_in = 6b'000100;
+
+    #2 Func_in = 6b'000110;
+
+    #2 Func_in = 6b'000111;
+
 	$finish;
 
 end
