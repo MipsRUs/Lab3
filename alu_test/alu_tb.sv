@@ -21,8 +21,11 @@
 
 module alu_tb;
 
-  logic ref_clk;
-  logic reset;
+  logic Func_in;
+  logic A_in;
+  logic B_in;
+  logic O_out;
+  logic Branch_out;
   
 processor L1(
           .Func_in(Func_in)
