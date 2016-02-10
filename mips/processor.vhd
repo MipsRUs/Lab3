@@ -490,7 +490,7 @@ begin
 
 	JRControlMuxx: 	mux PORT MAP(in0=>concatination_out, in1=>rdata_1_out, sel=>JRControl_out, outb=>JRControlMux_out);
 
-	ramx:			ram PORT MAP(clk=>ref_clk, we=>MemToReg_out, addr=>alu_out, dataI=>rdata_2_out, dataO=>mem_data_out);
+	ramx:			ram PORT MAP(clk=>ref_clk, we=>MemWrite_out, addr=>alu_out, dataI=>rdata_2_out, dataO=>mem_data_out);
 
 	ShiftandExtendx: shiftextend PORT MAP(loadcontrol=>LoadControl_out, in32=>MemRegMux_out, out32=>ShiftAndExtend_out);
 
