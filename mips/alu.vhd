@@ -41,7 +41,7 @@ begin
 
 	variable one : std_logic_vector (31 DOWNTO 0) := "00000000000000000000000000000001";
 	variable zero : std_logic_vector (31 DOWNTO 0) := "00000000000000000000000000000000";
-	variable sixteen : std_logic_vector (31 downto 0) := "00000000000000000000000000010000"
+	variable sixteen : std_logic_vector (31 downto 0) := "00000000000000000000000000010000";
 
 	
 	begin
