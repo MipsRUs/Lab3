@@ -27,7 +27,7 @@ module alu_tb;
   logic O_out;
   logic Branch_out;
   
-processor L1(
+alu L1(
           .Func_in(Func_in)
          ,.A_in(A_in)
          ,.B_in(B_in)
