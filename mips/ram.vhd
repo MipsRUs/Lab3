@@ -45,14 +45,18 @@ type memory is array (0 to (2**11)-1) of byte;  --size: 8 x 2048
 
 begin
         ram_process: process (clk, we, addr, dataI)
+        
         variable mem_var:memory;
+        variable zero : std_logic_vector (31 DOWNTO 0) 
+		:= "00000000000000000000000000000000";
+
         begin
 
         -- SC (2016-02-06: changed clk='0')
         if(clk'event and clk='0') then
 
         		-- making sure that the address is not negative
-                if(addr > 0) then 
+                if(addr > "") then 
 					if(we='1') then
                         mem_var(to_integer(unsigned(addr))) := dataI(31 downto 24);
                         mem_var(to_integer(unsigned(addr))+1) := dataI(23 downto 16);
