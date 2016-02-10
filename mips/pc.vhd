@@ -35,7 +35,7 @@ ENTITY pc IS
 	GENERIC (NBIT: INTEGER := 32);
 			
 	PORT (
-		clk: in STD_LOGIC;
+		ref_clk: in STD_LOGIC;
       	rst: in STD_LOGIC;  
 		addr_in: in STD_LOGIC_VECTOR(NBIT-1 DOWNTO 0);
 		addr_out: out STD_LOGIC_VECtOR(NBIT-1 DOWNTO 0)
@@ -46,8 +46,8 @@ architecture logic of pc is
 begin
 	
 	-- if reset is '1' set the values to 0's else output the addr_in
-	addr_out <= (others=>'0') when (clk'event AND clk='1' AND rst='1') else 
-				addr_in when (clk'event AND clk='1' AND rst='0');														
+	addr_out <= (others=>'0') when (ref_clk'event AND ref_clk='1' AND rst='1') else 
+				addr_in when (ref_clk'event AND ref_clk='1' AND rst='0');														
 	
 end logic;
 

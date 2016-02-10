@@ -26,7 +26,7 @@ use ieee.numeric_std.all;
 ENTITY regfile IS
 
 	PORT (
-		clk : IN std_logic ;
+		ref_clk : IN std_logic ;
 		rst_s : IN std_logic ; 
 		we : IN std_logic ; -- write enable
 		raddr_1 : IN std_logic_vector (4 DOWNTO 0); -- read address 1
@@ -45,12 +45,12 @@ type memory is array(0 to 2**4) of word;
 
 
 begin
-	funct: process(clk)
+	funct: process(ref_clk)
 	variable mem_var:memory;
 	variable rdata1_var, rdata2_var : STD_LOGIC_VECTOR(31 downto 0);
 
 	begin
-	if(clk'event and clk='1') then
+	if(ref_clk'event and ref_clk='1') then
 
 		-- if reset is '1', make all registers in regfile to be 0's 
 		if(rst_s='1') then
@@ -76,7 +76,7 @@ begin
 		rdata_2 <=rdata2_var;
 
 	-- SC 2016-02-06: Added, need to be tested
-	elsif(clk='0') then 
+	elsif(ref_clk='0') then 
 
 		-- if write enable, write to regfile
 			if (we='1') then
