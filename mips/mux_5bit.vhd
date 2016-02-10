@@ -33,7 +33,7 @@ entity mux_5bit is
 	);
 end mux_5bit;
 
-architecture behavior of mux is
+architecture behavior of mux_5bit is
 begin
 	
 	outb <= in0 when (sel = '0') else 
