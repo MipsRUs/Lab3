@@ -156,7 +156,7 @@ end component;
 
 -- pc
 component pc
-	PORT (clk: in STD_LOGIC;
+	PORT (ref_clk: in STD_LOGIC;
   		rst: in STD_LOGIC;
   		-- this is set to '1' if there is a branch
   		--isBranch: in STD_LOGIC;  
@@ -168,7 +168,7 @@ end component;
 -- ram: data memory
 component ram
 	port (
-		clk : IN std_logic;
+		ref_clk : IN std_logic;
 		we : IN std_logic;
 		addr : IN std_logic_vector(31 DOWNTO 0); 
 		dataI : IN std_logic_vector(31 DOWNTO 0); 
@@ -179,7 +179,7 @@ end component;
 -- regfile
 component regfile
 	PORT (
-		clk : IN std_logic;
+		ref_clk : IN std_logic;
 		rst_s : IN std_logic; 
 		we : IN std_logic; -- write enable
 		raddr_1 : IN std_logic_vector (4 DOWNTO 0); -- read address 1
@@ -287,12 +287,12 @@ component shiftextend
 end component;
 
 -- checkpositive
-component checkpositive
-	port( 
-		in0: in std_logic_vector(31 downto 0);
-		outb: out std_logic_vector(31 downto 0)
-	);
-end component;
+--component checkpositive
+--	port( 
+--		in0: in std_logic_vector(31 downto 0);
+--		outb: out std_logic_vector(31 downto 0)
+--	);
+--end component;
 
 
 
@@ -445,13 +445,13 @@ signal mem_data_out: std_logic_vector(31 DOWNTO 0);
 ------------------ MemReg mux signal ---------------------
 signal MemRegMux_out: std_logic_vector(31 DOWNTO 0);
 
-signal checkpositive_out: std_logic_vector(31 DOWNTO 0);
+--signal checkpositive_out: std_logic_vector(31 DOWNTO 0);
 
 
 ------------------- begin --------------------- 
 begin
 
-	pcx:			pc PORT MAP(clk=>ref_clk, rst=>reset, addr_in=>JumpMux2PC, addr_out=>PCOut);	
+	pcx:			pc PORT MAP(ref_clk=>ref_clk, rst=>reset, addr_in=>JumpMux2PC, addr_out=>PCOut);	
 	
 	adder1x:		adder32 PORT MAP(a_32=>PCOut, b_32=>adder_b_32, cin=>adder1_cin, sub=>adder1_sub, 
 								sum_32=>adder1x_out, cout=>adder1_cout, ov=>adder1_ov);
@@ -475,7 +475,7 @@ begin
 								ALUControl=>ALUControl_out, rs=>rs_out, rt=>rt_out, rd=>rd_out, imm=>imm_out, shamt=>shamt_out,
 								jumpshiftleft=>jumpshiftleft_out);
 
-	regfilex:		regfile PORT MAP(clk=>ref_clk, rst_s=>reset, we=>RegWrite_out, raddr_1=>rs_out, raddr_2=>rt_out, waddr=>JALaddrMux2Waddr,
+	regfilex:		regfile PORT MAP(ref_clk=>ref_clk, rst_s=>reset, we=>RegWrite_out, raddr_1=>rs_out, raddr_2=>rt_out, waddr=>JALaddrMux2Waddr,
 								rdata_1=>rdata_1_out, rdata_2=>rdata_2_out, wdata=>JalDataMux2Reg);
 
 	SignExtensionImmx: sign_extension_16bit PORT MAP(immediate=>imm_out, sign_extension_out=>SignExtensionImm_out);
@@ -503,9 +503,9 @@ begin
 
 	JRControlMuxx: 	mux PORT MAP(in0=>concatination_out, in1=>rdata_1_out, sel=>JRControl_out, outb=>JRControlMux_out);
 
-	ramx:			ram PORT MAP(clk=>ref_clk, we=>MemWrite_out, addr=>checkpositive_out, dataI=>rdata_2_out, dataO=>mem_data_out);
+	ramx:			ram PORT MAP(ref_clk=>ref_clk, we=>MemWrite_out, addr=>alu_out, dataI=>rdata_2_out, dataO=>mem_data_out);
 
-	checkpositivex: checkpositive PORT MAP(in0=>alu_out, outb=>checkpositive_out);
+--	checkpositivex: checkpositive PORT MAP(in0=>alu_out, outb=>checkpositive_out);
 
 	ShiftandExtendx: shiftextend PORT MAP(loadcontrol=>LoadControl_out, in32=>MemRegMux_out, out32=>ShiftAndExtend_out);
 

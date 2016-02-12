@@ -39,9 +39,12 @@ architecture behavior of alu is
 begin
 	funct: process(Func_in, A_in, B_in)
 
-	variable one : std_logic_vector (31 DOWNTO 0) := "00000000000000000000000000000001";
-	variable zero : std_logic_vector (31 DOWNTO 0) := "00000000000000000000000000000000";
-	variable sixteen : std_logic_vector (31 downto 0) := "00000000000000000000000000010000"
+	variable one : std_logic_vector (31 DOWNTO 0) 
+		:= "00000000000000000000000000000001";
+	variable zero : std_logic_vector (31 DOWNTO 0) 
+		:= "00000000000000000000000000000000";
+	variable sixteen : std_logic_vector (31 downto 0) 
+		:= "00000000000000000000000000010000";
 
 	
 	begin
@@ -109,82 +112,111 @@ begin
 				end if;
 				Branch_out <= '0';
 				
-			-- LUI MOVED TO OTHERS
+			-- LUI
 			--when "XXXXXX" =>
-			--	O_out <= std_logic_vector(unsigned(B_in) sll to_integer(unsigned(sixteen)));
+				--O_out <= std_logic_vector(unsigned(B_in) sll to_integer(unsigned(sixteen)));
 				
 			--shift instr
 			--SLL
 			when "000000" =>
-				O_out <= std_logic_vector(unsigned(B_in) sll to_integer(unsigned(A_in)));
+				O_out <= std_logic_vector(unsigned(B_in) sll 
+					to_integer(unsigned(A_in)));
 				Branch_out <= '0';
 				
 			--SRL
 			when "000010" =>
 				--O_out <= B_in srl A_in;
-				O_out <= std_logic_vector(unsigned(B_in) srl to_integer(unsigned(A_in)));
+				O_out <= std_logic_vector(unsigned(B_in) srl 
+					to_integer(unsigned(A_in)));
 				Branch_out <= '0';
 				
 			--SRA
 			when "000011" =>
 				--O_out <= B_in sra A_in;
-				O_out <= std_logic_vector(unsigned(B_in) sra to_integer(unsigned(A_in)));
+				O_out <= std_logic_vector(unsigned(B_in) ror 
+					to_integer(unsigned(A_in)));
 				Branch_out <= '0';
 
 			--SLLV
 			when "000100" =>
 				--O_out <= B_in sll A_in;
-				O_out <= std_logic_vector(unsigned(B_in) sll to_integer(unsigned(A_in)));
+				O_out <= std_logic_vector(unsigned(B_in) sll 
+					to_integer(unsigned(A_in)));
 				Branch_out <= '0';
 				
 			--SRLV
 			when "000110" =>
 				--O_out <= B_in srl A_in;
-				O_out <= std_logic_vector(unsigned(B_in) srl to_integer(unsigned(A_in)));
+				O_out <= std_logic_vector(unsigned(B_in) srl 
+					to_integer(unsigned(A_in)));
 				Branch_out <= '0';
 				
 			--SRAV
 			when "000111" =>
 				--O_out <= B_in sra A_in;
-				O_out <= std_logic_vector(unsigned(B_in) srl to_integer(unsigned(A_in)));
+				O_out <= std_logic_vector(unsigned(B_in) srl 
+					to_integer(unsigned(A_in)));
 				Branch_out <= '0';
 				
 			--branch
 			--BLTZ
 			when "111000" =>
 				O_out <= A_in;
-				Branch_out <= A_in < zero;
+				if(A_in < zero) then 
+					Branch_out <= '1';
+				else 
+					Branch_out <= '0';
+				end if;
+
 				
 			--BGEZ
 			when "111001" =>
 				O_out <= A_in;
-				Branch_out <= A_in >= zero;
+				if(A_in >= zero) then 
+					Branch_out <= '1';
+				else 
+					Branch_out <= '0';
+				end if;
 				
 			--BEQ
 			when "111100" =>
 				O_out <= A_in;
-				Branch_out <= A_in == B_in;
+				if(A_in = B_in) then 
+					Branch_out <= '1';
+				else 
+					Branch_out <= '0';
+				end if;
 				
 			--BNE
 			when "111101" =>
 				O_out <= A_in;
-				Branch_out <= A_in != B_in;
+				if(A_in /= B_in) then 
+					Branch_out <= '1';
+				else
+					Branch_out <= '0';
+				end if;
 				
 			--BLEZ
 			when "111110" =>
 				O_out <= A_in;
-				Branch_out <= A_in <= zero;
+				if(A_in <= zero) then 
+					Branch_out <= '1';
+				else 
+					Branch_out <= '0';
+				end if;
 			
 			--BGTZ
 			when "111111" =>
 				O_out <= A_in;
-				Branch_out <= A_in > zero;
+				if(A_in > zero) then 
+					Branch_out <= '1';
+				else 	
+					Branch_out <= '0';
+				end if;
 			
-			--LUI
 			when others =>
-				O_out <= std_logic_vector(unsigned(B_in) sll to_integer(unsigned(sixteen)));
+				O_out <= zero;
 				Branch_out <= '0';
-
 
 		end case;
 	end process;
