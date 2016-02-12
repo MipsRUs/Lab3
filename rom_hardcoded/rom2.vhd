@@ -10,7 +10,7 @@ entity rom2 is -- instruction memory
 end rom2;
 architecture behavior of rom2 is
 
-type ramtype is array (63 downto 0) of STD_LOGIC_VECTOR(7 downto 0);
+type ramtype is array (0 to 63) of STD_LOGIC_VECTOR(7 downto 0);
 constant mem: ramtype := ("00100000","00000010","00000000","00000101",
 			"00100000","00000011","00000000","00001100",
 			"00100000","01100111","11111111","11110111",
