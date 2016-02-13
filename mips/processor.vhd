@@ -260,7 +260,7 @@ component concatination
 end component;
 
 -- shiftleft
-component shiftll
+component shiftleft_26bit
 	PORT (
 		A_in : IN std_logic_vector (25 DOWNTO 0);
 		O_out: OUT std_logic_vector (27 DOWNTO 0)
@@ -268,7 +268,7 @@ component shiftll
 end component;
 
 ----------------------------------------------------------TAKE A LOOOKK THIS HAS NOT BEEN DONE WHEN I CREATED THE PROCRESSOR ------------------------
-component shiftll32
+component shiftleft_32bit
 	PORT (
 		A_in: IN std_logic_vector(31 DOWNTO 0);
 		O_out: OUT std_logic_vector(31 DOWNTO 0)
@@ -466,7 +466,7 @@ begin
 
 	romx: 			rom PORT MAP(addr=>PCOut, dataOut=>rom_out);
 
-	shiftleft1x: 	shiftll PORT MAP(A_in=>jumpshiftleft_out, O_out=>shiftleft1x_out);
+	shiftleft1x: 	shiftleft_26bit PORT MAP(A_in=>jumpshiftleft_out, O_out=>shiftleft1x_out);
 
 	concatinationx:	concatination PORT MAP(A_in=>shiftleft1x_out, B_in=>adder1x_out, O_out=>concatination_out);
 
@@ -490,7 +490,7 @@ begin
 
 	SignExtensionShamtx: sign_extension_5bit PORT MAP(shamt=>shamt_out, sign_extension_out=>SignExtensionShamt_out);
 
-	shiftleft2x: 	shiftll32 PORT MAP(A_in=>SignExtensionImm_out, O_out=>shiftleft2x_out);
+	shiftleft2x: 	shiftleft_32bit PORT MAP(A_in=>SignExtensionImm_out, O_out=>shiftleft2x_out);
 
 	AluSrcMuxx:		mux PORT MAP(in0=>rdata_2_out, in1=>SignExtensionImm_out, sel=>ALUSrc_out, outb=>alu_b_in);
 

@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 -- Copyright MIPS_R_US 2016 - All Rights Reserved 
 --
--- File: sll32.vhd
+-- File: sll.vhd
 -- Team: MIPS_R_US
 -- Members:
 -- 		Stefan Cao (ID# 79267250)
@@ -10,7 +10,7 @@
 --		Linda Vang (ID# 71434490)
 --
 -- Description:
---		Shifter that takes in 32 bits input
+--		shifter that takes 26 bits input
 --
 -- History:
 -- 		Date		Update Description			Developer
@@ -23,18 +23,17 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-ENTITY shiftll32 IS
+ENTITY shiftleft_26bit IS
 	PORT (
-		A_in : IN std_logic_vector (31 DOWNTO 0);
-		O_out: OUT std_logic_vector (31 DOWNTO 0)
+		A_in : IN std_logic_vector (25 DOWNTO 0);
+		O_out: OUT std_logic_vector (27 DOWNTO 0)
 	);
-END shiftll32 ;
+END shiftleft_26bit ;
 
-architecture behavior of shiftll32 is
-
+architecture behavior of shiftleft_26bit is
 
 begin
 
-		O_out <= A_in(29 downto 0) & "00";
+		O_out <= A_in & "00";
 
 end behavior;
