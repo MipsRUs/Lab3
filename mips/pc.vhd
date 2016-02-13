@@ -23,6 +23,7 @@
 --	1/13/2016		Created						TH, NS, LV, SC
 --	1/29/2016		Changed pc implementation	SC
 --						+ changed to "when-else"
+--  2/12/2016		made it synthesizable		SC
 -------------------------------------------------------------------
 
 library ieee;
@@ -30,10 +31,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 ENTITY pc IS
-	
-	-- program counter is set to 32 for this 32-bit ALU
-	--GENERIC (NBIT: INTEGER := 32);
-			
+		
 	PORT (
 		ref_clk: in STD_LOGIC;
       	rst: in STD_LOGIC;  
@@ -44,11 +42,21 @@ end pc;
       
 architecture logic of pc is
 begin
+	pc_process: process(ref_clk, rst)
 	
-	-- if reset is '1' set the values to 0's else output the addr_in
-	addr_out <= (others=>'0') when (ref_clk'event AND ref_clk='1' AND rst='1') else 
-				addr_in when (ref_clk'event AND ref_clk='1' AND rst='0');														
-	
+	variable temp: STD_LOGIC_VECTOR(31 DOWNTO 0);
+
+	begin
+		if(rst='1') then 
+			temp := (others=>'0');
+		else 
+			temp := addr_in;
+		end if;
+
+		if(ref_clk'event AND ref_clk='1') then 
+			addr_out <= temp;
+		end if;
+	end process;														
 end logic;
 
 

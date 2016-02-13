@@ -23,6 +23,7 @@
 --	1/13/2016		Created						TH, NS, LV, SC
 --	1/29/2016		Changed pc implementation	SC
 --						+ changed to "when-else"
+--  2/12/2016		made it synthesizable		SC
 -------------------------------------------------------------------
 
 library ieee;
