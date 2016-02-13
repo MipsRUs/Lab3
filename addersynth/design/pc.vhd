@@ -46,7 +46,7 @@ architecture logic of pc is
 begin
 	
 	-- if reset is '1' set the values to 0's else output the addr_in
-	addr_out <= (others=>'0') when (ref_clk'event AND ref_clk='1' AND rst='1') else 
+	addr_out <= "00000000000000000000000000000000" when (ref_clk'event AND ref_clk='1' AND rst='1') else 
 				addr_in when (ref_clk'event AND ref_clk='1' AND rst='0');														
 	
 end logic;
