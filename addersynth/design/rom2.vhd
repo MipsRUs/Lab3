@@ -30,6 +30,6 @@ constant mem: ramtype := ("00100000","00000010","00000000","00000101",
 			--"10101100","00000010","00000000","01010100");
 begin
 
-dataOut<= mem(to_integer(addr)) & mem(to_integer(addr) + 1) & mem(to_integer(addr) +2) & mem(to_integer(addr) + 3);
+dataOut<= mem(to_integer(addr(7 downto 0))) & mem(to_integer(addr(7 DOWNTO 0)) + 1) & mem(to_integer(addr(7 DOWNTO 0)) +2) & mem(to_integer(addr(7 DOWNTO 0)) + 3);
 
 end;
