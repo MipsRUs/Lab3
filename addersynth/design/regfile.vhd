@@ -42,9 +42,8 @@ END regfile ;
 
 architecture behavior of regfile is
 
-subtype word is std_logic_vector(31 downto 0);
-type memory is array(0 to 2**4) of word;
-signal mem: ramtype;
+type ramtype is array (31 downto 0) of STD_LOGIC_VECTOR(31 downto 0);
+	signal mem: ramtype;
 
 begin
     process(ref_clk) begin
