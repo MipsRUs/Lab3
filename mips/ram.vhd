@@ -58,14 +58,14 @@ begin
 		-- making sure that the address is not negative
        
 		if(we='1') then
-                mem_var(to_integer(unsigned(addr(7 DOWNTO 0)))) := dataI(31 downto 24);
-                mem_var(to_integer(unsigned(addr(7 DOWNTO 0)))+1) := dataI(23 downto 16);
-                mem_var(to_integer(unsigned(addr(7 DOWNTO 0)))+2) := dataI(15 downto 8);
-                mem_var(to_integer(unsigned(addr(7 DOWNTO 0)))+3) := dataI(7 downto 0);
+                mem_var(to_integer(unsigned(addr))) := dataI(31 downto 24);
+                mem_var(to_integer(unsigned(addr))+1) := dataI(23 downto 16);
+                mem_var(to_integer(unsigned(addr))+2) := dataI(15 downto 8);
+                mem_var(to_integer(unsigned(addr))+3) := dataI(7 downto 0);
 
         	else
-                dataO <= mem_var(to_integer(unsigned(addr(7 DOWNTO 0)))) &  mem_var(to_integer(unsigned(addr(7 DOWNTO 0)))+1)
-                        & mem_var(to_integer(unsigned(addr(7 DOWNTO 0)))+2) & mem_var(to_integer(unsigned(addr(7 DOWNTO 0)))+3);
+                dataO <= mem_var(to_integer(unsigned(addr))) &  mem_var(to_integer(unsigned(addr))+1)
+                        & mem_var(to_integer(unsigned(addr))+2) & mem_var(to_integer(unsigned(addr))+3);
         	end if;
               
         end if;
