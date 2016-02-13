@@ -19,7 +19,7 @@ begin
 	
 	
 	begin
-		O_out <= std_logic_vector(resize(unsigned(B_in), 27) sll 2;
+		O_out <= std_logic_vector(resize(unsigned(A_in), 27);
 	end process;
 	
 end behavior;
