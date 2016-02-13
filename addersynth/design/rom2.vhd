@@ -36,8 +36,6 @@ constant mem_var : rom_type :=
 begin
 
 rom_process: process (addr)
-        
-        variable mem_var:memory;
       
         begin
         	dataOut <= mem_var(to_integer(unsigned(addr(7 DOWNTO 0)))) &  mem_var(to_integer(unsigned(addr(7 DOWNTO 0)))+1)
