@@ -1,1 +1,1 @@
-analyze -format vhdl { adder.vhd }
+analyze -format vhdl { pc.vhd }

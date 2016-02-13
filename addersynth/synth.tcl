@@ -5,7 +5,7 @@
 #
 #
 set PROJECT_NAME                "MIPS"
-set TOP                         "adder"
+set TOP                         "pc"
 set FILES                       "files_mips"
 set clock_period                2.0
 
@@ -101,7 +101,7 @@ current_design ${TOP}
 #==============================================================================
 
 set CORE_CLK_PERIOD            ${clock_period}
-set CLK_NAME                       clk
+set CLK_NAME                       ref_clk
 set INPUT_DELAY                    2.0
 set OUTPUT_DELAY                   0.5
 set MAX_AREA                       0; # Optimize the design for the smallest possible size
@@ -112,7 +112,7 @@ set MAX_OUTPUT_LOAD                0
 #==============================================================================
 
 
-create_clock -name $CLK_NAME    -period $CORE_CLK_PERIOD  -waveform  "0 [expr $CORE_CLK_PERIOD/2]"  [get_ports clk]
+create_clock -name $CLK_NAME    -period $CORE_CLK_PERIOD  -waveform  "0 [expr $CORE_CLK_PERIOD/2]"  [get_ports ref_clk]
 
 #set_clock_uncertainty $CLK_SKEW [get_clocks $CLK_NAME]
 
