@@ -1,1 +1,1 @@
-analyze -format vhdl { regfile.vhd }
+analyze -format vhdl { rom2.vhd }

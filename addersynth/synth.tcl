@@ -5,7 +5,7 @@
 #
 #
 set PROJECT_NAME                "MIPS"
-set TOP                         "regfile"
+set TOP                         "rom2"
 set FILES                       "files_mips"
 set clock_period                2.0
 
