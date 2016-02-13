@@ -207,18 +207,30 @@ component sign_extension_5bit
 	);
 end component;
 
--- 32-bit adder
-component adder32
+---- 32-bit adder
+--component adder32
+--	port(
+--		a_32    : in  std_logic_vector(31 downto 0);
+--        b_32    : in  std_logic_vector(31 downto 0);
+--		cin	: in std_logic;
+--		sub	: in std_logic;
+--		sum_32	: out std_logic_vector(31 downto 0);
+--		cout	: inout std_logic;
+--		ov	: out std_logic
+--	);
+--end component;
+
+
+component adder
 	port(
-		a_32    : in  std_logic_vector(31 downto 0);
-        b_32    : in  std_logic_vector(31 downto 0);
-		cin	: in std_logic;
-		sub	: in std_logic;
-		sum_32	: out std_logic_vector(31 downto 0);
-		cout	: inout std_logic;
-		ov	: out std_logic
+		A_in : in std_logic_vector(31 downto 0);
+		B_in : in std_logic_vector(31 downto 0);	
+		O_out : out std_logic_vector(31 downto 0)
 	);
 end component;
+
+
+
 
 -- andgate
 component andgate
@@ -453,8 +465,7 @@ begin
 
 	pcx:			pc PORT MAP(ref_clk=>ref_clk, rst=>reset, addr_in=>JumpMux2PC, addr_out=>PCOut);	
 	
-	adder1x:		adder32 PORT MAP(a_32=>PCOut, b_32=>adder_b_32, cin=>adder1_cin, sub=>adder1_sub, 
-								sum_32=>adder1x_out, cout=>adder1_cout, ov=>adder1_ov);
+	adder1x:		adder PORT MAP(A_in=>PCOut, B_in=>adder_b_32, O_out=>adder1x_out);
 
 	romx: 			rom PORT MAP(addr=>PCOut, dataOut=>rom_out);
 
@@ -490,8 +501,7 @@ begin
 
 	ShiftandExtendLUI: 	shiftlui PORT MAP(in32=>SignExtensionImm_out, out32=>ShiftAndExtendLUI_out);
 
-	adder2x:		adder32 PORT MAP(a_32=>adder1x_out, b_32=>shiftleft2x_out, cin=>adder2_cin, sub=>adder2_sub, sum_32=>adder2x_out, 
-									cout=>adder2_cout, ov=>adder2_ov);
+	adder2x:		adder PORT MAP(A_in=>adder1x_out, B_in=>shiftleft2x_out, O_out=>adder2x_out);
 
 	alux: 			alu PORT MAP(Func_in=>ALUControl_out, A_in=>alu_a_in, B_in=>alu_b_in, O_out=>alu_out, Branch_out=>alu_branch_out);
 

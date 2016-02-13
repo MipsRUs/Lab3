@@ -20,12 +20,13 @@
 -------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity adder is
 	port(
-		A_in : in std_logic;
-		B_in : in std_logic;	
-		O_out : out std_logic
+		A_in : in std_logic_vector(31 downto 0);
+		B_in : in std_logic_vector(31 downto 0);	
+		O_out : out std_logic_vector(31 downto 0)
 	);
 end adder;
 
