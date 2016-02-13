@@ -1,1 +1,1 @@
-analyze -format vhdl { pc.vhd }
+analyze -format vhdl { regfile.vhd }
