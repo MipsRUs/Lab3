@@ -19,7 +19,7 @@ begin
 	
 	
 	begin
-		O_out <= std_logic_vector(resize(unsigned(A_in), 28));
+		O_out <= std_logic_vector(resize(signed(A_in), 28));
 
 	
 end behavior;
