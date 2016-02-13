@@ -23,7 +23,7 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+use IEEE.std_logic_signed.all;
 
 ENTITY regfile IS
 
@@ -44,29 +44,27 @@ architecture behavior of regfile is
 
 subtype word is std_logic_vector(31 downto 0);
 type memory is array(0 to 2**4) of word;
+signal mem: ramtype;
 
 begin
-        ram_process: process (ref_clk, we, raddr_1, raddr_2 waddr, wdata)
-        variable mem_var:memory;
-
-        begin
-
-        if(ref_clk'event and ref_clk='0') then
-                if(we='1') then
-                        mem_var(to_integer(unsigned(waddr))) := wdata;
-                else 
-                        rdata1 <= mem_var(to_integer(unsigned(raddr_1)));
-                        rdata2 <= mem_var(to_integer(unsigned(raddr_2)));
-                end if;
-                        
-        else 
-                if(we='1') then
-                        mem_var(to_integer(unsigned(waddr))) := wdata;
-                else
-                        rdata1 <= mem_var(to_integer(unsigned(raddr_1)));
-                        rdata2 <= mem_var(to_integer(unsigned(raddr_2)));
-                end if;
-        end if;
-
-        end process;
+    process(ref_clk) begin
+		if rising_edge(ref_clk) then
+			if we = '1' then 
+				mem(conv_integer(waddr)) <= wdata;
+			end if;
+		end if;
+	end process;
+	
+	process(all) begin
+		if (conv_integer(raddr_1) = 0) then 
+			rdata_1 <= X"00000000";
+		else 
+			rdata_1 <= mem(conv_integer(raddr_1));
+		end if;
+		if (conv_integer(raddr_2) = 0) then 
+			rdata_2 <= X"00000000";
+		else 
+			rdata_2 <= mem(conv_integer(raddr_2));
+		end if;
+	end process;
 end behavior;
