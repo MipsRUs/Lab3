@@ -1,7 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all; 
-use STD.TEXTIO.all;
-use IEEE.NUMERIC_STD_UNSIGNED.all;
+use ieee.numeric_std.all;
 entity rom2 is -- instruction memory
 	port(
 		addr: IN STD_LOGIC_VECTOR(31 downto 0); 
