@@ -47,7 +47,7 @@ type ramtype is array (31 downto 0) of STD_LOGIC_VECTOR(31 downto 0);
 
 begin
     process(ref_clk) begin
-		if rising_edge(ref_clk) then
+		if (ref_clk = '0') then
 			if we = '1' then 
 				mem(conv_integer(waddr)) <= wdata;
 			end if;
