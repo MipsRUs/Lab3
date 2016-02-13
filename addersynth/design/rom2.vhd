@@ -7,12 +7,25 @@ entity rom2 is -- instruction memory
 		dataOut: OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 	);
 end rom2;
+
 architecture behavior of rom2 is
 
-type ramtype is array (0 to 63) of STD_LOGIC_VECTOR(7 downto 0);
-variable mem: ramtype; 
+subtype byte is std_logic_vector(7 DOWNTO 0);
+
+-- change this depending of the size of the RAM
+-- the ram is supposed to be 32 by 2**9, but because of instructions giving
+--              overflow, we changed it to 2**14 to not deal with this complications
+type memory is array (0 to (2**11)-1) of byte;  --size: 8 x 2048
+
 begin
 
-dataOut<= mem(to_integer(addr(7 downto 0))) & mem(to_integer(addr(7 DOWNTO 0)) + 1) & mem(to_integer(addr(7 DOWNTO 0)) +2) & mem(to_integer(addr(7 DOWNTO 0)) + 3);
+rom_process: process (addr)
+        
+        variable mem_var:memory;
+      
+        begin
+        	dataOut <= mem_var(to_integer(unsigned(addr(7 DOWNTO 0)))) &  mem_var(to_integer(unsigned(addr(7 DOWNTO 0)))+1)
+                        & mem_var(to_integer(unsigned(addr(7 DOWNTO 0)))+2) & mem_var(to_integer(unsigned(addr(7 DOWNTO 0)))+3);
 
-end;
+        end process;
+end behavior;
