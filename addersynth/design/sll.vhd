@@ -1,21 +1,19 @@
--- shifter that takes in 26 bits
-
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-ENTITY sll IS
-	PORT (
-		A_in : IN std_logic_vector (25 DOWNTO 0);
-		O_out: OUT std_logic_vector (27 DOWNTO 0)
+entity sign_extension_5bit is
+	PORT(
+		shamt : IN std_logic_vector(4 DOWNTO 0);
+		sign_extension_out : OUT std_logic_vector(31 DOWNTO 0)
 	);
-END sll ;
+end sign_extension_5bit;
 
-architecture behavior of sll is
-
+architecture Behavioral of sign_extension_5bit is
 
 begin
-		O_out <= std_logic_vector(resize(signed(A_in), 28));
 
-	
-end behavior;
+	sign_extension_out <= std_logic_vector(resize(signed(shamt), 32));
+
+end Behavioral;
+
