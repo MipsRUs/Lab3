@@ -15,11 +15,11 @@ architecture behavior of shiftll is
 
 
 begin
-	funct: process(A_in)
+
 	
 	
 	begin
 		O_out <= std_logic_vector(resize(unsigned(A_in), 27));
-	end process;
+
 	
 end behavior;
