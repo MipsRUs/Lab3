@@ -1,1 +1,1 @@
-analyze -format vhdl { sll.vhd }
+analyze -format vhdl { shiftleft_26bit.vhd }
