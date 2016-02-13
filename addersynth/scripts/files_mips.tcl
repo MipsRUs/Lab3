@@ -1,1 +1,1 @@
-analyze -format vhdl { sll.vhd }
+analyze -format vhdl { sign_extension_5bit.vhd }
