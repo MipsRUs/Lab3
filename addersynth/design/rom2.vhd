@@ -12,7 +12,7 @@ architecture behavior of rom2 is
 
 
 subtype byte is std_logic_vector(7 DOWNTO 0);
-type rom_type is array (0 to (2**11)-1) of byte;
+type rom_type is array (0 to 63) of byte;
 constant mem_var : rom_type :=
 			("00100000","00000010","00000000","00000101",
 			"00100000","00000011","00000000","00001100",
