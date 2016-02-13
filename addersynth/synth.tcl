@@ -5,7 +5,7 @@
 #
 #
 set PROJECT_NAME                "MIPS"
-set TOP                         "sign_extension_5bit"
+set TOP                         "sll"
 set FILES                       "files_mips"
 set clock_period                2.0
 
