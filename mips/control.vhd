@@ -186,6 +186,11 @@ begin
 						-- LUI
 						(instruction(31 DOWNTO 26) = "001111") OR
 
+						-- BEQ
+						(instruction(31 DOWNTO 26) = "000100") OR
+						-- BNE
+						(instruction(31 DOWNTO 26) = "000101") OR
+						
 						-- BLTZ or BGEZ
 						(instruction(31 DOWNTO 26) = "000001") OR
 
@@ -239,7 +244,8 @@ begin
 
 						-- LB
 						(instruction(31 DOWNTO 26) = "100000") OR
-
+						-- BEQ
+						(instruction(31 DOWNTO 26) = "000100") OR
 						-- LH
 						(instruction(31 DOWNTO 26) = "100001") OR
 
