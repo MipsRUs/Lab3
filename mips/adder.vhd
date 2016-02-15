@@ -10,7 +10,7 @@
 --		Linda Vang (ID# 71434490)
 --
 -- Description:
---		This is an adder with 1 bit
+--		This is an adder that adds 2 32-bit inputs
 --
 -- History:
 -- 		Date		Update Description			Developer
@@ -31,10 +31,8 @@ entity adder is
 end adder;
 
 architecture logic of adder is
-
 begin
 	sum <= std_logic_vector(signed(a) + signed(b));
-
 end architecture; 
 
 
