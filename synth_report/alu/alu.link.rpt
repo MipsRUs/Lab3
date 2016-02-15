@@ -1,0 +1,10 @@
+
+  Linking design 'alu'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  alu                         /users/ugrad2/2014/spring/lvang2/eecs112l/Lab3/mips_synth/alu.db
+  saed32lvt_tt1p05vn40c (library) /users/ugrad2/2012/spring/pooriam/libraries/saed32lvt_tt1p05vn40c.db
+  saed32sram_tt1p05vn40c (library) /users/ugrad2/2012/spring/pooriam/libraries/saed32sram_tt1p05vn40c.db
+  dw_foundation.sldb (library) /ecelib/linware/synopsys15/dc/libraries/syn/dw_foundation.sldb
+
+1

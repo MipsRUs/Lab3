@@ -1,0 +1,30 @@
+Warning: Detected use of obsolete/unsupported feature.  The following
+	will not be available in a future release of the application:
+	elaborate -update. Use plain elaborate instead (CMD-100)
+Loading db file '/ecelib/linware/synopsys15/dc/libraries/syn/gtech.db'
+Loading db file '/ecelib/linware/synopsys15/dc/libraries/syn/standard.sldb'
+  Loading link library 'saed32lvt_tt1p05vn40c'
+  Loading link library 'saed32sram_tt1p05vn40c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  /users/ugrad2/2014/spring/lvang2/eecs112l/Lab3/mips_synth/design/ram.vhd:47: Initial values for signals/variables are not supported for synthesis by default. They are ignored. (VHD-7)
+
+Inferred memory devices in process
+	in routine ram line 47 in file
+		'/users/ugrad2/2014/spring/lvang2/eecs112l/Lab3/mips_synth/design/ram.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     mem_var_reg     | Flip-flop | 2072  |  Y  | N  | N  | N  | N  | N  | N  |
+|      dataO_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================
+| block name/line  | Inputs | Outputs | # sel inputs | MB |
+===========================================================
+|      ram/67      |  2048  |    8    |      11      | N  |
+===========================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'ram'.
+1

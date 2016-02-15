@@ -1,0 +1,221 @@
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | J-2014.09-DWBB_201409.4 |     *     |
+| Licensed DW Building Blocks        | J-2014.09-DWBB_201409.4 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Loaded alib file './alib-52/saed32lvt_tt1p05vn40c.db.alib'
+Information: Ungrouping 0 of 1 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'regfile'
+ Implement Synthetic for 'regfile'.
+
+  Updating timing information
+Information: The register 'mem_reg[0][0]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][1]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][2]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][3]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][4]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][5]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][6]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][7]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][8]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][9]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][10]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][11]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][12]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][13]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][14]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][15]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][16]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][17]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][18]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][19]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][20]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][21]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][22]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][23]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][24]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][25]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][26]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][27]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][28]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][29]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][30]' will be removed. (OPT-1207)
+Information: The register 'mem_reg[0][31]' will be removed. (OPT-1207)
+Information: Updating design information... (UID-85)
+Information: The library cell 'PMT3_LVT' in the library 'saed32lvt_tt1p05vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'PMT2_LVT' in the library 'saed32lvt_tt1p05vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'PMT1_LVT' in the library 'saed32lvt_tt1p05vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT3_LVT' in the library 'saed32lvt_tt1p05vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT2_LVT' in the library 'saed32lvt_tt1p05vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT1_LVT' in the library 'saed32lvt_tt1p05vn40c' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+Threshold voltage group cell usage:
+>> saed32cell_lvt 100.00%
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:07    5823.6      0.00       0.0       0.0                           4873012736.0000
+    0:00:07    5823.6      0.00       0.0       0.0                           4873012736.0000
+    0:00:07    5823.6      0.00       0.0       0.0                           4873012736.0000
+    0:00:07    5823.6      0.00       0.0       0.0                           4873012736.0000
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:07    5589.1      0.00       0.0       0.0                           4713158144.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+
+Threshold voltage group cell usage:
+>> saed32cell_lvt 100.00%
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:07    5604.4      0.00       0.0       0.0                           4622978560.0000
+
+Threshold voltage group cell usage:
+>> saed32cell_lvt 100.00%
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:08    5604.4      0.00       0.0       0.0                           4622978560.0000
+    0:00:08    5533.2      0.00       0.0       0.0                           4747214336.0000
+    0:00:08    5533.2      0.00       0.0       0.0                           4747214336.0000
+    0:00:08    5546.2      0.00       0.0       0.0                           4662689792.0000
+    0:00:08    5546.2      0.00       0.0       0.0                           4662689792.0000
+Loading db file '/users/ugrad2/2012/spring/pooriam/libraries/saed32lvt_tt1p05vn40c.db'
+Loading db file '/users/ugrad2/2012/spring/pooriam/libraries/saed32sram_tt1p05vn40c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
