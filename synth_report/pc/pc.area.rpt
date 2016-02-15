@@ -1,0 +1,53 @@
+Warning: duplicate option '-nosplit' overrides previous value. (CMD-018)
+ 
+****************************************
+Report : area
+Design : pc
+Version: J-2014.09-SP4
+Date   : Sun Feb 14 18:39:14 2016
+****************************************
+
+Library(s) Used:
+
+    saed32lvt_tt1p05vn40c (File: /users/ugrad2/2012/spring/pooriam/libraries/saed32lvt_tt1p05vn40c.db)
+
+Number of ports:                           66
+Number of nets:                           100
+Number of cells:                           66
+Number of combinational cells:             34
+Number of sequential cells:                32
+Number of macros/black boxes:               0
+Number of buf/inv:                          2
+Number of references:                       4
+
+Combinational area:                 68.873027
+Buf/Inv area:                        3.812160
+Noncombinational area:             211.447815
+Macro/Black Box area:                0.000000
+Net Interconnect area:              46.459481
+
+Total cell area:                   280.320842
+Total area:                        326.780323
+
+The above information was reported from the logical library. The following are from the physical library:
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+pc                                 280.3208    100.0   68.8730   211.4478  0.0000  pc
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                  68.8730   211.4478  0.0000
+
+
+Area of detected synthetic parts
+--------------------------------
+  No DW parts to report!
+
+Total synthetic cell area:              0.0000  0.0%  
+
+1

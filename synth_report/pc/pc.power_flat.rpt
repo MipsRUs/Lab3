@@ -1,0 +1,1803 @@
+ 
+****************************************
+Report : power
+        -net
+        -cell
+        -analysis_effort medium
+        -verbose
+        -flat
+        -sort_mode dynamic_power
+Design : pc
+Version: J-2014.09-SP4
+Date   : Sun Feb 14 18:39:14 2016
+****************************************
+
+
+Library(s) Used:
+
+    saed32lvt_tt1p05vn40c (File: /users/ugrad2/2012/spring/pooriam/libraries/saed32lvt_tt1p05vn40c.db)
+
+
+Operating Conditions: tt1p05vn40c   Library: saed32lvt_tt1p05vn40c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+pc                     8000              saed32lvt_tt1p05vn40c
+
+
+Global Operating Voltage = 1.05 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+
+  Attributes
+  ----------
+      a  -  Switching activity information annotated on net
+      d  -  Default switching activity information on net
+
+                             Total      Static   Toggle   Switching
+Net                          Net Load   Prob.    Rate     Power      Attrs
+--------------------------------------------------------------------------------
+addr_out[10]                   0.004    0.254    0.0440      0.0001  
+addr_out[21]                   0.004    0.254    0.0443      0.0001  
+addr_out[17]                   0.004    0.253    0.0444      0.0001  
+addr_out[9]                    0.004    0.246    0.0439      0.0001  
+addr_out[24]                   0.004    0.259    0.0446      0.0001  
+addr_out[3]                    0.004    0.251    0.0444      0.0001  
+addr_out[19]                   0.004    0.253    0.0446      0.0001  
+addr_out[15]                   0.004    0.250    0.0445      0.0001  
+addr_out[25]                   0.004    0.252    0.0446      0.0001  
+addr_out[5]                    0.004    0.256    0.0448      0.0001  
+addr_out[31]                   0.004    0.257    0.0449      0.0001  
+addr_out[20]                   0.004    0.258    0.0450      0.0001  
+addr_out[30]                   0.004    0.261    0.0452      0.0001  
+addr_out[8]                    0.004    0.253    0.0449      0.0001  
+addr_out[18]                   0.004    0.253    0.0449      0.0001  
+addr_out[27]                   0.004    0.259    0.0453      0.0001  
+addr_out[16]                   0.004    0.259    0.0454      0.0001  
+addr_out[7]                    0.004    0.249    0.0448      0.0001  
+addr_out[2]                    0.004    0.250    0.0450      0.0001  
+addr_out[6]                    0.004    0.260    0.0455      0.0001  
+addr_out[1]                    0.004    0.255    0.0452      0.0001  
+addr_out[26]                   0.004    0.252    0.0450      0.0001  
+addr_out[0]                    0.004    0.252    0.0452      0.0001  
+addr_out[4]                    0.004    0.250    0.0452      0.0001  
+addr_out[22]                   0.004    0.259    0.0457      0.0001  
+addr_out[11]                   0.004    0.252    0.0454      0.0001  
+addr_out[14]                   0.004    0.261    0.0461      0.0001  
+addr_out[28]                   0.004    0.257    0.0458      0.0001  
+addr_out[23]                   0.004    0.253    0.0460      0.0001  
+addr_out[29]                   0.004    0.251    0.0459      0.0001  
+addr_out[12]                   0.004    0.248    0.0458      0.0001  
+addr_out[13]                   0.004    0.252    0.0466      0.0001  
+n3                            10.397    0.500    0.0500      0.2866  d
+n2                             8.830    0.500    0.0500      0.2434  d
+temp[13]                       0.568    0.252    0.0500      0.0156  
+temp[14]                       0.568    0.261    0.0496      0.0155  
+temp[23]                       0.568    0.252    0.0494      0.0155  
+temp[12]                       0.568    0.248    0.0494      0.0155  
+temp[6]                        0.568    0.260    0.0488      0.0153  
+temp[16]                       0.568    0.259    0.0488      0.0153  
+temp[0]                        0.568    0.252    0.0487      0.0153  
+temp[4]                        0.568    0.250    0.0487      0.0153  
+temp[8]                        0.568    0.253    0.0482      0.0151  
+temp[17]                       0.568    0.253    0.0481      0.0151  
+temp[19]                       0.568    0.254    0.0481      0.0150  
+temp[2]                        0.568    0.250    0.0480      0.0150  
+temp[15]                       0.568    0.249    0.0480      0.0150  
+temp[21]                       0.568    0.253    0.0478      0.0150  
+temp[29]                       0.568    0.251    0.0493      0.0154  
+temp[27]                       0.568    0.260    0.0492      0.0154  
+temp[11]                       0.568    0.252    0.0491      0.0154  
+temp[22]                       0.568    0.260    0.0490      0.0153  
+temp[28]                       0.568    0.258    0.0488      0.0153  
+temp[26]                       0.568    0.252    0.0487      0.0153  
+temp[31]                       0.568    0.257    0.0487      0.0152  
+temp[30]                       0.568    0.261    0.0486      0.0152  
+temp[1]                        0.568    0.255    0.0485      0.0152  
+temp[20]                       0.568    0.258    0.0484      0.0152  
+temp[5]                        0.568    0.256    0.0481      0.0151  
+temp[18]                       0.568    0.253    0.0480      0.0150  
+temp[7]                        0.568    0.248    0.0479      0.0150  
+temp[3]                        0.568    0.252    0.0478      0.0150  
+temp[25]                       0.568    0.253    0.0478      0.0150  
+temp[24]                       0.568    0.259    0.0478      0.0150  
+temp[10]                       0.568    0.254    0.0476      0.0149  
+temp[9]                        0.568    0.246    0.0472      0.0148  
+--------------------------------------------------------------------------------
+Total (66 nets)                                              1.0195 uW
+
+
+
+  Attributes
+  ----------
+      a  -  Switching activity information annotated on net
+      d  -  Default switching activity information on net
+      m  -  Multiply-driven net
+
+                          Net         Driver     Tot Dynamic     Driver
+                          Switching   Internal   Power           Leakage
+Net                       Power       Power      (% Net/Tot)     Power    Attrs
+--------------------------------------------------------------------------------
+addr_out[10]              1.055e-04     2.6817     2.682 (0%)   8751115.0000
+addr_out[21]              1.061e-04     2.6782     2.678 (0%)   8750943.0000
+addr_out[17]              1.064e-04     2.6760     2.676 (0%)   8750433.0000
+addr_out[9]               1.053e-04     2.6758     2.676 (0%)   8744799.0000
+addr_out[24]              1.069e-04     2.6757     2.676 (0%)   8755377.0000
+addr_out[3]               1.063e-04     2.6730     2.673 (0%)   8749333.0000
+addr_out[19]              1.068e-04     2.6730     2.673 (0%)   8751012.0000
+addr_out[15]              1.067e-04     2.6702     2.670 (0%)   8747627.0000
+addr_out[25]              1.068e-04     2.6698     2.670 (0%)   8749963.0000
+addr_out[5]               1.074e-04     2.6696     2.670 (0%)   8752830.0000
+addr_out[31]              1.077e-04     2.6679     2.668 (0%)   8753386.0000
+addr_out[20]              1.079e-04     2.6677     2.668 (0%)   8754516.0000
+addr_out[30]              1.084e-04     2.6661     2.666 (0%)   8756444.0000
+addr_out[8]               1.077e-04     2.6660     2.666 (0%)   8750625.0000
+addr_out[18]              1.076e-04     2.6655     2.666 (0%)   8750542.0000
+addr_out[27]              1.087e-04     2.6631     2.663 (0%)   8755448.0000
+addr_out[16]              1.089e-04     2.6629     2.663 (0%)   8755114.0000
+addr_out[7]               1.074e-04     2.6619     2.662 (0%)   8746792.0000
+addr_out[2]               1.078e-04     2.6617     2.662 (0%)   8748135.0000
+addr_out[6]               1.091e-04     2.6616     2.662 (0%)   8755942.0000
+addr_out[1]               1.083e-04     2.6614     2.662 (0%)   8751947.0000
+addr_out[26]              1.080e-04     2.6611     2.661 (0%)   8749392.0000
+addr_out[0]               1.083e-04     2.6605     2.661 (0%)   8749411.0000
+addr_out[4]               1.084e-04     2.6579     2.658 (0%)   8748061.0000
+addr_out[22]              1.095e-04     2.6568     2.657 (0%)   8755391.0000
+addr_out[11]              1.089e-04     2.6553     2.655 (0%)   8749873.0000
+addr_out[14]              1.105e-04     2.6518     2.652 (0%)   8756300.0000
+addr_out[28]              1.098e-04     2.6517     2.652 (0%)   8753945.0000
+addr_out[23]              1.103e-04     2.6459     2.646 (0%)   8749940.0000
+addr_out[29]              1.100e-04     2.6455     2.646 (0%)   8749111.0000
+addr_out[12]              1.099e-04     2.6446     2.645 (0%)   8746024.0000
+addr_out[13]              1.118e-04     2.6344     2.635 (0%)   8749646.0000
+n3                           0.2866     0.1595     0.446 (64%)  1683564.1250 d
+n2                           0.2434     0.0403     0.284 (86%)  14761.1611  d
+temp[13]                     0.0156     0.0939     0.110 (14%)  1347683.0000
+temp[14]                     0.0155     0.0933     0.109 (14%)  1347683.0000
+temp[23]                     0.0155     0.0930     0.108 (14%)  1347683.0000
+temp[12]                     0.0155     0.0929     0.108 (14%)  1347683.0000
+temp[6]                      0.0153     0.0919     0.107 (14%)  1347683.0000
+temp[16]                     0.0153     0.0919     0.107 (14%)  1347683.0000
+temp[0]                      0.0153     0.0917     0.107 (14%)  1347683.0000
+temp[4]                      0.0153     0.0917     0.107 (14%)  1347683.0000
+temp[8]                      0.0151     0.0909     0.106 (14%)  1347683.0000
+temp[17]                     0.0151     0.0907     0.106 (14%)  1347683.0000
+temp[19]                     0.0150     0.0905     0.106 (14%)  1347683.0000
+temp[2]                      0.0150     0.0905     0.106 (14%)  1347683.0000
+temp[15]                     0.0150     0.0904     0.105 (14%)  1347683.0000
+temp[21]                     0.0150     0.0901     0.105 (14%)  1347683.0000
+temp[29]                     0.0154     0.0783  9.38e-02 (16%)  1347683.0000
+temp[27]                     0.0154     0.0782  9.36e-02 (16%)  1347683.0000
+temp[11]                     0.0154     0.0781  9.35e-02 (16%)  1347683.0000
+temp[22]                     0.0153     0.0779  9.32e-02 (16%)  1347683.0000
+temp[28]                     0.0153     0.0776  9.29e-02 (16%)  1347683.0000
+temp[26]                     0.0153     0.0776  9.28e-02 (16%)  1347683.0000
+temp[31]                     0.0152     0.0775  9.27e-02 (16%)  1347683.0000
+temp[30]                     0.0152     0.0773  9.25e-02 (16%)  1347683.0000
+temp[1]                      0.0152     0.0771  9.23e-02 (16%)  1347683.0000
+temp[20]                     0.0152     0.0771  9.22e-02 (16%)  1347683.0000
+temp[5]                      0.0151     0.0765  9.16e-02 (16%)  1347683.0000
+temp[18]                     0.0150     0.0765  9.16e-02 (16%)  1347683.0000
+temp[7]                      0.0150     0.0764  9.14e-02 (16%)  1347683.0000
+temp[3]                      0.0150     0.0762  9.12e-02 (16%)  1347683.0000
+temp[25]                     0.0150     0.0762  9.12e-02 (16%)  1347683.0000
+temp[24]                     0.0150     0.0761  9.11e-02 (16%)  1347683.0000
+temp[10]                     0.0149     0.0758  9.07e-02 (16%)  1347683.0000
+temp[9]                      0.0148     0.0753  9.00e-02 (16%)  1347683.0000
+--------------------------------------------------------------------------------
+Totals (66 nets)             1.019uW   88.083uW   89.103uW (1%)  324.863uW
+
+
+  Attributes
+  ----------
+      h  -  Hierarchical cell
+
+                        Cell      Driven Net  Tot Dynamic      Cell
+                        Internal  Switching   Power            Leakage
+Cell                    Power     Power       (% Cell/Tot)     Power      Attrs
+--------------------------------------------------------------------------------
+addr_out_reg[10]           2.6817 1.054e-04      2.682 (100%)  8751115.0000  
+addr_out_reg[21]           2.6782 1.061e-04      2.678 (100%)  8750943.0000  
+addr_out_reg[17]           2.6760 1.063e-04      2.676 (100%)  8750433.0000  
+addr_out_reg[9]            2.6758 1.054e-04      2.676 (100%)  8744799.0000  
+addr_out_reg[24]           2.6757 1.068e-04      2.676 (100%)  8755377.0000  
+addr_out_reg[3]            2.6730 1.063e-04      2.673 (100%)  8749333.0000  
+addr_out_reg[19]           2.6730 1.068e-04      2.673 (100%)  8751012.0000  
+addr_out_reg[15]           2.6702 1.066e-04      2.670 (100%)  8747627.0000  
+addr_out_reg[25]           2.6698 1.068e-04      2.670 (100%)  8749963.0000  
+addr_out_reg[5]            2.6696 1.073e-04      2.670 (100%)  8752830.0000  
+addr_out_reg[31]           2.6679 1.078e-04      2.668 (100%)  8753386.0000  
+addr_out_reg[20]           2.6677 1.080e-04      2.668 (100%)  8754516.0000  
+addr_out_reg[30]           2.6661 1.085e-04      2.666 (100%)  8756444.0000  
+addr_out_reg[8]            2.6660 1.078e-04      2.666 (100%)  8750625.0000  
+addr_out_reg[18]           2.6655 1.075e-04      2.666 (100%)  8750542.0000  
+addr_out_reg[27]           2.6631 1.087e-04      2.663 (100%)  8755448.0000  
+addr_out_reg[16]           2.6629 1.090e-04      2.663 (100%)  8755114.0000  
+addr_out_reg[7]            2.6619 1.075e-04      2.662 (100%)  8746792.0000  
+addr_out_reg[2]            2.6617 1.078e-04      2.662 (100%)  8748135.0000  
+addr_out_reg[6]            2.6616 1.092e-04      2.662 (100%)  8755942.0000  
+addr_out_reg[1]            2.6614 1.082e-04      2.662 (100%)  8751947.0000  
+addr_out_reg[26]           2.6611 1.080e-04      2.661 (100%)  8749392.0000  
+addr_out_reg[0]            2.6605 1.082e-04      2.661 (100%)  8749411.0000  
+addr_out_reg[4]            2.6579 1.085e-04      2.658 (100%)  8748061.0000  
+addr_out_reg[22]           2.6568 1.094e-04      2.657 (100%)  8755391.0000  
+addr_out_reg[11]           2.6553 1.090e-04      2.655 (100%)  8749873.0000  
+addr_out_reg[14]           2.6518 1.106e-04      2.652 (100%)  8756300.0000  
+addr_out_reg[28]           2.6517 1.099e-04      2.652 (100%)  8753945.0000  
+addr_out_reg[23]           2.6459 1.104e-04      2.646 (100%)  8749940.0000  
+addr_out_reg[29]           2.6455 1.099e-04      2.646 (100%)  8749111.0000  
+addr_out_reg[12]           2.6446 1.099e-04      2.645 (100%)  8746024.0000  
+addr_out_reg[13]           2.6344 1.118e-04      2.635 (100%)  8749646.0000  
+U38                        0.1595    0.2866      0.446 (36%)   1683564.1250  
+U36                        0.0403    0.2434      0.284 (14%)   14761.1611  
+U51                        0.0939    0.0156      0.110 (86%)   1347683.0000  
+U52                        0.0933    0.0155      0.109 (86%)   1347683.0000  
+U61                        0.0930    0.0155      0.108 (86%)   1347683.0000  
+U50                        0.0929    0.0155      0.108 (86%)   1347683.0000  
+U44                        0.0919    0.0153      0.107 (86%)   1347683.0000  
+U54                        0.0919    0.0153      0.107 (86%)   1347683.0000  
+U37                        0.0917    0.0153      0.107 (86%)   1347683.0000  
+U42                        0.0917    0.0153      0.107 (86%)   1347683.0000  
+U46                        0.0909    0.0151      0.106 (86%)   1347683.0000  
+U55                        0.0907    0.0151      0.106 (86%)   1347683.0000  
+U57                        0.0905    0.0150      0.106 (86%)   1347683.0000  
+U40                        0.0905    0.0150      0.106 (86%)   1347683.0000  
+U53                        0.0904    0.0150      0.105 (86%)   1347683.0000  
+U59                        0.0901    0.0150      0.105 (86%)   1347683.0000  
+U67                        0.0783    0.0154   9.38e-02 (84%)   1347683.0000  
+U65                        0.0782    0.0154   9.36e-02 (84%)   1347683.0000  
+U49                        0.0781    0.0154   9.35e-02 (84%)   1347683.0000  
+U60                        0.0779    0.0153   9.32e-02 (84%)   1347683.0000  
+U66                        0.0776    0.0153   9.29e-02 (84%)   1347683.0000  
+U64                        0.0776    0.0153   9.28e-02 (84%)   1347683.0000  
+U69                        0.0775    0.0152   9.27e-02 (84%)   1347683.0000  
+U68                        0.0773    0.0152   9.25e-02 (84%)   1347683.0000  
+U39                        0.0771    0.0152   9.23e-02 (84%)   1347683.0000  
+U58                        0.0771    0.0152   9.22e-02 (84%)   1347683.0000  
+U43                        0.0765    0.0151   9.16e-02 (84%)   1347683.0000  
+U56                        0.0765    0.0150   9.16e-02 (84%)   1347683.0000  
+U45                        0.0764    0.0150   9.14e-02 (84%)   1347683.0000  
+U41                        0.0762    0.0150   9.12e-02 (84%)   1347683.0000  
+U63                        0.0762    0.0150   9.12e-02 (84%)   1347683.0000  
+U62                        0.0761    0.0150   9.11e-02 (84%)   1347683.0000  
+U48                        0.0758    0.0149   9.07e-02 (84%)   1347683.0000  
+U47                        0.0753    0.0148   9.00e-02 (84%)   1347683.0000  
+--------------------------------------------------------------------------------
+Totals (66 cells)         88.083uW   1.019uW    89.103uW (99%)  324.863uW
+
+
+
+  Attributes
+  ----------
+      h  -  Hierarchical cell
+      a  -  User annotated State/Path Dependent (SDPD) information
+      e  -  Estimated SDPD from user annotated non-SDPD switching activity
+      d  -  Estimated SDPD from default annotated non-SDPD switching activity
+
+               Toggling Source   State Pin Toggle Internal     Leakage
+Cell           Pin      of Path  Cond  Rate       Power        Power    Attrs
+--------------------------------------------------------------------------------
+   addr_out_reg[10] D            (CLK Q QN') 7.7e-04    0.0000            r
+   addr_out_reg[10] D            (CLK Q QN') 7.7e-04 6.791e-04            f
+   addr_out_reg[10] D            (CLK Q' QN)  0.0066 2.190e-03            r
+   addr_out_reg[10] D            (CLK Q' QN)  0.0066    0.0000            f
+   addr_out_reg[10] D            (CLK' Q QN') 7.7e-04 2.729e-03           r
+   addr_out_reg[10] D            (CLK' Q QN') 7.7e-04 2.185e-03           f
+   addr_out_reg[10] D                   0.0156   5.170e-03                r
+   addr_out_reg[10] D                   0.0156      0.0292                f
+   addr_out_reg[10] CLK          (D' Q' QN)  0.2077    0.7077           d r
+   addr_out_reg[10] CLK          (D' Q' QN)  0.2077    0.6171           d f
+   addr_out_reg[10] CLK          (D Q QN')  0.0082    0.0188            d r
+   addr_out_reg[10] CLK          (D Q QN')  0.0082    0.0328            d f
+   addr_out_reg[10] CLK          (D' Q QN')  0.0240    0.0818           d r
+   addr_out_reg[10] CLK          (D' Q QN')  0.0240    0.1323           d f
+   addr_out_reg[10] CLK                 0.2601      0.7900              d r
+   addr_out_reg[10] CLK                 0.2601      1.0826              d f
+   addr_out_reg[10] Q   CLK             0.0220   -2.077e-01               r
+   addr_out_reg[10] Q   CLK             0.0220   -2.013e-01               f
+   addr_out_reg[10] QN  CLK             0.0221   -2.047e-01               r
+   addr_out_reg[10] QN  CLK             0.0221   -2.097e-01               f
+   addr_out_reg[10]              (CLK' D' Q' QN)              1590556.6250  
+   addr_out_reg[10]              (CLK' D' Q QN')              184030.2188  
+   addr_out_reg[10]              (CLK D' Q' QN)               1869707.7500  
+   addr_out_reg[10]              (CLK D' Q QN')               220317.0312  
+   addr_out_reg[10]              (CLK' D Q QN')               64781.5078  
+   addr_out_reg[10]              (CLK D Q' QN)                646176.3125  
+   addr_out_reg[10]              (CLK D Q QN')                53856.1602  
+   addr_out_reg[10]              default                      4121689.2500  
+addr_out_reg[10]  (Cell Total)                      2.6817    8751115.0000
+   addr_out_reg[21] D            (CLK Q QN') 7.7e-04    0.0000            r
+   addr_out_reg[21] D            (CLK Q QN') 7.7e-04 7.158e-04            f
+   addr_out_reg[21] D            (CLK Q' QN)  0.0067 2.320e-03            r
+   addr_out_reg[21] D            (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[21] D            (CLK' Q QN') 7.7e-04 2.761e-03           r
+   addr_out_reg[21] D            (CLK' Q QN') 7.7e-04 2.265e-03           f
+   addr_out_reg[21] D                   0.0157   5.480e-03                r
+   addr_out_reg[21] D                   0.0157      0.0304                f
+   addr_out_reg[21] CLK          (D' Q' QN)  0.2078    0.7080           d r
+   addr_out_reg[21] CLK          (D' Q' QN)  0.2078    0.6174           d f
+   addr_out_reg[21] CLK          (D Q QN')  0.0082    0.0188            d r
+   addr_out_reg[21] CLK          (D Q QN')  0.0082    0.0328            d f
+   addr_out_reg[21] CLK          (D' Q QN')  0.0241    0.0819           d r
+   addr_out_reg[21] CLK          (D' Q QN')  0.0241    0.1325           d f
+   addr_out_reg[21] CLK                 0.2600      0.7896              d r
+   addr_out_reg[21] CLK                 0.2600      1.0821              d f
+   addr_out_reg[21] Q   CLK             0.0221   -2.090e-01               r
+   addr_out_reg[21] Q   CLK             0.0221   -2.025e-01               f
+   addr_out_reg[21] QN  CLK             0.0222   -2.061e-01               r
+   addr_out_reg[21] QN  CLK             0.0222   -2.111e-01               f
+   addr_out_reg[21]              (CLK' D' Q' QN)              1591250.5000  
+   addr_out_reg[21]              (CLK' D' Q QN')              184367.7969  
+   addr_out_reg[21]              (CLK D' Q' QN)               1870523.5000  
+   addr_out_reg[21]              (CLK D' Q QN')               220721.1719  
+   addr_out_reg[21]              (CLK' D Q QN')               64698.4336  
+   addr_out_reg[21]              (CLK D Q' QN)                644446.9375  
+   addr_out_reg[21]              (CLK D Q QN')                53787.0977  
+   addr_out_reg[21]              default                      4121147.2500  
+addr_out_reg[21]  (Cell Total)                      2.6782    8750943.0000
+   addr_out_reg[17] D            (CLK Q QN') 7.7e-04    0.0000            r
+   addr_out_reg[17] D            (CLK Q QN') 7.7e-04 7.151e-04            f
+   addr_out_reg[17] D            (CLK Q' QN)  0.0067 2.341e-03            r
+   addr_out_reg[17] D            (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[17] D            (CLK' Q QN') 7.7e-04 2.758e-03           r
+   addr_out_reg[17] D            (CLK' Q QN') 7.7e-04 2.263e-03           f
+   addr_out_reg[17] D                   0.0158   5.513e-03                r
+   addr_out_reg[17] D                   0.0158      0.0306                f
+   addr_out_reg[17] CLK          (D' Q' QN)  0.2084    0.7101           d r
+   addr_out_reg[17] CLK          (D' Q' QN)  0.2084    0.6192           d f
+   addr_out_reg[17] CLK          (D Q QN')  0.0081    0.0186            d r
+   addr_out_reg[17] CLK          (D Q QN')  0.0081    0.0325            d f
+   addr_out_reg[17] CLK          (D' Q QN')  0.0239    0.0813           d r
+   addr_out_reg[17] CLK          (D' Q QN')  0.0239    0.1316           d f
+   addr_out_reg[17] CLK                 0.2596      0.7884              d r
+   addr_out_reg[17] CLK                 0.2596      1.0805              d f
+   addr_out_reg[17] Q   CLK             0.0222   -2.095e-01               r
+   addr_out_reg[17] Q   CLK             0.0222   -2.030e-01               f
+   addr_out_reg[17] QN  CLK             0.0222   -2.065e-01               r
+   addr_out_reg[17] QN  CLK             0.0222   -2.115e-01               f
+   addr_out_reg[17]              (CLK' D' Q' QN)              1595940.8750  
+   addr_out_reg[17]              (CLK' D' Q QN')              183110.8750  
+   addr_out_reg[17]              (CLK D' Q' QN)               1876037.0000  
+   addr_out_reg[17]              (CLK D' Q QN')               219216.3906  
+   addr_out_reg[17]              (CLK' D Q QN')               64139.9609  
+   addr_out_reg[17]              (CLK D Q' QN)                645165.6875  
+   addr_out_reg[17]              (CLK D Q QN')                53322.8086  
+   addr_out_reg[17]              default                      4113499.0000  
+addr_out_reg[17]  (Cell Total)                      2.6760    8750433.0000
+   addr_out_reg[9] D             (CLK Q QN') 7.1e-04    0.0000            r
+   addr_out_reg[9] D             (CLK Q QN') 7.1e-04 6.336e-04            f
+   addr_out_reg[9] D             (CLK Q' QN)  0.0067 2.218e-03            r
+   addr_out_reg[9] D             (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[9] D             (CLK' Q QN') 7.1e-04 2.546e-03           r
+   addr_out_reg[9] D             (CLK' Q QN') 7.1e-04 2.039e-03           f
+   addr_out_reg[9] D                    0.0155   5.115e-03                r
+   addr_out_reg[9] D                    0.0155      0.0289                f
+   addr_out_reg[9] CLK           (D' Q' QN)  0.2142    0.7299           d r
+   addr_out_reg[9] CLK           (D' Q' QN)  0.2142    0.6365           d f
+   addr_out_reg[9] CLK           (D Q QN')  0.0075    0.0172            d r
+   addr_out_reg[9] CLK           (D Q QN')  0.0075    0.0299            d f
+   addr_out_reg[9] CLK           (D' Q QN')  0.0228    0.0777           d r
+   addr_out_reg[9] CLK           (D' Q QN')  0.0228    0.1257           d f
+   addr_out_reg[9] CLK                  0.2555      0.7760              d r
+   addr_out_reg[9] CLK                  0.2555      1.0635              d f
+   addr_out_reg[9] Q    CLK             0.0220   -2.074e-01               r
+   addr_out_reg[9] Q    CLK             0.0220   -2.010e-01               f
+   addr_out_reg[9] QN   CLK             0.0220   -2.043e-01               r
+   addr_out_reg[9] QN   CLK             0.0220   -2.093e-01               f
+   addr_out_reg[9]               (CLK' D' Q' QN)              1640558.7500  
+   addr_out_reg[9]               (CLK' D' Q QN')              174825.9219  
+   addr_out_reg[9]               (CLK D' Q' QN)               1928485.5000  
+   addr_out_reg[9]               (CLK D' Q QN')               209297.8281  
+   addr_out_reg[9]               (CLK' D Q QN')               59037.1602  
+   addr_out_reg[9]               (CLK D Q' QN)                639368.6875  
+   addr_out_reg[9]               (CLK D Q QN')                49080.5938  
+   addr_out_reg[9]               default                      4044143.7500  
+addr_out_reg[9]  (Cell Total)                       2.6758    8744799.0000
+   addr_out_reg[24] D            (CLK Q QN') 8.0e-04    0.0000            r
+   addr_out_reg[24] D            (CLK Q QN') 8.0e-04 7.135e-04            f
+   addr_out_reg[24] D            (CLK Q' QN)  0.0065 2.166e-03            r
+   addr_out_reg[24] D            (CLK Q' QN)  0.0065    0.0000            f
+   addr_out_reg[24] D            (CLK' Q QN') 8.0e-04 2.867e-03           r
+   addr_out_reg[24] D            (CLK' Q QN') 8.0e-04 2.296e-03           f
+   addr_out_reg[24] D                   0.0157   5.203e-03                r
+   addr_out_reg[24] D                   0.0157      0.0294                f
+   addr_out_reg[24] CLK          (D' Q' QN)  0.2030    0.6918           d r
+   addr_out_reg[24] CLK          (D' Q' QN)  0.2030    0.6033           d f
+   addr_out_reg[24] CLK          (D Q QN')  0.0087    0.0201            d r
+   addr_out_reg[24] CLK          (D Q QN')  0.0087    0.0350            d f
+   addr_out_reg[24] CLK          (D' Q QN')  0.0250    0.0849           d r
+   addr_out_reg[24] CLK          (D' Q QN')  0.0250    0.1374           d f
+   addr_out_reg[24] CLK                 0.2633      0.7996              d r
+   addr_out_reg[24] CLK                 0.2633      1.0958              d f
+   addr_out_reg[24] Q   CLK             0.0223   -2.106e-01               r
+   addr_out_reg[24] Q   CLK             0.0223   -2.040e-01               f
+   addr_out_reg[24] QN  CLK             0.0224   -2.076e-01               r
+   addr_out_reg[24] QN  CLK             0.0224   -2.127e-01               f
+   addr_out_reg[24]              (CLK' D' Q' QN)              1554914.3750  
+   addr_out_reg[24]              (CLK' D' Q QN')              191098.8438  
+   addr_out_reg[24]              (CLK D' Q' QN)               1827810.1250  
+   addr_out_reg[24]              (CLK D' Q QN')               228779.4375  
+   addr_out_reg[24]              (CLK' D Q QN')               69175.5234  
+   addr_out_reg[24]              (CLK D Q' QN)                649592.1875  
+   addr_out_reg[24]              (CLK D Q QN')                57509.1250  
+   addr_out_reg[24]              default                      4176497.5000  
+addr_out_reg[24]  (Cell Total)                      2.6757    8755377.0000
+   addr_out_reg[3] D             (CLK Q QN') 7.6e-04    0.0000            r
+   addr_out_reg[3] D             (CLK Q QN') 7.6e-04 6.709e-04            f
+   addr_out_reg[3] D             (CLK Q' QN)  0.0067 2.216e-03            r
+   addr_out_reg[3] D             (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[3] D             (CLK' Q QN') 7.6e-04 2.696e-03           r
+   addr_out_reg[3] D             (CLK' Q QN') 7.6e-04 2.159e-03           f
+   addr_out_reg[3] D                    0.0157   5.195e-03                r
+   addr_out_reg[3] D                    0.0157      0.0294                f
+   addr_out_reg[3] CLK           (D' Q' QN)  0.2096    0.7141           d r
+   addr_out_reg[3] CLK           (D' Q' QN)  0.2096    0.6227           d f
+   addr_out_reg[3] CLK           (D Q QN')  0.0080    0.0183            d r
+   addr_out_reg[3] CLK           (D Q QN')  0.0080    0.0319            d f
+   addr_out_reg[3] CLK           (D' Q QN')  0.0237    0.0805           d r
+   addr_out_reg[3] CLK           (D' Q QN')  0.0237    0.1303           d f
+   addr_out_reg[3] CLK                  0.2588      0.7860              d r
+   addr_out_reg[3] CLK                  0.2588      1.0772              d f
+   addr_out_reg[3] Q    CLK             0.0222   -2.095e-01               r
+   addr_out_reg[3] Q    CLK             0.0222   -2.030e-01               f
+   addr_out_reg[3] QN   CLK             0.0222   -2.064e-01               r
+   addr_out_reg[3] QN   CLK             0.0222   -2.114e-01               f
+   addr_out_reg[3]               (CLK' D' Q' QN)              1604977.7500  
+   addr_out_reg[3]               (CLK' D' Q QN')              181290.3281  
+   addr_out_reg[3]               (CLK D' Q' QN)               1886659.8750  
+   addr_out_reg[3]               (CLK D' Q QN')               217036.8906  
+   addr_out_reg[3]               (CLK' D Q QN')               63075.8555  
+   addr_out_reg[3]               (CLK D Q' QN)                644462.1250  
+   addr_out_reg[3]               (CLK D Q QN')                52438.1641  
+   addr_out_reg[3]               default                      4099391.7500  
+addr_out_reg[3]  (Cell Total)                       2.6730    8749333.0000
+   addr_out_reg[19] D            (CLK Q QN') 7.7e-04    0.0000            r
+   addr_out_reg[19] D            (CLK Q QN') 7.7e-04 7.172e-04            f
+   addr_out_reg[19] D            (CLK Q' QN)  0.0067 2.334e-03            r
+   addr_out_reg[19] D            (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[19] D            (CLK' Q QN') 7.7e-04 2.766e-03           r
+   addr_out_reg[19] D            (CLK' Q QN') 7.7e-04 2.270e-03           f
+   addr_out_reg[19] D                   0.0158   5.506e-03                r
+   addr_out_reg[19] D                   0.0158      0.0305                f
+   addr_out_reg[19] CLK          (D' Q' QN)  0.2078    0.7081           d r
+   addr_out_reg[19] CLK          (D' Q' QN)  0.2078    0.6175           d f
+   addr_out_reg[19] CLK          (D Q QN')  0.0082    0.0188            d r
+   addr_out_reg[19] CLK          (D Q QN')  0.0082    0.0327            d f
+   addr_out_reg[19] CLK          (D' Q QN')  0.0240    0.0816           d r
+   addr_out_reg[19] CLK          (D' Q QN')  0.0240    0.1320           d f
+   addr_out_reg[19] CLK                 0.2600      0.7897              d r
+   addr_out_reg[19] CLK                 0.2600      1.0823              d f
+   addr_out_reg[19] Q   CLK             0.0223   -2.104e-01               r
+   addr_out_reg[19] Q   CLK             0.0223   -2.039e-01               f
+   addr_out_reg[19] QN  CLK             0.0223   -2.073e-01               r
+   addr_out_reg[19] QN  CLK             0.0223   -2.123e-01               f
+   addr_out_reg[19]              (CLK' D' Q' QN)              1591597.6250  
+   addr_out_reg[19]              (CLK' D' Q QN')              183696.1562  
+   addr_out_reg[19]              (CLK D' Q' QN)               1870931.5000  
+   addr_out_reg[19]              (CLK D' Q QN')               219917.0781  
+   addr_out_reg[19]              (CLK' D Q QN')               64656.9688  
+   addr_out_reg[19]              (CLK D Q' QN)                646529.6250  
+   addr_out_reg[19]              (CLK D Q QN')                53752.6250  
+   addr_out_reg[19]              default                      4119930.5000  
+addr_out_reg[19]  (Cell Total)                      2.6730    8751012.0000
+   addr_out_reg[15] D            (CLK Q QN') 7.5e-04    0.0000            r
+   addr_out_reg[15] D            (CLK Q QN') 7.5e-04 6.953e-04            f
+   addr_out_reg[15] D            (CLK Q' QN)  0.0067 2.352e-03            r
+   addr_out_reg[15] D            (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[15] D            (CLK' Q QN') 7.5e-04 2.682e-03           r
+   addr_out_reg[15] D            (CLK' Q QN') 7.5e-04 2.201e-03           f
+   addr_out_reg[15] D                   0.0157   5.487e-03                r
+   addr_out_reg[15] D                   0.0157      0.0304                f
+   addr_out_reg[15] CLK          (D' Q' QN)  0.2112    0.7197           d r
+   addr_out_reg[15] CLK          (D' Q' QN)  0.2112    0.6276           d f
+   addr_out_reg[15] CLK          (D Q QN')  0.0078    0.0179            d r
+   addr_out_reg[15] CLK          (D Q QN')  0.0078    0.0312            d f
+   addr_out_reg[15] CLK          (D' Q QN')  0.0235    0.0798           d r
+   addr_out_reg[15] CLK          (D' Q QN')  0.0235    0.1291           d f
+   addr_out_reg[15] CLK                 0.2576      0.7822              d r
+   addr_out_reg[15] CLK                 0.2576      1.0720              d f
+   addr_out_reg[15] Q   CLK             0.0222   -2.101e-01               r
+   addr_out_reg[15] Q   CLK             0.0222   -2.036e-01               f
+   addr_out_reg[15] QN  CLK             0.0223   -2.072e-01               r
+   addr_out_reg[15] QN  CLK             0.0223   -2.122e-01               f
+   addr_out_reg[15]              (CLK' D' Q' QN)              1617576.5000  
+   addr_out_reg[15]              (CLK' D' Q QN')              179613.7031  
+   addr_out_reg[15]              (CLK D' Q' QN)               1901469.7500  
+   addr_out_reg[15]              (CLK D' Q QN')               215029.6719  
+   addr_out_reg[15]              (CLK' D Q QN')               61618.3789  
+   addr_out_reg[15]              (CLK D Q' QN)                640435.7500  
+   addr_out_reg[15]              (CLK D Q QN')                51226.4922  
+   addr_out_reg[15]              default                      4080657.2500  
+addr_out_reg[15]  (Cell Total)                      2.6702    8747627.0000
+   addr_out_reg[25] D            (CLK Q QN') 7.6e-04    0.0000            r
+   addr_out_reg[25] D            (CLK Q QN') 7.6e-04 6.755e-04            f
+   addr_out_reg[25] D            (CLK Q' QN)  0.0067 2.210e-03            r
+   addr_out_reg[25] D            (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[25] D            (CLK' Q QN') 7.6e-04 2.714e-03           r
+   addr_out_reg[25] D            (CLK' Q QN') 7.6e-04 2.174e-03           f
+   addr_out_reg[25] D                   0.0157   5.196e-03                r
+   addr_out_reg[25] D                   0.0157      0.0294                f
+   addr_out_reg[25] CLK          (D' Q' QN)  0.2089    0.7117           d r
+   addr_out_reg[25] CLK          (D' Q' QN)  0.2089    0.6207           d f
+   addr_out_reg[25] CLK          (D Q QN')  0.0080    0.0185            d r
+   addr_out_reg[25] CLK          (D Q QN')  0.0080    0.0323            d f
+   addr_out_reg[25] CLK          (D' Q QN')  0.0238    0.0810           d r
+   addr_out_reg[25] CLK          (D' Q QN')  0.0238    0.1311           d f
+   addr_out_reg[25] CLK                 0.2593      0.7874              d r
+   addr_out_reg[25] CLK                 0.2593      1.0791              d f
+   addr_out_reg[25] Q   CLK             0.0223   -2.104e-01               r
+   addr_out_reg[25] Q   CLK             0.0223   -2.039e-01               f
+   addr_out_reg[25] QN  CLK             0.0223   -2.075e-01               r
+   addr_out_reg[25] QN  CLK             0.0223   -2.125e-01               f
+   addr_out_reg[25]              (CLK' D' Q' QN)              1599725.5000  
+   addr_out_reg[25]              (CLK' D' Q QN')              182401.8906  
+   addr_out_reg[25]              (CLK D' Q' QN)               1880485.8750  
+   addr_out_reg[25]              (CLK D' Q QN')               218367.6250  
+   addr_out_reg[25]              (CLK' D Q QN')               63692.3750  
+   addr_out_reg[25]              (CLK D Q' QN)                644679.0000  
+   addr_out_reg[25]              (CLK D Q QN')                52950.7070  
+   addr_out_reg[25]              default                      4107660.0000  
+addr_out_reg[25]  (Cell Total)                      2.6698    8749963.0000
+   addr_out_reg[5] D             (CLK Q QN') 7.9e-04    0.0000            r
+   addr_out_reg[5] D             (CLK Q QN') 7.9e-04 6.986e-04            f
+   addr_out_reg[5] D             (CLK Q' QN)  0.0066 2.199e-03            r
+   addr_out_reg[5] D             (CLK Q' QN)  0.0066    0.0000            f
+   addr_out_reg[5] D             (CLK' Q QN') 7.9e-04 2.807e-03           r
+   addr_out_reg[5] D             (CLK' Q QN') 7.9e-04 2.248e-03           f
+   addr_out_reg[5] D                    0.0158   5.228e-03                r
+   addr_out_reg[5] D                    0.0158      0.0296                f
+   addr_out_reg[5] CLK           (D' Q' QN)  0.2058    0.7014           d r
+   addr_out_reg[5] CLK           (D' Q' QN)  0.2058    0.6116           d f
+   addr_out_reg[5] CLK           (D Q QN')  0.0084    0.0193            d r
+   addr_out_reg[5] CLK           (D Q QN')  0.0084    0.0337            d f
+   addr_out_reg[5] CLK           (D' Q QN')  0.0244    0.0830           d r
+   addr_out_reg[5] CLK           (D' Q QN')  0.0244    0.1343           d f
+   addr_out_reg[5] CLK                  0.2614      0.7938              d r
+   addr_out_reg[5] CLK                  0.2614      1.0879              d f
+   addr_out_reg[5] Q    CLK             0.0224   -2.115e-01               r
+   addr_out_reg[5] Q    CLK             0.0224   -2.049e-01               f
+   addr_out_reg[5] QN   CLK             0.0224   -2.083e-01               r
+   addr_out_reg[5] QN   CLK             0.0224   -2.134e-01               f
+   addr_out_reg[5]               (CLK' D' Q' QN)              1576394.6250  
+   addr_out_reg[5]               (CLK' D' Q QN')              186800.6094  
+   addr_out_reg[5]               (CLK D' Q' QN)               1853060.2500  
+   addr_out_reg[5]               (CLK D' Q QN')               223633.6562  
+   addr_out_reg[5]               (CLK' D Q QN')               66496.5391  
+   addr_out_reg[5]               (CLK D Q' QN)                647628.0000  
+   addr_out_reg[5]               (CLK D Q QN')                55281.9531  
+   addr_out_reg[5]               default                      4143535.0000  
+addr_out_reg[5]  (Cell Total)                       2.6696    8752830.0000
+   addr_out_reg[31] D            (CLK Q QN') 8.0e-04    0.0000            r
+   addr_out_reg[31] D            (CLK Q QN') 8.0e-04 7.112e-04            f
+   addr_out_reg[31] D            (CLK Q' QN)  0.0067 2.225e-03            r
+   addr_out_reg[31] D            (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[31] D            (CLK' Q QN') 8.0e-04 2.858e-03           r
+   addr_out_reg[31] D            (CLK' Q QN') 8.0e-04 2.289e-03           f
+   addr_out_reg[31] D                   0.0160   5.298e-03                r
+   addr_out_reg[31] D                   0.0160      0.0299                f
+   addr_out_reg[31] CLK          (D' Q' QN)  0.2053    0.6994           d r
+   addr_out_reg[31] CLK          (D' Q' QN)  0.2053    0.6099           d f
+   addr_out_reg[31] CLK          (D Q QN')  0.0085    0.0195            d r
+   addr_out_reg[31] CLK          (D Q QN')  0.0085    0.0339            d f
+   addr_out_reg[31] CLK          (D' Q QN')  0.0245    0.0833           d r
+   addr_out_reg[31] CLK          (D' Q QN')  0.0245    0.1348           d f
+   addr_out_reg[31] CLK                 0.2618      0.7951              d r
+   addr_out_reg[31] CLK                 0.2618      1.0896              d f
+   addr_out_reg[31] Q   CLK             0.0225   -2.121e-01               r
+   addr_out_reg[31] Q   CLK             0.0225   -2.055e-01               f
+   addr_out_reg[31] QN  CLK             0.0225   -2.091e-01               r
+   addr_out_reg[31] QN  CLK             0.0225   -2.142e-01               f
+   addr_out_reg[31]              (CLK' D' Q' QN)              1572022.7500  
+   addr_out_reg[31]              (CLK' D' Q QN')              187499.0625  
+   addr_out_reg[31]              (CLK D' Q' QN)               1847921.0000  
+   addr_out_reg[31]              (CLK D' Q QN')               224469.8281  
+   addr_out_reg[31]              (CLK' D Q QN')               67034.1094  
+   addr_out_reg[31]              (CLK D Q' QN)                648627.6875  
+   addr_out_reg[31]              (CLK D Q QN')                55728.8633  
+   addr_out_reg[31]              default                      4150082.2500  
+addr_out_reg[31]  (Cell Total)                      2.6679    8753386.0000
+   addr_out_reg[20] D            (CLK Q QN') 8.1e-04    0.0000            r
+   addr_out_reg[20] D            (CLK Q QN') 8.1e-04 7.158e-04            f
+   addr_out_reg[20] D            (CLK Q' QN)  0.0067 2.202e-03            r
+   addr_out_reg[20] D            (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[20] D            (CLK' Q QN') 8.1e-04 2.877e-03           r
+   addr_out_reg[20] D            (CLK' Q QN') 8.1e-04 2.304e-03           f
+   addr_out_reg[20] D                   0.0159   5.270e-03                r
+   addr_out_reg[20] D                   0.0159      0.0298                f
+   addr_out_reg[20] CLK          (D' Q' QN)  0.2040    0.6951           d r
+   addr_out_reg[20] CLK          (D' Q' QN)  0.2040    0.6062           d f
+   addr_out_reg[20] CLK          (D Q QN')  0.0086    0.0198            d r
+   addr_out_reg[20] CLK          (D Q QN')  0.0086    0.0346            d f
+   addr_out_reg[20] CLK          (D' Q QN')  0.0247    0.0842           d r
+   addr_out_reg[20] CLK          (D' Q QN')  0.0247    0.1362           d f
+   addr_out_reg[20] CLK                 0.2626      0.7976              d r
+   addr_out_reg[20] CLK                 0.2626      1.0931              d f
+   addr_out_reg[20] Q   CLK             0.0225   -2.125e-01               r
+   addr_out_reg[20] Q   CLK             0.0225   -2.059e-01               f
+   addr_out_reg[20] QN  CLK             0.0226   -2.094e-01               r
+   addr_out_reg[20] QN  CLK             0.0226   -2.144e-01               f
+   addr_out_reg[20]              (CLK' D' Q' QN)              1562402.8750  
+   addr_out_reg[20]              (CLK' D' Q QN')              189491.0312  
+   addr_out_reg[20]              (CLK D' Q' QN)               1836612.8750  
+   addr_out_reg[20]              (CLK D' Q QN')               226854.5781  
+   addr_out_reg[20]              (CLK' D Q QN')               68230.7891  
+   addr_out_reg[20]              (CLK D Q' QN)                649269.0000  
+   addr_out_reg[20]              (CLK D Q QN')                56723.7227  
+   addr_out_reg[20]              default                      4164930.5000  
+addr_out_reg[20]  (Cell Total)                      2.6677    8754516.0000
+   addr_out_reg[30] D            (CLK Q QN') 8.3e-04    0.0000            r
+   addr_out_reg[30] D            (CLK Q QN') 8.3e-04 7.318e-04            f
+   addr_out_reg[30] D            (CLK Q' QN)  0.0066 2.196e-03            r
+   addr_out_reg[30] D            (CLK Q' QN)  0.0066    0.0000            f
+   addr_out_reg[30] D            (CLK' Q QN') 8.3e-04 2.941e-03           r
+   addr_out_reg[30] D            (CLK' Q QN') 8.3e-04 2.355e-03           f
+   addr_out_reg[30] D                   0.0160   5.293e-03                r
+   addr_out_reg[30] D                   0.0160      0.0299                f
+   addr_out_reg[30] CLK          (D' Q' QN)  0.2019    0.6881           d r
+   addr_out_reg[30] CLK          (D' Q' QN)  0.2019    0.6000           d f
+   addr_out_reg[30] CLK          (D Q QN')  0.0089    0.0204            d r
+   addr_out_reg[30] CLK          (D Q QN')  0.0089    0.0356            d f
+   addr_out_reg[30] CLK          (D' Q QN')  0.0251    0.0854           d r
+   addr_out_reg[30] CLK          (D' Q QN')  0.0251    0.1382           d f
+   addr_out_reg[30] CLK                 0.2641      0.8020              d r
+   addr_out_reg[30] CLK                 0.2641      1.0992              d f
+   addr_out_reg[30] Q   CLK             0.0226   -2.135e-01               r
+   addr_out_reg[30] Q   CLK             0.0226   -2.069e-01               f
+   addr_out_reg[30] QN  CLK             0.0227   -2.104e-01               r
+   addr_out_reg[30] QN  CLK             0.0227   -2.155e-01               f
+   addr_out_reg[30]              (CLK' D' Q' QN)              1546534.6250  
+   addr_out_reg[30]              (CLK' D' Q QN')              192312.2969  
+   addr_out_reg[30]              (CLK D' Q' QN)               1817959.6250  
+   addr_out_reg[30]              (CLK D' Q QN')               230232.1406  
+   addr_out_reg[30]              (CLK' D Q QN')               70246.6328  
+   addr_out_reg[30]              (CLK D Q' QN)                651955.6250  
+   addr_out_reg[30]              (CLK D Q QN')                58399.5938  
+   addr_out_reg[30]              default                      4188803.5000  
+addr_out_reg[30]  (Cell Total)                      2.6661    8756444.0000
+   addr_out_reg[8] D             (CLK Q QN') 7.8e-04    0.0000            r
+   addr_out_reg[8] D             (CLK Q QN') 7.8e-04 7.198e-04            f
+   addr_out_reg[8] D             (CLK Q' QN)  0.0067 2.343e-03            r
+   addr_out_reg[8] D             (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[8] D             (CLK' Q QN') 7.8e-04 2.777e-03           r
+   addr_out_reg[8] D             (CLK' Q QN') 7.8e-04 2.278e-03           f
+   addr_out_reg[8] D                    0.0158   5.527e-03                r
+   addr_out_reg[8] D                    0.0158      0.0306                f
+   addr_out_reg[8] CLK           (D' Q' QN)  0.2081    0.7091           d r
+   addr_out_reg[8] CLK           (D' Q' QN)  0.2081    0.6184           d f
+   addr_out_reg[8] CLK           (D Q QN')  0.0081    0.0187            d r
+   addr_out_reg[8] CLK           (D Q QN')  0.0081    0.0326            d f
+   addr_out_reg[8] CLK           (D' Q QN')  0.0240    0.0817           d r
+   addr_out_reg[8] CLK           (D' Q QN')  0.0240    0.1322           d f
+   addr_out_reg[8] CLK                  0.2598      0.7889              d r
+   addr_out_reg[8] CLK                  0.2598      1.0811              d f
+   addr_out_reg[8] Q    CLK             0.0225   -2.121e-01               r
+   addr_out_reg[8] Q    CLK             0.0225   -2.055e-01               f
+   addr_out_reg[8] QN   CLK             0.0225   -2.091e-01               r
+   addr_out_reg[8] QN   CLK             0.0225   -2.142e-01               f
+   addr_out_reg[8]               (CLK' D' Q' QN)              1593789.6250  
+   addr_out_reg[8]               (CLK' D' Q QN')              183909.6406  
+   addr_out_reg[8]               (CLK D' Q' QN)               1873508.1250  
+   addr_out_reg[8]               (CLK D' Q QN')               220172.6562  
+   addr_out_reg[8]               (CLK' D Q QN')               64395.4922  
+   addr_out_reg[8]               (CLK D Q' QN)                644053.4375  
+   addr_out_reg[8]               (CLK D Q QN')                53535.2461  
+   addr_out_reg[8]               default                      4117261.5000  
+addr_out_reg[8]  (Cell Total)                       2.6660    8750625.0000
+   addr_out_reg[18] D            (CLK Q QN') 7.7e-04    0.0000            r
+   addr_out_reg[18] D            (CLK Q QN') 7.7e-04 6.833e-04            f
+   addr_out_reg[18] D            (CLK Q' QN)  0.0067 2.215e-03            r
+   addr_out_reg[18] D            (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[18] D            (CLK' Q QN') 7.7e-04 2.746e-03           r
+   addr_out_reg[18] D            (CLK' Q QN') 7.7e-04 2.199e-03           f
+   addr_out_reg[18] D                   0.0158   5.221e-03                r
+   addr_out_reg[18] D                   0.0158      0.0295                f
+   addr_out_reg[18] CLK          (D' Q' QN)  0.2082    0.7095           d r
+   addr_out_reg[18] CLK          (D' Q' QN)  0.2082    0.6187           d f
+   addr_out_reg[18] CLK          (D Q QN')  0.0081    0.0187            d r
+   addr_out_reg[18] CLK          (D Q QN')  0.0081    0.0326            d f
+   addr_out_reg[18] CLK          (D' Q QN')  0.0240    0.0816           d r
+   addr_out_reg[18] CLK          (D' Q QN')  0.0240    0.1319           d f
+   addr_out_reg[18] CLK                 0.2597      0.7887              d r
+   addr_out_reg[18] CLK                 0.2597      1.0809              d f
+   addr_out_reg[18] Q   CLK             0.0224   -2.119e-01               r
+   addr_out_reg[18] Q   CLK             0.0224   -2.053e-01               f
+   addr_out_reg[18] QN  CLK             0.0225   -2.087e-01               r
+   addr_out_reg[18] QN  CLK             0.0225   -2.138e-01               f
+   addr_out_reg[18]              (CLK' D' Q' QN)              1594723.8750  
+   addr_out_reg[18]              (CLK' D' Q QN')              183562.8438  
+   addr_out_reg[18]              (CLK D' Q' QN)               1874606.3750  
+   addr_out_reg[18]              (CLK D' Q QN')               219757.4844  
+   addr_out_reg[18]              (CLK' D Q QN')               64284.4375  
+   addr_out_reg[18]              (CLK D Q' QN)                644535.0000  
+   addr_out_reg[18]              (CLK D Q QN')                53442.9219  
+   addr_out_reg[18]              default                      4115628.7500  
+addr_out_reg[18]  (Cell Total)                      2.6655    8750542.0000
+   addr_out_reg[27] D            (CLK Q QN') 8.3e-04    0.0000            r
+   addr_out_reg[27] D            (CLK Q QN') 8.3e-04 7.333e-04            f
+   addr_out_reg[27] D            (CLK Q' QN)  0.0067 2.231e-03            r
+   addr_out_reg[27] D            (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[27] D            (CLK' Q QN') 8.3e-04 2.947e-03           r
+   addr_out_reg[27] D            (CLK' Q QN') 8.3e-04 2.360e-03           f
+   addr_out_reg[27] D                   0.0162   5.357e-03                r
+   addr_out_reg[27] D                   0.0162      0.0303                f
+   addr_out_reg[27] CLK          (D' Q' QN)  0.2030    0.6918           d r
+   addr_out_reg[27] CLK          (D' Q' QN)  0.2030    0.6033           d f
+   addr_out_reg[27] CLK          (D Q QN')  0.0087    0.0201            d r
+   addr_out_reg[27] CLK          (D Q QN')  0.0087    0.0350            d f
+   addr_out_reg[27] CLK          (D' Q QN')  0.0249    0.0847           d r
+   addr_out_reg[27] CLK          (D' Q QN')  0.0249    0.1370           d f
+   addr_out_reg[27] CLK                 0.2633      0.7997              d r
+   addr_out_reg[27] CLK                 0.2633      1.0960              d f
+   addr_out_reg[27] Q   CLK             0.0227   -2.140e-01               r
+   addr_out_reg[27] Q   CLK             0.0227   -2.074e-01               f
+   addr_out_reg[27] QN  CLK             0.0227   -2.110e-01               r
+   addr_out_reg[27] QN  CLK             0.0227   -2.161e-01               f
+   addr_out_reg[27]              (CLK' D' Q' QN)              1554978.3750  
+   addr_out_reg[27]              (CLK' D' Q QN')              190662.0312  
+   addr_out_reg[27]              (CLK D' Q' QN)               1827885.2500  
+   addr_out_reg[27]              (CLK D' Q QN')               228256.4844  
+   addr_out_reg[27]              (CLK' D Q QN')               69167.3359  
+   addr_out_reg[27]              (CLK D Q' QN)                651030.1250  
+   addr_out_reg[27]              (CLK D Q QN')                57502.3203  
+   addr_out_reg[27]              default                      4175966.2500  
+addr_out_reg[27]  (Cell Total)                      2.6631    8755448.0000
+   addr_out_reg[16] D            (CLK Q QN') 8.2e-04    0.0000            r
+   addr_out_reg[16] D            (CLK Q QN') 8.2e-04 7.616e-04            f
+   addr_out_reg[16] D            (CLK Q' QN)  0.0067 2.335e-03            r
+   addr_out_reg[16] D            (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[16] D            (CLK' Q QN') 8.2e-04 2.938e-03           r
+   addr_out_reg[16] D            (CLK' Q QN') 8.2e-04 2.410e-03           f
+   addr_out_reg[16] D                   0.0161   5.603e-03                r
+   addr_out_reg[16] D                   0.0161      0.0311                f
+   addr_out_reg[16] CLK          (D' Q' QN)  0.2033    0.6927           d r
+   addr_out_reg[16] CLK          (D' Q' QN)  0.2033    0.6041           d f
+   addr_out_reg[16] CLK          (D Q QN')  0.0087    0.0200            d r
+   addr_out_reg[16] CLK          (D Q QN')  0.0087    0.0349            d f
+   addr_out_reg[16] CLK          (D' Q QN')  0.0249    0.0848           d r
+   addr_out_reg[16] CLK          (D' Q QN')  0.0249    0.1371           d f
+   addr_out_reg[16] CLK                 0.2631      0.7990              d r
+   addr_out_reg[16] CLK                 0.2631      1.0950              d f
+   addr_out_reg[16] Q   CLK             0.0227   -2.145e-01               r
+   addr_out_reg[16] Q   CLK             0.0227   -2.078e-01               f
+   addr_out_reg[16] QN  CLK             0.0228   -2.113e-01               r
+   addr_out_reg[16] QN  CLK             0.0228   -2.164e-01               f
+   addr_out_reg[16]              (CLK' D' Q' QN)              1556987.1250  
+   addr_out_reg[16]              (CLK' D' Q QN')              190787.0312  
+   addr_out_reg[16]              (CLK D' Q' QN)               1830246.6250  
+   addr_out_reg[16]              (CLK D' Q QN')               228406.1406  
+   addr_out_reg[16]              (CLK' D Q QN')               68912.8047  
+   addr_out_reg[16]              (CLK D Q' QN)                649046.8125  
+   addr_out_reg[16]              (CLK D Q QN')                57290.7188  
+   addr_out_reg[16]              default                      4173436.7500  
+addr_out_reg[16]  (Cell Total)                      2.6629    8755114.0000
+   addr_out_reg[7] D             (CLK Q QN') 7.4e-04    0.0000            r
+   addr_out_reg[7] D             (CLK Q QN') 7.4e-04 6.573e-04            f
+   addr_out_reg[7] D             (CLK Q' QN)  0.0068 2.237e-03            r
+   addr_out_reg[7] D             (CLK Q' QN)  0.0068    0.0000            f
+   addr_out_reg[7] D             (CLK' Q QN') 7.4e-04 2.642e-03           r
+   addr_out_reg[7] D             (CLK' Q QN') 7.4e-04 2.115e-03           f
+   addr_out_reg[7] D                    0.0157   5.201e-03                r
+   addr_out_reg[7] D                    0.0157      0.0294                f
+   addr_out_reg[7] CLK           (D' Q' QN)  0.2121    0.7228           d r
+   addr_out_reg[7] CLK           (D' Q' QN)  0.2121    0.6303           d f
+   addr_out_reg[7] CLK           (D Q QN')  0.0077    0.0177            d r
+   addr_out_reg[7] CLK           (D Q QN')  0.0077    0.0308            d f
+   addr_out_reg[7] CLK           (D' Q QN')  0.0232    0.0791           d r
+   addr_out_reg[7] CLK           (D' Q QN')  0.0232    0.1280           d f
+   addr_out_reg[7] CLK                  0.2570      0.7804              d r
+   addr_out_reg[7] CLK                  0.2570      1.0695              d f
+   addr_out_reg[7] Q    CLK             0.0224   -2.116e-01               r
+   addr_out_reg[7] Q    CLK             0.0224   -2.051e-01               f
+   addr_out_reg[7] QN   CLK             0.0225   -2.086e-01               r
+   addr_out_reg[7] QN   CLK             0.0225   -2.136e-01               f
+   addr_out_reg[7]               (CLK' D' Q' QN)              1624538.8750  
+   addr_out_reg[7]               (CLK' D' Q QN')              178068.4688  
+   addr_out_reg[7]               (CLK D' Q' QN)               1909654.0000  
+   addr_out_reg[7]               (CLK D' Q QN')               213179.7344  
+   addr_out_reg[7]               (CLK' D Q QN')               60826.1641  
+   addr_out_reg[7]               (CLK D Q' QN)                640432.6250  
+   addr_out_reg[7]               (CLK D Q QN')                50567.8828  
+   addr_out_reg[7]               default                      4069524.7500  
+addr_out_reg[7]  (Cell Total)                       2.6619    8746792.0000
+   addr_out_reg[2] D             (CLK Q QN') 7.5e-04    0.0000            r
+   addr_out_reg[2] D             (CLK Q QN') 7.5e-04 6.983e-04            f
+   addr_out_reg[2] D             (CLK Q' QN)  0.0067 2.353e-03            r
+   addr_out_reg[2] D             (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[2] D             (CLK' Q QN') 7.5e-04 2.693e-03           r
+   addr_out_reg[2] D             (CLK' Q QN') 7.5e-04 2.210e-03           f
+   addr_out_reg[2] D                    0.0158   5.495e-03                r
+   addr_out_reg[2] D                    0.0158      0.0305                f
+   addr_out_reg[2] CLK           (D' Q' QN)  0.2107    0.7181           d r
+   addr_out_reg[2] CLK           (D' Q' QN)  0.2107    0.6262           d f
+   addr_out_reg[2] CLK           (D Q QN')  0.0078    0.0180            d r
+   addr_out_reg[2] CLK           (D Q QN')  0.0078    0.0314            d f
+   addr_out_reg[2] CLK           (D' Q QN')  0.0235    0.0799           d r
+   addr_out_reg[2] CLK           (D' Q QN')  0.0235    0.1293           d f
+   addr_out_reg[2] CLK                  0.2579      0.7833              d r
+   addr_out_reg[2] CLK                  0.2579      1.0735              d f
+   addr_out_reg[2] Q    CLK             0.0225   -2.124e-01               r
+   addr_out_reg[2] Q    CLK             0.0225   -2.058e-01               f
+   addr_out_reg[2] QN   CLK             0.0226   -2.094e-01               r
+   addr_out_reg[2] QN   CLK             0.0226   -2.145e-01               f
+   addr_out_reg[2]               (CLK' D' Q' QN)              1614026.6250  
+   addr_out_reg[2]               (CLK' D' Q QN')              179940.2969  
+   addr_out_reg[2]               (CLK D' Q' QN)               1897296.8750  
+   addr_out_reg[2]               (CLK D' Q QN')               215420.6406  
+   addr_out_reg[2]               (CLK' D Q QN')               62026.1289  
+   addr_out_reg[2]               (CLK D Q' QN)                642091.4375  
+   addr_out_reg[2]               (CLK D Q QN')                51565.4727  
+   addr_out_reg[2]               default                      4085768.2500  
+addr_out_reg[2]  (Cell Total)                       2.6617    8748135.0000
+   addr_out_reg[6] D             (CLK Q QN') 8.3e-04    0.0000            r
+   addr_out_reg[6] D             (CLK Q QN') 8.3e-04 7.667e-04            f
+   addr_out_reg[6] D             (CLK Q' QN)  0.0067 2.331e-03            r
+   addr_out_reg[6] D             (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[6] D             (CLK' Q QN') 8.3e-04 2.957e-03           r
+   addr_out_reg[6] D             (CLK' Q QN') 8.3e-04 2.427e-03           f
+   addr_out_reg[6] D                    0.0161   5.608e-03                r
+   addr_out_reg[6] D                    0.0161      0.0311                f
+   addr_out_reg[6] CLK           (D' Q' QN)  0.2025    0.6899           d r
+   addr_out_reg[6] CLK           (D' Q' QN)  0.2025    0.6016           d f
+   addr_out_reg[6] CLK           (D Q QN')  0.0088    0.0203            d r
+   addr_out_reg[6] CLK           (D Q QN')  0.0088    0.0353            d f
+   addr_out_reg[6] CLK           (D' Q QN')  0.0250    0.0851           d r
+   addr_out_reg[6] CLK           (D' Q QN')  0.0250    0.1377           d f
+   addr_out_reg[6] CLK                  0.2637      0.8009              d r
+   addr_out_reg[6] CLK                  0.2637      1.0976              d f
+   addr_out_reg[6] Q    CLK             0.0228   -2.149e-01               r
+   addr_out_reg[6] Q    CLK             0.0228   -2.083e-01               f
+   addr_out_reg[6] QN   CLK             0.0228   -2.118e-01               r
+   addr_out_reg[6] QN   CLK             0.0228   -2.170e-01               f
+   addr_out_reg[6]               (CLK' D' Q' QN)              1550667.3750  
+   addr_out_reg[6]               (CLK' D' Q QN')              191587.6250  
+   addr_out_reg[6]               (CLK D' Q' QN)               1822817.7500  
+   addr_out_reg[6]               (CLK D' Q QN')               229364.5781  
+   addr_out_reg[6]               (CLK' D Q QN')               69716.5156  
+   addr_out_reg[6]               (CLK D Q' QN)                651218.6875  
+   addr_out_reg[6]               (CLK D Q QN')                57958.8867  
+   addr_out_reg[6]               default                      4182610.2500  
+addr_out_reg[6]  (Cell Total)                       2.6616    8755942.0000
+   addr_out_reg[1] D             (CLK Q QN') 7.9e-04    0.0000            r
+   addr_out_reg[1] D             (CLK Q QN') 7.9e-04 6.977e-04            f
+   addr_out_reg[1] D             (CLK Q' QN)  0.0067 2.225e-03            r
+   addr_out_reg[1] D             (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[1] D             (CLK' Q QN') 7.9e-04 2.804e-03           r
+   addr_out_reg[1] D             (CLK' Q QN') 7.9e-04 2.245e-03           f
+   addr_out_reg[1] D                    0.0159   5.270e-03                r
+   addr_out_reg[1] D                    0.0159      0.0298                f
+   addr_out_reg[1] CLK           (D' Q' QN)  0.2068    0.7047           d r
+   addr_out_reg[1] CLK           (D' Q' QN)  0.2068    0.6145           d f
+   addr_out_reg[1] CLK           (D Q QN')  0.0083    0.0191            d r
+   addr_out_reg[1] CLK           (D Q QN')  0.0083    0.0332            d f
+   addr_out_reg[1] CLK           (D' Q QN')  0.0242    0.0823           d r
+   addr_out_reg[1] CLK           (D' Q QN')  0.0242    0.1332           d f
+   addr_out_reg[1] CLK                  0.2607      0.7918              d r
+   addr_out_reg[1] CLK                  0.2607      1.0852              d f
+   addr_out_reg[1] Q    CLK             0.0226   -2.133e-01               r
+   addr_out_reg[1] Q    CLK             0.0226   -2.067e-01               f
+   addr_out_reg[1] QN   CLK             0.0226   -2.102e-01               r
+   addr_out_reg[1] QN   CLK             0.0226   -2.153e-01               f
+   addr_out_reg[1]               (CLK' D' Q' QN)              1583843.2500  
+   addr_out_reg[1]               (CLK' D' Q QN')              185249.9219  
+   addr_out_reg[1]               (CLK D' Q' QN)               1861816.1250  
+   addr_out_reg[1]               (CLK D' Q QN')               221777.2188  
+   addr_out_reg[1]               (CLK' D Q QN')               65589.4688  
+   addr_out_reg[1]               (CLK D Q' QN)                647184.6875  
+   addr_out_reg[1]               (CLK D Q QN')                54527.8594  
+   addr_out_reg[1]               default                      4131959.0000  
+addr_out_reg[1]  (Cell Total)                       2.6614    8751947.0000
+   addr_out_reg[26] D            (CLK Q QN') 7.7e-04    0.0000            r
+   addr_out_reg[26] D            (CLK Q QN') 7.7e-04 6.852e-04            f
+   addr_out_reg[26] D            (CLK Q' QN)  0.0068 2.256e-03            r
+   addr_out_reg[26] D            (CLK Q' QN)  0.0068    0.0000            f
+   addr_out_reg[26] D            (CLK' Q QN') 7.7e-04 2.754e-03           r
+   addr_out_reg[26] D            (CLK' Q QN') 7.7e-04 2.205e-03           f
+   addr_out_reg[26] D                   0.0160   5.294e-03                r
+   addr_out_reg[26] D                   0.0160      0.0299                f
+   addr_out_reg[26] CLK          (D' Q' QN)  0.2094    0.7137           d r
+   addr_out_reg[26] CLK          (D' Q' QN)  0.2094    0.6224           d f
+   addr_out_reg[26] CLK          (D Q QN')  0.0080    0.0184            d r
+   addr_out_reg[26] CLK          (D Q QN')  0.0080    0.0320            d f
+   addr_out_reg[26] CLK          (D' Q QN')  0.0237    0.0807           d r
+   addr_out_reg[26] CLK          (D' Q QN')  0.0237    0.1306           d f
+   addr_out_reg[26] CLK                 0.2589      0.7861              d r
+   addr_out_reg[26] CLK                 0.2589      1.0774              d f
+   addr_out_reg[26] Q   CLK             0.0225   -2.127e-01               r
+   addr_out_reg[26] Q   CLK             0.0225   -2.061e-01               f
+   addr_out_reg[26] QN  CLK             0.0226   -2.097e-01               r
+   addr_out_reg[26] QN  CLK             0.0226   -2.147e-01               f
+   addr_out_reg[26]              (CLK' D' Q' QN)              1604061.3750  
+   addr_out_reg[26]              (CLK' D' Q QN')              181755.3125  
+   addr_out_reg[26]              (CLK D' Q' QN)               1885582.6250  
+   addr_out_reg[26]              (CLK D' Q QN')               217593.5469  
+   addr_out_reg[26]              (CLK' D Q QN')               63183.0273  
+   addr_out_reg[26]              (CLK D Q' QN)                643538.0000  
+   addr_out_reg[26]              (CLK D Q QN')                52527.2617  
+   addr_out_reg[26]              default                      4101151.0000  
+addr_out_reg[26]  (Cell Total)                      2.6611    8749392.0000
+   addr_out_reg[0] D             (CLK Q QN') 7.7e-04    0.0000            r
+   addr_out_reg[0] D             (CLK Q QN') 7.7e-04 7.172e-04            f
+   addr_out_reg[0] D             (CLK Q' QN)  0.0068 2.379e-03            r
+   addr_out_reg[0] D             (CLK Q' QN)  0.0068    0.0000            f
+   addr_out_reg[0] D             (CLK' Q QN') 7.7e-04 2.766e-03           r
+   addr_out_reg[0] D             (CLK' Q QN') 7.7e-04 2.270e-03           f
+   addr_out_reg[0] D                    0.0160   5.580e-03                r
+   addr_out_reg[0] D                    0.0160      0.0309                f
+   addr_out_reg[0] CLK           (D' Q' QN)  0.2094    0.7137           d r
+   addr_out_reg[0] CLK           (D' Q' QN)  0.2094    0.6224           d f
+   addr_out_reg[0] CLK           (D Q QN')  0.0080    0.0184            d r
+   addr_out_reg[0] CLK           (D Q QN')  0.0080    0.0320            d f
+   addr_out_reg[0] CLK           (D' Q QN')  0.0237    0.0807           d r
+   addr_out_reg[0] CLK           (D' Q QN')  0.0237    0.1306           d f
+   addr_out_reg[0] CLK                  0.2589      0.7862              d r
+   addr_out_reg[0] CLK                  0.2589      1.0774              d f
+   addr_out_reg[0] Q    CLK             0.0226   -2.133e-01               r
+   addr_out_reg[0] Q    CLK             0.0226   -2.067e-01               f
+   addr_out_reg[0] QN   CLK             0.0226   -2.101e-01               r
+   addr_out_reg[0] QN   CLK             0.0226   -2.152e-01               f
+   addr_out_reg[0]               (CLK' D' Q' QN)              1604039.8750  
+   addr_out_reg[0]               (CLK' D' Q QN')              181674.3125  
+   addr_out_reg[0]               (CLK D' Q' QN)               1885557.5000  
+   addr_out_reg[0]               (CLK D' Q QN')               217496.5781  
+   addr_out_reg[0]               (CLK' D Q QN')               63185.5781  
+   addr_out_reg[0]               (CLK D Q' QN)                643842.2500  
+   addr_out_reg[0]               (CLK D Q QN')                52529.3828  
+   addr_out_reg[0]               default                      4101085.5000  
+addr_out_reg[0]  (Cell Total)                       2.6605    8749411.0000
+   addr_out_reg[4] D             (CLK Q QN') 7.6e-04    0.0000            r
+   addr_out_reg[4] D             (CLK Q QN') 7.6e-04 7.068e-04            f
+   addr_out_reg[4] D             (CLK Q' QN)  0.0069 2.390e-03            r
+   addr_out_reg[4] D             (CLK Q' QN)  0.0069    0.0000            f
+   addr_out_reg[4] D             (CLK' Q QN') 7.6e-04 2.726e-03           r
+   addr_out_reg[4] D             (CLK' Q QN') 7.6e-04 2.237e-03           f
+   addr_out_reg[4] D                    0.0160   5.577e-03                r
+   addr_out_reg[4] D                    0.0160      0.0309                f
+   addr_out_reg[4] CLK           (D' Q' QN)  0.2109    0.7186           d r
+   addr_out_reg[4] CLK           (D' Q' QN)  0.2109    0.6266           d f
+   addr_out_reg[4] CLK           (D Q QN')  0.0078    0.0180            d r
+   addr_out_reg[4] CLK           (D Q QN')  0.0078    0.0313            d f
+   addr_out_reg[4] CLK           (D' Q QN')  0.0234    0.0797           d r
+   addr_out_reg[4] CLK           (D' Q QN')  0.0234    0.1289           d f
+   addr_out_reg[4] CLK                  0.2579      0.7832              d r
+   addr_out_reg[4] CLK                  0.2579      1.0733              d f
+   addr_out_reg[4] Q    CLK             0.0226   -2.135e-01               r
+   addr_out_reg[4] Q    CLK             0.0226   -2.069e-01               f
+   addr_out_reg[4] QN   CLK             0.0227   -2.104e-01               r
+   addr_out_reg[4] QN   CLK             0.0227   -2.155e-01               f
+   addr_out_reg[4]               (CLK' D' Q' QN)              1615122.0000  
+   addr_out_reg[4]               (CLK' D' Q QN')              179399.5469  
+   addr_out_reg[4]               (CLK D' Q' QN)               1898584.5000  
+   addr_out_reg[4]               (CLK D' Q QN')               214773.2812  
+   addr_out_reg[4]               (CLK' D Q QN')               61900.1211  
+   addr_out_reg[4]               (CLK D Q' QN)                643154.6250  
+   addr_out_reg[4]               (CLK D Q QN')                51460.7148  
+   addr_out_reg[4]               default                      4083665.7500  
+addr_out_reg[4]  (Cell Total)                       2.6579    8748061.0000
+   addr_out_reg[22] D            (CLK Q QN') 8.2e-04    0.0000            r
+   addr_out_reg[22] D            (CLK Q QN') 8.2e-04 7.293e-04            f
+   addr_out_reg[22] D            (CLK Q' QN)  0.0067 2.221e-03            r
+   addr_out_reg[22] D            (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[22] D            (CLK' Q QN') 8.2e-04 2.931e-03           r
+   addr_out_reg[22] D            (CLK' Q QN') 8.2e-04 2.347e-03           f
+   addr_out_reg[22] D                   0.0161   5.331e-03                r
+   addr_out_reg[22] D                   0.0161      0.0301                f
+   addr_out_reg[22] CLK          (D' Q' QN)  0.2031    0.6921           d r
+   addr_out_reg[22] CLK          (D' Q' QN)  0.2031    0.6035           d f
+   addr_out_reg[22] CLK          (D Q QN')  0.0087    0.0201            d r
+   addr_out_reg[22] CLK          (D Q QN')  0.0087    0.0350            d f
+   addr_out_reg[22] CLK          (D' Q QN')  0.0249    0.0846           d r
+   addr_out_reg[22] CLK          (D' Q QN')  0.0249    0.1369           d f
+   addr_out_reg[22] CLK                 0.2633      0.7996              d r
+   addr_out_reg[22] CLK                 0.2633      1.0959              d f
+   addr_out_reg[22] Q   CLK             0.0228   -2.157e-01               r
+   addr_out_reg[22] Q   CLK             0.0228   -2.090e-01               f
+   addr_out_reg[22] QN  CLK             0.0229   -2.124e-01               r
+   addr_out_reg[22] QN  CLK             0.0229   -2.176e-01               f
+   addr_out_reg[22]              (CLK' D' Q' QN)              1555512.6250  
+   addr_out_reg[22]              (CLK' D' Q QN')              190525.5625  
+   addr_out_reg[22]              (CLK D' Q' QN)               1828513.2500  
+   addr_out_reg[22]              (CLK D' Q QN')               228093.1094  
+   addr_out_reg[22]              (CLK' D Q QN')               69099.5469  
+   addr_out_reg[22]              (CLK D Q' QN)                651081.5000  
+   addr_out_reg[22]              (CLK D Q QN')                57445.9609  
+   addr_out_reg[22]              default                      4175119.7500  
+addr_out_reg[22]  (Cell Total)                      2.6568    8755391.0000
+   addr_out_reg[11] D            (CLK Q QN') 7.8e-04    0.0000            r
+   addr_out_reg[11] D            (CLK Q QN') 7.8e-04 6.928e-04            f
+   addr_out_reg[11] D            (CLK Q' QN)  0.0069 2.270e-03            r
+   addr_out_reg[11] D            (CLK Q' QN)  0.0069    0.0000            f
+   addr_out_reg[11] D            (CLK' Q QN') 7.8e-04 2.784e-03           r
+   addr_out_reg[11] D            (CLK' Q QN') 7.8e-04 2.229e-03           f
+   addr_out_reg[11] D                   0.0161   5.334e-03                r
+   addr_out_reg[11] D                   0.0161      0.0301                f
+   addr_out_reg[11] CLK          (D' Q' QN)  0.2090    0.7121           d r
+   addr_out_reg[11] CLK          (D' Q' QN)  0.2090    0.6210           d f
+   addr_out_reg[11] CLK          (D Q QN')  0.0080    0.0185            d r
+   addr_out_reg[11] CLK          (D Q QN')  0.0080    0.0322            d f
+   addr_out_reg[11] CLK          (D' Q QN')  0.0238    0.0810           d r
+   addr_out_reg[11] CLK          (D' Q QN')  0.0238    0.1310           d f
+   addr_out_reg[11] CLK                 0.2592      0.7872              d r
+   addr_out_reg[11] CLK                 0.2592      1.0788              d f
+   addr_out_reg[11] Q   CLK             0.0227   -2.144e-01               r
+   addr_out_reg[11] Q   CLK             0.0227   -2.078e-01               f
+   addr_out_reg[11] QN  CLK             0.0228   -2.113e-01               r
+   addr_out_reg[11] QN  CLK             0.0228   -2.164e-01               f
+   addr_out_reg[11]              (CLK' D' Q' QN)              1600444.2500  
+   addr_out_reg[11]              (CLK' D' Q QN')              182267.4688  
+   addr_out_reg[11]              (CLK D' Q' QN)               1881330.6250  
+   addr_out_reg[11]              (CLK D' Q QN')               218206.7031  
+   addr_out_reg[11]              (CLK' D Q QN')               63607.7109  
+   addr_out_reg[11]              (CLK D Q' QN)                644586.3125  
+   addr_out_reg[11]              (CLK D Q QN')                52880.3242  
+   addr_out_reg[11]              default                      4106550.2500  
+addr_out_reg[11]  (Cell Total)                      2.6553    8749873.0000
+   addr_out_reg[14] D            (CLK Q QN') 8.4e-04    0.0000            r
+   addr_out_reg[14] D            (CLK Q QN') 8.4e-04 7.829e-04            f
+   addr_out_reg[14] D            (CLK Q' QN)  0.0068 2.364e-03            r
+   addr_out_reg[14] D            (CLK Q' QN)  0.0068    0.0000            f
+   addr_out_reg[14] D            (CLK' Q QN') 8.4e-04 3.020e-03           r
+   addr_out_reg[14] D            (CLK' Q QN') 8.4e-04 2.478e-03           f
+   addr_out_reg[14] D                   0.0163   5.699e-03                r
+   addr_out_reg[14] D                   0.0163      0.0316                f
+   addr_out_reg[14] CLK          (D' Q' QN)  0.2020    0.6884           d r
+   addr_out_reg[14] CLK          (D' Q' QN)  0.2020    0.6003           d f
+   addr_out_reg[14] CLK          (D Q QN')  0.0089    0.0204            d r
+   addr_out_reg[14] CLK          (D Q QN')  0.0089    0.0355            d f
+   addr_out_reg[14] CLK          (D' Q QN')  0.0251    0.0855           d r
+   addr_out_reg[14] CLK          (D' Q QN')  0.0251    0.1383           d f
+   addr_out_reg[14] CLK                 0.2640      0.8017              d r
+   addr_out_reg[14] CLK                 0.2640      1.0987              d f
+   addr_out_reg[14] Q   CLK             0.0231   -2.177e-01               r
+   addr_out_reg[14] Q   CLK             0.0231   -2.110e-01               f
+   addr_out_reg[14] QN  CLK             0.0231   -2.146e-01               r
+   addr_out_reg[14] QN  CLK             0.0231   -2.198e-01               f
+   addr_out_reg[14]              (CLK' D' Q' QN)              1547258.7500  
+   addr_out_reg[14]              (CLK' D' Q QN')              192483.5312  
+   addr_out_reg[14]              (CLK D' Q' QN)               1818810.8750  
+   addr_out_reg[14]              (CLK D' Q QN')               230437.1406  
+   addr_out_reg[14]              (CLK' D Q QN')               70153.5781  
+   addr_out_reg[14]              (CLK D Q' QN)                650817.2500  
+   addr_out_reg[14]              (CLK D Q QN')                58322.2344  
+   addr_out_reg[14]              default                      4188017.5000  
+addr_out_reg[14]  (Cell Total)                      2.6518    8756300.0000
+   addr_out_reg[28] D            (CLK Q QN') 8.1e-04    0.0000            r
+   addr_out_reg[28] D            (CLK Q QN') 8.1e-04 7.167e-04            f
+   addr_out_reg[28] D            (CLK Q' QN)  0.0067 2.225e-03            r
+   addr_out_reg[28] D            (CLK Q' QN)  0.0067    0.0000            f
+   addr_out_reg[28] D            (CLK' Q QN') 8.1e-04 2.880e-03           r
+   addr_out_reg[28] D            (CLK' Q QN') 8.1e-04 2.306e-03           f
+   addr_out_reg[28] D                   0.0161   5.310e-03                r
+   addr_out_reg[28] D                   0.0161      0.0300                f
+   addr_out_reg[28] CLK          (D' Q' QN)  0.2046    0.6974           d r
+   addr_out_reg[28] CLK          (D' Q' QN)  0.2046    0.6081           d f
+   addr_out_reg[28] CLK          (D Q QN')  0.0085    0.0196            d r
+   addr_out_reg[28] CLK          (D Q QN')  0.0085    0.0342            d f
+   addr_out_reg[28] CLK          (D' Q QN')  0.0246    0.0837           d r
+   addr_out_reg[28] CLK          (D' Q QN')  0.0246    0.1354           d f
+   addr_out_reg[28] CLK                 0.2622      0.7963              d r
+   addr_out_reg[28] CLK                 0.2622      1.0914              d f
+   addr_out_reg[28] Q   CLK             0.0229   -2.163e-01               r
+   addr_out_reg[28] Q   CLK             0.0229   -2.096e-01               f
+   addr_out_reg[28] QN  CLK             0.0230   -2.134e-01               r
+   addr_out_reg[28] QN  CLK             0.0230   -2.186e-01               f
+   addr_out_reg[28]              (CLK' D' Q' QN)              1567379.3750  
+   addr_out_reg[28]              (CLK' D' Q QN')              188384.6406  
+   addr_out_reg[28]              (CLK D' Q' QN)               1842462.7500  
+   addr_out_reg[28]              (CLK D' Q QN')               225530.0312  
+   addr_out_reg[28]              (CLK' D Q QN')               67609.3125  
+   addr_out_reg[28]              (CLK D Q' QN)                649194.8750  
+   addr_out_reg[28]              (CLK D Q QN')                56207.0586  
+   addr_out_reg[28]              default                      4157177.5000  
+addr_out_reg[28]  (Cell Total)                      2.6517    8753945.0000
+   addr_out_reg[23] D            (CLK Q QN') 7.9e-04    0.0000            r
+   addr_out_reg[23] D            (CLK Q QN') 7.9e-04 7.322e-04            f
+   addr_out_reg[23] D            (CLK Q' QN)  0.0069 2.408e-03            r
+   addr_out_reg[23] D            (CLK Q' QN)  0.0069    0.0000            f
+   addr_out_reg[23] D            (CLK' Q QN') 7.9e-04 2.824e-03           r
+   addr_out_reg[23] D            (CLK' Q QN') 7.9e-04 2.317e-03           f
+   addr_out_reg[23] D                   0.0162   5.663e-03                r
+   addr_out_reg[23] D                   0.0162      0.0314                f
+   addr_out_reg[23] CLK          (D' Q' QN)  0.2088    0.7116           d r
+   addr_out_reg[23] CLK          (D' Q' QN)  0.2088    0.6206           d f
+   addr_out_reg[23] CLK          (D Q QN')  0.0080    0.0185            d r
+   addr_out_reg[23] CLK          (D Q QN')  0.0080    0.0323            d f
+   addr_out_reg[23] CLK          (D' Q QN')  0.0239    0.0812           d r
+   addr_out_reg[23] CLK          (D' Q QN')  0.0239    0.1313           d f
+   addr_out_reg[23] CLK                 0.2593      0.7873              d r
+   addr_out_reg[23] CLK                 0.2593      1.0790              d f
+   addr_out_reg[23] Q   CLK             0.0230   -2.173e-01               r
+   addr_out_reg[23] Q   CLK             0.0230   -2.106e-01               f
+   addr_out_reg[23] QN  CLK             0.0231   -2.141e-01               r
+   addr_out_reg[23] QN  CLK             0.0231   -2.193e-01               f
+   addr_out_reg[23]              (CLK' D' Q' QN)              1599507.6250  
+   addr_out_reg[23]              (CLK' D' Q QN')              182711.5312  
+   addr_out_reg[23]              (CLK D' Q' QN)               1880229.7500  
+   addr_out_reg[23]              (CLK D' Q QN')               218738.3125  
+   addr_out_reg[23]              (CLK' D Q QN')               63718.0078  
+   addr_out_reg[23]              (CLK D Q' QN)                643757.7500  
+   addr_out_reg[23]              (CLK D Q QN')                52972.0195  
+   addr_out_reg[23]              default                      4108305.0000  
+addr_out_reg[23]  (Cell Total)                      2.6459    8749940.0000
+   addr_out_reg[29] D            (CLK Q QN') 7.8e-04    0.0000            r
+   addr_out_reg[29] D            (CLK Q QN') 7.8e-04 6.906e-04            f
+   addr_out_reg[29] D            (CLK Q' QN)  0.0069 2.283e-03            r
+   addr_out_reg[29] D            (CLK Q' QN)  0.0069    0.0000            f
+   addr_out_reg[29] D            (CLK' Q QN') 7.8e-04 2.775e-03           r
+   addr_out_reg[29] D            (CLK' Q QN') 7.8e-04 2.222e-03           f
+   addr_out_reg[29] D                   0.0162   5.351e-03                r
+   addr_out_reg[29] D                   0.0162      0.0302                f
+   addr_out_reg[29] CLK          (D' Q' QN)  0.2097    0.7147           d r
+   addr_out_reg[29] CLK          (D' Q' QN)  0.2097    0.6232           d f
+   addr_out_reg[29] CLK          (D Q QN')  0.0079    0.0183            d r
+   addr_out_reg[29] CLK          (D Q QN')  0.0079    0.0319            d f
+   addr_out_reg[29] CLK          (D' Q QN')  0.0237    0.0805           d r
+   addr_out_reg[29] CLK          (D' Q QN')  0.0237    0.1303           d f
+   addr_out_reg[29] CLK                 0.2586      0.7855              d r
+   addr_out_reg[29] CLK                 0.2586      1.0765              d f
+   addr_out_reg[29] Q   CLK             0.0229   -2.167e-01               r
+   addr_out_reg[29] Q   CLK             0.0229   -2.100e-01               f
+   addr_out_reg[29] QN  CLK             0.0230   -2.136e-01               r
+   addr_out_reg[29] QN  CLK             0.0230   -2.188e-01               f
+   addr_out_reg[29]              (CLK' D' Q' QN)              1606352.5000  
+   addr_out_reg[29]              (CLK' D' Q QN')              181308.3906  
+   addr_out_reg[29]              (CLK D' Q' QN)               1888275.8750  
+   addr_out_reg[29]              (CLK D' Q QN')               217058.5000  
+   addr_out_reg[29]              (CLK' D Q QN')               62915.3711  
+   addr_out_reg[29]              (CLK D Q' QN)                643309.0000  
+   addr_out_reg[29]              (CLK D Q QN')                52304.7461  
+   addr_out_reg[29]              default                      4097585.5000  
+addr_out_reg[29]  (Cell Total)                      2.6455    8749111.0000
+   addr_out_reg[12] D            (CLK Q QN') 7.6e-04    0.0000            r
+   addr_out_reg[12] D            (CLK Q QN') 7.6e-04 7.035e-04            f
+   addr_out_reg[12] D            (CLK Q' QN)  0.0070 2.436e-03            r
+   addr_out_reg[12] D            (CLK Q' QN)  0.0070    0.0000            f
+   addr_out_reg[12] D            (CLK' Q QN') 7.6e-04 2.713e-03           r
+   addr_out_reg[12] D            (CLK' Q QN') 7.6e-04 2.226e-03           f
+   addr_out_reg[12] D                   0.0162   5.645e-03                r
+   addr_out_reg[12] D                   0.0162      0.0313                f
+   addr_out_reg[12] CLK          (D' Q' QN)  0.2129    0.7255           d r
+   addr_out_reg[12] CLK          (D' Q' QN)  0.2129    0.6327           d f
+   addr_out_reg[12] CLK          (D Q QN')  0.0076    0.0175            d r
+   addr_out_reg[12] CLK          (D Q QN')  0.0076    0.0305            d f
+   addr_out_reg[12] CLK          (D' Q QN')  0.0231    0.0786           d r
+   addr_out_reg[12] CLK          (D' Q QN')  0.0231    0.1271           d f
+   addr_out_reg[12] CLK                 0.2564      0.7787              d r
+   addr_out_reg[12] CLK                 0.2564      1.0671              d f
+   addr_out_reg[12] Q   CLK             0.0229   -2.165e-01               r
+   addr_out_reg[12] Q   CLK             0.0229   -2.098e-01               f
+   addr_out_reg[12] QN  CLK             0.0230   -2.133e-01               r
+   addr_out_reg[12] QN  CLK             0.0230   -2.185e-01               f
+   addr_out_reg[12]              (CLK' D' Q' QN)              1630661.0000  
+   addr_out_reg[12]              (CLK' D' Q QN')              176878.5781  
+   addr_out_reg[12]              (CLK D' Q' QN)               1916850.6250  
+   addr_out_reg[12]              (CLK D' Q QN')               211755.2344  
+   addr_out_reg[12]              (CLK' D Q QN')               60136.9180  
+   addr_out_reg[12]              (CLK D Q' QN)                639837.1875  
+   addr_out_reg[12]              (CLK D Q QN')                49994.8750  
+   addr_out_reg[12]              default                      4059910.2500  
+addr_out_reg[12]  (Cell Total)                      2.6446    8746024.0000
+   addr_out_reg[13] D            (CLK Q QN') 7.9e-04    0.0000            r
+   addr_out_reg[13] D            (CLK Q QN') 7.9e-04 7.361e-04            f
+   addr_out_reg[13] D            (CLK Q' QN)  0.0070 2.438e-03            r
+   addr_out_reg[13] D            (CLK Q' QN)  0.0070    0.0000            f
+   addr_out_reg[13] D            (CLK' Q QN') 7.9e-04 2.839e-03           r
+   addr_out_reg[13] D            (CLK' Q QN') 7.9e-04 2.330e-03           f
+   addr_out_reg[13] D                   0.0164   5.723e-03                r
+   addr_out_reg[13] D                   0.0164      0.0317                f
+   addr_out_reg[13] CLK          (D' Q' QN)  0.2092    0.7130           d r
+   addr_out_reg[13] CLK          (D' Q' QN)  0.2092    0.6218           d f
+   addr_out_reg[13] CLK          (D Q QN')  0.0080    0.0184            d r
+   addr_out_reg[13] CLK          (D Q QN')  0.0080    0.0321            d f
+   addr_out_reg[13] CLK          (D' Q QN')  0.0237    0.0807           d r
+   addr_out_reg[13] CLK          (D' Q QN')  0.0237    0.1306           d f
+   addr_out_reg[13] CLK                 0.2590      0.7867              d r
+   addr_out_reg[13] CLK                 0.2590      1.0781              d f
+   addr_out_reg[13] Q   CLK             0.0233   -2.201e-01               r
+   addr_out_reg[13] Q   CLK             0.0233   -2.133e-01               f
+   addr_out_reg[13] QN  CLK             0.0234   -2.170e-01               r
+   addr_out_reg[13] QN  CLK             0.0234   -2.223e-01               f
+   addr_out_reg[13]              (CLK' D' Q' QN)              1602513.6250  
+   addr_out_reg[13]              (CLK' D' Q QN')              181717.2031  
+   addr_out_reg[13]              (CLK D' Q' QN)               1883763.2500  
+   addr_out_reg[13]              (CLK D' Q QN')               217547.9219  
+   addr_out_reg[13]              (CLK' D Q QN')               63364.4102  
+   addr_out_reg[13]              (CLK D Q' QN)                644897.9375  
+   addr_out_reg[13]              (CLK D Q QN')                52678.0547  
+   addr_out_reg[13]              default                      4103164.0000  
+addr_out_reg[13]  (Cell Total)                      2.6344    8749646.0000
+   U38         Y        A               0.0250      0.1017              d r
+   U38         Y        A               0.0250      0.0578              d f
+   U38                           (A)                          841782.1250  
+   U38                           default                      841782.0000  
+U38  (Cell Total)                                   0.1595    1683564.1250
+   U36         Y        A               0.0250      0.0399              d r
+   U36         Y        A               0.0250   3.188e-04              d f
+   U36                           (A)                          7380.5811  
+   U36                           default                      7380.5801  
+U36  (Cell Total)                                   0.0403    14761.1611
+   U51         A1                (A2')  0.0125   3.459e-03              d r
+   U51         A1                (A2')  0.0125   -1.986e-03             d f
+   U51         A1                       0.0125   3.459e-03              d r
+   U51         A1                       0.0125   -1.986e-03             d f
+   U51         A2                (A1')  0.0125   9.920e-03              d r
+   U51         A2                (A1')  0.0125   -8.319e-03             d f
+   U51         A2                       0.0125   9.920e-03              d r
+   U51         A2                       0.0125   -8.319e-03             d f
+   U51         Y        A1              0.0125      0.0114                r
+   U51         Y        A1              0.0125      0.0195                f
+   U51         Y        A2              0.0125      0.0262                r
+   U51         Y        A2              0.0125      0.0306                f
+   U51                           (A1' A2')                    11768.5645  
+   U51                           (A1' A2)                     533370.7500  
+   U51                           (A1 A2')                     221607.8750  
+   U51                           (A1 A2)                      580935.8750  
+   U51                           default                         0.0000  
+U51  (Cell Total)                                   0.0939    1347683.0000
+   U52         A1                (A2')  0.0125   3.459e-03              d r
+   U52         A1                (A2')  0.0125   -1.986e-03             d f
+   U52         A1                       0.0125   3.459e-03              d r
+   U52         A1                       0.0125   -1.986e-03             d f
+   U52         A2                (A1')  0.0125   9.920e-03              d r
+   U52         A2                (A1')  0.0125   -8.319e-03             d f
+   U52         A2                       0.0125   9.920e-03              d r
+   U52         A2                       0.0125   -8.319e-03             d f
+   U52         Y        A1              0.0124      0.0114                r
+   U52         Y        A1              0.0124      0.0193                f
+   U52         Y        A2              0.0124      0.0260                r
+   U52         Y        A2              0.0124      0.0304                f
+   U52                           (A1' A2')                    11768.5645  
+   U52                           (A1' A2)                     533370.7500  
+   U52                           (A1 A2')                     221607.8750  
+   U52                           (A1 A2)                      580935.8750  
+   U52                           default                         0.0000  
+U52  (Cell Total)                                   0.0933    1347683.0000
+   U61         A1                (A2')  0.0125   3.459e-03              d r
+   U61         A1                (A2')  0.0125   -1.986e-03             d f
+   U61         A1                       0.0125   3.459e-03              d r
+   U61         A1                       0.0125   -1.986e-03             d f
+   U61         A2                (A1')  0.0125   9.920e-03              d r
+   U61         A2                (A1')  0.0125   -8.319e-03             d f
+   U61         A2                       0.0125   9.920e-03              d r
+   U61         A2                       0.0125   -8.319e-03             d f
+   U61         Y        A1              0.0124      0.0113                r
+   U61         Y        A1              0.0124      0.0193                f
+   U61         Y        A2              0.0124      0.0259                r
+   U61         Y        A2              0.0124      0.0303                f
+   U61                           (A1' A2')                    11768.5645  
+   U61                           (A1' A2)                     533370.7500  
+   U61                           (A1 A2')                     221607.8750  
+   U61                           (A1 A2)                      580935.8750  
+   U61                           default                         0.0000  
+U61  (Cell Total)                                   0.0930    1347683.0000
+   U50         A1                (A2')  0.0125   3.459e-03              d r
+   U50         A1                (A2')  0.0125   -1.986e-03             d f
+   U50         A1                       0.0125   3.459e-03              d r
+   U50         A1                       0.0125   -1.986e-03             d f
+   U50         A2                (A1')  0.0125   9.920e-03              d r
+   U50         A2                (A1')  0.0125   -8.319e-03             d f
+   U50         A2                       0.0125   9.920e-03              d r
+   U50         A2                       0.0125   -8.319e-03             d f
+   U50         Y        A1              0.0123      0.0113                r
+   U50         Y        A1              0.0123      0.0193                f
+   U50         Y        A2              0.0123      0.0259                r
+   U50         Y        A2              0.0123      0.0303                f
+   U50                           (A1' A2')                    11768.5645  
+   U50                           (A1' A2)                     533370.7500  
+   U50                           (A1 A2')                     221607.8750  
+   U50                           (A1 A2)                      580935.8750  
+   U50                           default                         0.0000  
+U50  (Cell Total)                                   0.0929    1347683.0000
+   U44         A1                (A2')  0.0125   3.459e-03              d r
+   U44         A1                (A2')  0.0125   -1.986e-03             d f
+   U44         A1                       0.0125   3.459e-03              d r
+   U44         A1                       0.0125   -1.986e-03             d f
+   U44         A2                (A1')  0.0125   9.920e-03              d r
+   U44         A2                (A1')  0.0125   -8.319e-03             d f
+   U44         A2                       0.0125   9.920e-03              d r
+   U44         A2                       0.0125   -8.319e-03             d f
+   U44         Y        A1              0.0122      0.0112                r
+   U44         Y        A1              0.0122      0.0190                f
+   U44         Y        A2              0.0122      0.0256                r
+   U44         Y        A2              0.0122      0.0299                f
+   U44                           (A1' A2')                    11768.5645  
+   U44                           (A1' A2)                     533370.7500  
+   U44                           (A1 A2')                     221607.8750  
+   U44                           (A1 A2)                      580935.8750  
+   U44                           default                         0.0000  
+U44  (Cell Total)                                   0.0919    1347683.0000
+   U54         A1                (A2')  0.0125   3.459e-03              d r
+   U54         A1                (A2')  0.0125   -1.986e-03             d f
+   U54         A1                       0.0125   3.459e-03              d r
+   U54         A1                       0.0125   -1.986e-03             d f
+   U54         A2                (A1')  0.0125   9.920e-03              d r
+   U54         A2                (A1')  0.0125   -8.319e-03             d f
+   U54         A2                       0.0125   9.920e-03              d r
+   U54         A2                       0.0125   -8.319e-03             d f
+   U54         Y        A1              0.0122      0.0112                r
+   U54         Y        A1              0.0122      0.0190                f
+   U54         Y        A2              0.0122      0.0256                r
+   U54         Y        A2              0.0122      0.0299                f
+   U54                           (A1' A2')                    11768.5645  
+   U54                           (A1' A2)                     533370.7500  
+   U54                           (A1 A2')                     221607.8750  
+   U54                           (A1 A2)                      580935.8750  
+   U54                           default                         0.0000  
+U54  (Cell Total)                                   0.0919    1347683.0000
+   U37         A1                (A2')  0.0125   3.459e-03              d r
+   U37         A1                (A2')  0.0125   -1.986e-03             d f
+   U37         A1                       0.0125   3.459e-03              d r
+   U37         A1                       0.0125   -1.986e-03             d f
+   U37         A2                (A1')  0.0125   9.920e-03              d r
+   U37         A2                (A1')  0.0125   -8.319e-03             d f
+   U37         A2                       0.0125   9.920e-03              d r
+   U37         A2                       0.0125   -8.319e-03             d f
+   U37         Y        A1              0.0122      0.0112                r
+   U37         Y        A1              0.0122      0.0190                f
+   U37         Y        A2              0.0122      0.0256                r
+   U37         Y        A2              0.0122      0.0299                f
+   U37                           (A1' A2')                    11768.5645  
+   U37                           (A1' A2)                     533370.7500  
+   U37                           (A1 A2')                     221607.8750  
+   U37                           (A1 A2)                      580935.8750  
+   U37                           default                         0.0000  
+U37  (Cell Total)                                   0.0917    1347683.0000
+   U42         A1                (A2')  0.0125   3.459e-03              d r
+   U42         A1                (A2')  0.0125   -1.986e-03             d f
+   U42         A1                       0.0125   3.459e-03              d r
+   U42         A1                       0.0125   -1.986e-03             d f
+   U42         A2                (A1')  0.0125   9.920e-03              d r
+   U42         A2                (A1')  0.0125   -8.319e-03             d f
+   U42         A2                       0.0125   9.920e-03              d r
+   U42         A2                       0.0125   -8.319e-03             d f
+   U42         Y        A1              0.0122      0.0112                r
+   U42         Y        A1              0.0122      0.0190                f
+   U42         Y        A2              0.0122      0.0256                r
+   U42         Y        A2              0.0122      0.0299                f
+   U42                           (A1' A2')                    11768.5645  
+   U42                           (A1' A2)                     533370.7500  
+   U42                           (A1 A2')                     221607.8750  
+   U42                           (A1 A2)                      580935.8750  
+   U42                           default                         0.0000  
+U42  (Cell Total)                                   0.0917    1347683.0000
+   U46         A1                (A2')  0.0125   3.459e-03              d r
+   U46         A1                (A2')  0.0125   -1.986e-03             d f
+   U46         A1                       0.0125   3.459e-03              d r
+   U46         A1                       0.0125   -1.986e-03             d f
+   U46         A2                (A1')  0.0125   9.920e-03              d r
+   U46         A2                (A1')  0.0125   -8.319e-03             d f
+   U46         A2                       0.0125   9.920e-03              d r
+   U46         A2                       0.0125   -8.319e-03             d f
+   U46         Y        A1              0.0121      0.0110                r
+   U46         Y        A1              0.0121      0.0188                f
+   U46         Y        A2              0.0121      0.0253                r
+   U46         Y        A2              0.0121      0.0296                f
+   U46                           (A1' A2')                    11768.5645  
+   U46                           (A1' A2)                     533370.7500  
+   U46                           (A1 A2')                     221607.8750  
+   U46                           (A1 A2)                      580935.8750  
+   U46                           default                         0.0000  
+U46  (Cell Total)                                   0.0909    1347683.0000
+   U55         A1                (A2')  0.0125   3.459e-03              d r
+   U55         A1                (A2')  0.0125   -1.986e-03             d f
+   U55         A1                       0.0125   3.459e-03              d r
+   U55         A1                       0.0125   -1.986e-03             d f
+   U55         A2                (A1')  0.0125   9.920e-03              d r
+   U55         A2                (A1')  0.0125   -8.319e-03             d f
+   U55         A2                       0.0125   9.920e-03              d r
+   U55         A2                       0.0125   -8.319e-03             d f
+   U55         Y        A1              0.0120      0.0110                r
+   U55         Y        A1              0.0120      0.0188                f
+   U55         Y        A2              0.0120      0.0252                r
+   U55         Y        A2              0.0120      0.0295                f
+   U55                           (A1' A2')                    11768.5645  
+   U55                           (A1' A2)                     533370.7500  
+   U55                           (A1 A2')                     221607.8750  
+   U55                           (A1 A2)                      580935.8750  
+   U55                           default                         0.0000  
+U55  (Cell Total)                                   0.0907    1347683.0000
+   U57         A1                (A2')  0.0125   3.459e-03              d r
+   U57         A1                (A2')  0.0125   -1.986e-03             d f
+   U57         A1                       0.0125   3.459e-03              d r
+   U57         A1                       0.0125   -1.986e-03             d f
+   U57         A2                (A1')  0.0125   9.920e-03              d r
+   U57         A2                (A1')  0.0125   -8.319e-03             d f
+   U57         A2                       0.0125   9.920e-03              d r
+   U57         A2                       0.0125   -8.319e-03             d f
+   U57         Y        A1              0.0120      0.0110                r
+   U57         Y        A1              0.0120      0.0187                f
+   U57         Y        A2              0.0120      0.0252                r
+   U57         Y        A2              0.0120      0.0295                f
+   U57                           (A1' A2')                    11768.5645  
+   U57                           (A1' A2)                     533370.7500  
+   U57                           (A1 A2')                     221607.8750  
+   U57                           (A1 A2)                      580935.8750  
+   U57                           default                         0.0000  
+U57  (Cell Total)                                   0.0905    1347683.0000
+   U40         A1                (A2')  0.0125   3.459e-03              d r
+   U40         A1                (A2')  0.0125   -1.986e-03             d f
+   U40         A1                       0.0125   3.459e-03              d r
+   U40         A1                       0.0125   -1.986e-03             d f
+   U40         A2                (A1')  0.0125   9.920e-03              d r
+   U40         A2                (A1')  0.0125   -8.319e-03             d f
+   U40         A2                       0.0125   9.920e-03              d r
+   U40         A2                       0.0125   -8.319e-03             d f
+   U40         Y        A1              0.0120      0.0110                r
+   U40         Y        A1              0.0120      0.0187                f
+   U40         Y        A2              0.0120      0.0252                r
+   U40         Y        A2              0.0120      0.0294                f
+   U40                           (A1' A2')                    11768.5645  
+   U40                           (A1' A2)                     533370.7500  
+   U40                           (A1 A2')                     221607.8750  
+   U40                           (A1 A2)                      580935.8750  
+   U40                           default                         0.0000  
+U40  (Cell Total)                                   0.0905    1347683.0000
+   U53         A1                (A2')  0.0125   3.459e-03              d r
+   U53         A1                (A2')  0.0125   -1.986e-03             d f
+   U53         A1                       0.0125   3.459e-03              d r
+   U53         A1                       0.0125   -1.986e-03             d f
+   U53         A2                (A1')  0.0125   9.920e-03              d r
+   U53         A2                (A1')  0.0125   -8.319e-03             d f
+   U53         A2                       0.0125   9.920e-03              d r
+   U53         A2                       0.0125   -8.319e-03             d f
+   U53         Y        A1              0.0120      0.0110                r
+   U53         Y        A1              0.0120      0.0187                f
+   U53         Y        A2              0.0120      0.0252                r
+   U53         Y        A2              0.0120      0.0294                f
+   U53                           (A1' A2')                    11768.5645  
+   U53                           (A1' A2)                     533370.7500  
+   U53                           (A1 A2')                     221607.8750  
+   U53                           (A1 A2)                      580935.8750  
+   U53                           default                         0.0000  
+U53  (Cell Total)                                   0.0904    1347683.0000
+   U59         A1                (A2')  0.0125   3.459e-03              d r
+   U59         A1                (A2')  0.0125   -1.986e-03             d f
+   U59         A1                       0.0125   3.459e-03              d r
+   U59         A1                       0.0125   -1.986e-03             d f
+   U59         A2                (A1')  0.0125   9.920e-03              d r
+   U59         A2                (A1')  0.0125   -8.319e-03             d f
+   U59         A2                       0.0125   9.920e-03              d r
+   U59         A2                       0.0125   -8.319e-03             d f
+   U59         Y        A1              0.0120      0.0109                r
+   U59         Y        A1              0.0120      0.0186                f
+   U59         Y        A2              0.0120      0.0251                r
+   U59         Y        A2              0.0120      0.0293                f
+   U59                           (A1' A2')                    11768.5645  
+   U59                           (A1' A2)                     533370.7500  
+   U59                           (A1 A2')                     221607.8750  
+   U59                           (A1 A2)                      580935.8750  
+   U59                           default                         0.0000  
+U59  (Cell Total)                                   0.0901    1347683.0000
+   U67         A1                (A2')  0.0125   3.459e-03              d r
+   U67         A1                (A2')  0.0125   -1.986e-03             d f
+   U67         A1                       0.0125   3.459e-03              d r
+   U67         A1                       0.0125   -1.986e-03             d f
+   U67         A2                (A1')  0.0125      0.0104              d r
+   U67         A2                (A1')  0.0125   -9.216e-03             d f
+   U67         A2                       0.0125      0.0104              d r
+   U67         A2                       0.0125   -9.216e-03             d f
+   U67         Y        A1              0.0123      0.0113                r
+   U67         Y        A1              0.0123      0.0192                f
+   U67         Y        A2              0.0123      0.0201                r
+   U67         Y        A2              0.0123      0.0225                f
+   U67                           (A1' A2')                    11768.5645  
+   U67                           (A1' A2)                     533370.7500  
+   U67                           (A1 A2')                     221607.8750  
+   U67                           (A1 A2)                      580935.8750  
+   U67                           default                         0.0000  
+U67  (Cell Total)                                   0.0783    1347683.0000
+   U65         A1                (A2')  0.0125   3.459e-03              d r
+   U65         A1                (A2')  0.0125   -1.986e-03             d f
+   U65         A1                       0.0125   3.459e-03              d r
+   U65         A1                       0.0125   -1.986e-03             d f
+   U65         A2                (A1')  0.0125      0.0104              d r
+   U65         A2                (A1')  0.0125   -9.216e-03             d f
+   U65         A2                       0.0125      0.0104              d r
+   U65         A2                       0.0125   -9.216e-03             d f
+   U65         Y        A1              0.0123      0.0113                r
+   U65         Y        A1              0.0123      0.0192                f
+   U65         Y        A2              0.0123      0.0200                r
+   U65         Y        A2              0.0123      0.0224                f
+   U65                           (A1' A2')                    11768.5645  
+   U65                           (A1' A2)                     533370.7500  
+   U65                           (A1 A2')                     221607.8750  
+   U65                           (A1 A2)                      580935.8750  
+   U65                           default                         0.0000  
+U65  (Cell Total)                                   0.0782    1347683.0000
+   U49         A1                (A2')  0.0125   3.459e-03              d r
+   U49         A1                (A2')  0.0125   -1.986e-03             d f
+   U49         A1                       0.0125   3.459e-03              d r
+   U49         A1                       0.0125   -1.986e-03             d f
+   U49         A2                (A1')  0.0125      0.0104              d r
+   U49         A2                (A1')  0.0125   -9.216e-03             d f
+   U49         A2                       0.0125      0.0104              d r
+   U49         A2                       0.0125   -9.216e-03             d f
+   U49         Y        A1              0.0123      0.0112                r
+   U49         Y        A1              0.0123      0.0191                f
+   U49         Y        A2              0.0123      0.0200                r
+   U49         Y        A2              0.0123      0.0224                f
+   U49                           (A1' A2')                    11768.5645  
+   U49                           (A1' A2)                     533370.7500  
+   U49                           (A1 A2')                     221607.8750  
+   U49                           (A1 A2)                      580935.8750  
+   U49                           default                         0.0000  
+U49  (Cell Total)                                   0.0781    1347683.0000
+   U60         A1                (A2')  0.0125   3.459e-03              d r
+   U60         A1                (A2')  0.0125   -1.986e-03             d f
+   U60         A1                       0.0125   3.459e-03              d r
+   U60         A1                       0.0125   -1.986e-03             d f
+   U60         A2                (A1')  0.0125      0.0104              d r
+   U60         A2                (A1')  0.0125   -9.216e-03             d f
+   U60         A2                       0.0125      0.0104              d r
+   U60         A2                       0.0125   -9.216e-03             d f
+   U60         Y        A1              0.0122      0.0112                r
+   U60         Y        A1              0.0122      0.0191                f
+   U60         Y        A2              0.0122      0.0200                r
+   U60         Y        A2              0.0122      0.0223                f
+   U60                           (A1' A2')                    11768.5645  
+   U60                           (A1' A2)                     533370.7500  
+   U60                           (A1 A2')                     221607.8750  
+   U60                           (A1 A2)                      580935.8750  
+   U60                           default                         0.0000  
+U60  (Cell Total)                                   0.0779    1347683.0000
+   U66         A1                (A2')  0.0125   3.459e-03              d r
+   U66         A1                (A2')  0.0125   -1.986e-03             d f
+   U66         A1                       0.0125   3.459e-03              d r
+   U66         A1                       0.0125   -1.986e-03             d f
+   U66         A2                (A1')  0.0125      0.0104              d r
+   U66         A2                (A1')  0.0125   -9.216e-03             d f
+   U66         A2                       0.0125      0.0104              d r
+   U66         A2                       0.0125   -9.216e-03             d f
+   U66         Y        A1              0.0122      0.0112                r
+   U66         Y        A1              0.0122      0.0190                f
+   U66         Y        A2              0.0122      0.0199                r
+   U66         Y        A2              0.0122      0.0222                f
+   U66                           (A1' A2')                    11768.5645  
+   U66                           (A1' A2)                     533370.7500  
+   U66                           (A1 A2')                     221607.8750  
+   U66                           (A1 A2)                      580935.8750  
+   U66                           default                         0.0000  
+U66  (Cell Total)                                   0.0776    1347683.0000
+   U64         A1                (A2')  0.0125   3.459e-03              d r
+   U64         A1                (A2')  0.0125   -1.986e-03             d f
+   U64         A1                       0.0125   3.459e-03              d r
+   U64         A1                       0.0125   -1.986e-03             d f
+   U64         A2                (A1')  0.0125      0.0104              d r
+   U64         A2                (A1')  0.0125   -9.216e-03             d f
+   U64         A2                       0.0125      0.0104              d r
+   U64         A2                       0.0125   -9.216e-03             d f
+   U64         Y        A1              0.0122      0.0112                r
+   U64         Y        A1              0.0122      0.0190                f
+   U64         Y        A2              0.0122      0.0199                r
+   U64         Y        A2              0.0122      0.0222                f
+   U64                           (A1' A2')                    11768.5645  
+   U64                           (A1' A2)                     533370.7500  
+   U64                           (A1 A2')                     221607.8750  
+   U64                           (A1 A2)                      580935.8750  
+   U64                           default                         0.0000  
+U64  (Cell Total)                                   0.0776    1347683.0000
+   U69         A1                (A2')  0.0125   3.459e-03              d r
+   U69         A1                (A2')  0.0125   -1.986e-03             d f
+   U69         A1                       0.0125   3.459e-03              d r
+   U69         A1                       0.0125   -1.986e-03             d f
+   U69         A2                (A1')  0.0125      0.0104              d r
+   U69         A2                (A1')  0.0125   -9.216e-03             d f
+   U69         A2                       0.0125      0.0104              d r
+   U69         A2                       0.0125   -9.216e-03             d f
+   U69         Y        A1              0.0122      0.0111                r
+   U69         Y        A1              0.0122      0.0190                f
+   U69         Y        A2              0.0122      0.0198                r
+   U69         Y        A2              0.0122      0.0222                f
+   U69                           (A1' A2')                    11768.5645  
+   U69                           (A1' A2)                     533370.7500  
+   U69                           (A1 A2')                     221607.8750  
+   U69                           (A1 A2)                      580935.8750  
+   U69                           default                         0.0000  
+U69  (Cell Total)                                   0.0775    1347683.0000
+   U68         A1                (A2')  0.0125   3.459e-03              d r
+   U68         A1                (A2')  0.0125   -1.986e-03             d f
+   U68         A1                       0.0125   3.459e-03              d r
+   U68         A1                       0.0125   -1.986e-03             d f
+   U68         A2                (A1')  0.0125      0.0104              d r
+   U68         A2                (A1')  0.0125   -9.216e-03             d f
+   U68         A2                       0.0125      0.0104              d r
+   U68         A2                       0.0125   -9.216e-03             d f
+   U68         Y        A1              0.0121      0.0111                r
+   U68         Y        A1              0.0121      0.0189                f
+   U68         Y        A2              0.0121      0.0198                r
+   U68         Y        A2              0.0121      0.0221                f
+   U68                           (A1' A2')                    11768.5645  
+   U68                           (A1' A2)                     533370.7500  
+   U68                           (A1 A2')                     221607.8750  
+   U68                           (A1 A2)                      580935.8750  
+   U68                           default                         0.0000  
+U68  (Cell Total)                                   0.0773    1347683.0000
+   U39         A1                (A2')  0.0125   3.459e-03              d r
+   U39         A1                (A2')  0.0125   -1.986e-03             d f
+   U39         A1                       0.0125   3.459e-03              d r
+   U39         A1                       0.0125   -1.986e-03             d f
+   U39         A2                (A1')  0.0125      0.0104              d r
+   U39         A2                (A1')  0.0125   -9.216e-03             d f
+   U39         A2                       0.0125      0.0104              d r
+   U39         A2                       0.0125   -9.216e-03             d f
+   U39         Y        A1              0.0121      0.0111                r
+   U39         Y        A1              0.0121      0.0189                f
+   U39         Y        A2              0.0121      0.0198                r
+   U39         Y        A2              0.0121      0.0221                f
+   U39                           (A1' A2')                    11768.5645  
+   U39                           (A1' A2)                     533370.7500  
+   U39                           (A1 A2')                     221607.8750  
+   U39                           (A1 A2)                      580935.8750  
+   U39                           default                         0.0000  
+U39  (Cell Total)                                   0.0771    1347683.0000
+   U58         A1                (A2')  0.0125   3.459e-03              d r
+   U58         A1                (A2')  0.0125   -1.986e-03             d f
+   U58         A1                       0.0125   3.459e-03              d r
+   U58         A1                       0.0125   -1.986e-03             d f
+   U58         A2                (A1')  0.0125      0.0104              d r
+   U58         A2                (A1')  0.0125   -9.216e-03             d f
+   U58         A2                       0.0125      0.0104              d r
+   U58         A2                       0.0125   -9.216e-03             d f
+   U58         Y        A1              0.0121      0.0111                r
+   U58         Y        A1              0.0121      0.0189                f
+   U58         Y        A2              0.0121      0.0197                r
+   U58         Y        A2              0.0121      0.0221                f
+   U58                           (A1' A2')                    11768.5645  
+   U58                           (A1' A2)                     533370.7500  
+   U58                           (A1 A2')                     221607.8750  
+   U58                           (A1 A2)                      580935.8750  
+   U58                           default                         0.0000  
+U58  (Cell Total)                                   0.0771    1347683.0000
+   U43         A1                (A2')  0.0125   3.459e-03              d r
+   U43         A1                (A2')  0.0125   -1.986e-03             d f
+   U43         A1                       0.0125   3.459e-03              d r
+   U43         A1                       0.0125   -1.986e-03             d f
+   U43         A2                (A1')  0.0125      0.0104              d r
+   U43         A2                (A1')  0.0125   -9.216e-03             d f
+   U43         A2                       0.0125      0.0104              d r
+   U43         A2                       0.0125   -9.216e-03             d f
+   U43         Y        A1              0.0120      0.0110                r
+   U43         Y        A1              0.0120      0.0187                f
+   U43         Y        A2              0.0120      0.0196                r
+   U43         Y        A2              0.0120      0.0219                f
+   U43                           (A1' A2')                    11768.5645  
+   U43                           (A1' A2)                     533370.7500  
+   U43                           (A1 A2')                     221607.8750  
+   U43                           (A1 A2)                      580935.8750  
+   U43                           default                         0.0000  
+U43  (Cell Total)                                   0.0765    1347683.0000
+   U56         A1                (A2')  0.0125   3.459e-03              d r
+   U56         A1                (A2')  0.0125   -1.986e-03             d f
+   U56         A1                       0.0125   3.459e-03              d r
+   U56         A1                       0.0125   -1.986e-03             d f
+   U56         A2                (A1')  0.0125      0.0104              d r
+   U56         A2                (A1')  0.0125   -9.216e-03             d f
+   U56         A2                       0.0125      0.0104              d r
+   U56         A2                       0.0125   -9.216e-03             d f
+   U56         Y        A1              0.0120      0.0110                r
+   U56         Y        A1              0.0120      0.0187                f
+   U56         Y        A2              0.0120      0.0196                r
+   U56         Y        A2              0.0120      0.0219                f
+   U56                           (A1' A2')                    11768.5645  
+   U56                           (A1' A2)                     533370.7500  
+   U56                           (A1 A2')                     221607.8750  
+   U56                           (A1 A2)                      580935.8750  
+   U56                           default                         0.0000  
+U56  (Cell Total)                                   0.0765    1347683.0000
+   U45         A1                (A2')  0.0125   3.459e-03              d r
+   U45         A1                (A2')  0.0125   -1.986e-03             d f
+   U45         A1                       0.0125   3.459e-03              d r
+   U45         A1                       0.0125   -1.986e-03             d f
+   U45         A2                (A1')  0.0125      0.0104              d r
+   U45         A2                (A1')  0.0125   -9.216e-03             d f
+   U45         A2                       0.0125      0.0104              d r
+   U45         A2                       0.0125   -9.216e-03             d f
+   U45         Y        A1              0.0120      0.0110                r
+   U45         Y        A1              0.0120      0.0187                f
+   U45         Y        A2              0.0120      0.0195                r
+   U45         Y        A2              0.0120      0.0218                f
+   U45                           (A1' A2')                    11768.5645  
+   U45                           (A1' A2)                     533370.7500  
+   U45                           (A1 A2')                     221607.8750  
+   U45                           (A1 A2)                      580935.8750  
+   U45                           default                         0.0000  
+U45  (Cell Total)                                   0.0764    1347683.0000
+   U41         A1                (A2')  0.0125   3.459e-03              d r
+   U41         A1                (A2')  0.0125   -1.986e-03             d f
+   U41         A1                       0.0125   3.459e-03              d r
+   U41         A1                       0.0125   -1.986e-03             d f
+   U41         A2                (A1')  0.0125      0.0104              d r
+   U41         A2                (A1')  0.0125   -9.216e-03             d f
+   U41         A2                       0.0125      0.0104              d r
+   U41         A2                       0.0125   -9.216e-03             d f
+   U41         Y        A1              0.0120      0.0110                r
+   U41         Y        A1              0.0120      0.0187                f
+   U41         Y        A2              0.0120      0.0195                r
+   U41         Y        A2              0.0120      0.0218                f
+   U41                           (A1' A2')                    11768.5645  
+   U41                           (A1' A2)                     533370.7500  
+   U41                           (A1 A2')                     221607.8750  
+   U41                           (A1 A2)                      580935.8750  
+   U41                           default                         0.0000  
+U41  (Cell Total)                                   0.0762    1347683.0000
+   U63         A1                (A2')  0.0125   3.459e-03              d r
+   U63         A1                (A2')  0.0125   -1.986e-03             d f
+   U63         A1                       0.0125   3.459e-03              d r
+   U63         A1                       0.0125   -1.986e-03             d f
+   U63         A2                (A1')  0.0125      0.0104              d r
+   U63         A2                (A1')  0.0125   -9.216e-03             d f
+   U63         A2                       0.0125      0.0104              d r
+   U63         A2                       0.0125   -9.216e-03             d f
+   U63         Y        A1              0.0120      0.0110                r
+   U63         Y        A1              0.0120      0.0187                f
+   U63         Y        A2              0.0120      0.0195                r
+   U63         Y        A2              0.0120      0.0218                f
+   U63                           (A1' A2')                    11768.5645  
+   U63                           (A1' A2)                     533370.7500  
+   U63                           (A1 A2')                     221607.8750  
+   U63                           (A1 A2)                      580935.8750  
+   U63                           default                         0.0000  
+U63  (Cell Total)                                   0.0762    1347683.0000
+   U62         A1                (A2')  0.0125   3.459e-03              d r
+   U62         A1                (A2')  0.0125   -1.986e-03             d f
+   U62         A1                       0.0125   3.459e-03              d r
+   U62         A1                       0.0125   -1.986e-03             d f
+   U62         A2                (A1')  0.0125      0.0104              d r
+   U62         A2                (A1')  0.0125   -9.216e-03             d f
+   U62         A2                       0.0125      0.0104              d r
+   U62         A2                       0.0125   -9.216e-03             d f
+   U62         Y        A1              0.0119      0.0109                r
+   U62         Y        A1              0.0119      0.0186                f
+   U62         Y        A2              0.0119      0.0195                r
+   U62         Y        A2              0.0119      0.0218                f
+   U62                           (A1' A2')                    11768.5645  
+   U62                           (A1' A2)                     533370.7500  
+   U62                           (A1 A2')                     221607.8750  
+   U62                           (A1 A2)                      580935.8750  
+   U62                           default                         0.0000  
+U62  (Cell Total)                                   0.0761    1347683.0000
+   U48         A1                (A2')  0.0125   3.459e-03              d r
+   U48         A1                (A2')  0.0125   -1.986e-03             d f
+   U48         A1                       0.0125   3.459e-03              d r
+   U48         A1                       0.0125   -1.986e-03             d f
+   U48         A2                (A1')  0.0125      0.0104              d r
+   U48         A2                (A1')  0.0125   -9.216e-03             d f
+   U48         A2                       0.0125      0.0104              d r
+   U48         A2                       0.0125   -9.216e-03             d f
+   U48         Y        A1              0.0119      0.0109                r
+   U48         Y        A1              0.0119      0.0185                f
+   U48         Y        A2              0.0119      0.0194                r
+   U48         Y        A2              0.0119      0.0217                f
+   U48                           (A1' A2')                    11768.5645  
+   U48                           (A1' A2)                     533370.7500  
+   U48                           (A1 A2')                     221607.8750  
+   U48                           (A1 A2)                      580935.8750  
+   U48                           default                         0.0000  
+U48  (Cell Total)                                   0.0758    1347683.0000
+   U47         A1                (A2')  0.0125   3.459e-03              d r
+   U47         A1                (A2')  0.0125   -1.986e-03             d f
+   U47         A1                       0.0125   3.459e-03              d r
+   U47         A1                       0.0125   -1.986e-03             d f
+   U47         A2                (A1')  0.0125      0.0104              d r
+   U47         A2                (A1')  0.0125   -9.216e-03             d f
+   U47         A2                       0.0125      0.0104              d r
+   U47         A2                       0.0125   -9.216e-03             d f
+   U47         Y        A1              0.0118      0.0108                r
+   U47         Y        A1              0.0118      0.0184                f
+   U47         Y        A2              0.0118      0.0192                r
+   U47         Y        A2              0.0118      0.0215                f
+   U47                           (A1' A2')                    11768.5645  
+   U47                           (A1' A2)                     533370.7500  
+   U47                           (A1 A2')                     221607.8750  
+   U47                           (A1 A2)                      580935.8750  
+   U47                           default                         0.0000  
+U47  (Cell Total)                                   0.0753    1347683.0000
+--------------------------------------------------------------------------------
+Totals (66 cells)                                  88.083uW    324.863uW
+1

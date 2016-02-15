@@ -1,0 +1,112 @@
+ 
+****************************************
+Report : power
+        -net
+        -cell
+        -analysis_effort medium
+        -verbose
+        -flat
+        -sort_mode dynamic_power
+Design : andgate
+Version: J-2014.09-SP4
+Date   : Sun Feb 14 18:47:57 2016
+****************************************
+
+
+Library(s) Used:
+
+    saed32lvt_tt1p05vn40c (File: /users/ugrad2/2012/spring/pooriam/libraries/saed32lvt_tt1p05vn40c.db)
+
+
+Operating Conditions: tt1p05vn40c   Library: saed32lvt_tt1p05vn40c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+andgate                ForQA             saed32lvt_tt1p05vn40c
+
+
+Global Operating Voltage = 1.05 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+
+  Attributes
+  ----------
+      a  -  Switching activity information annotated on net
+      d  -  Default switching activity information on net
+
+                             Total      Static   Toggle   Switching
+Net                          Net Load   Prob.    Rate     Power      Attrs
+--------------------------------------------------------------------------------
+OUT1                           0.221    0.250    0.0981      0.0120  
+--------------------------------------------------------------------------------
+Total (1 net)                                               11.9643 nW
+
+
+
+  Attributes
+  ----------
+      a  -  Switching activity information annotated on net
+      d  -  Default switching activity information on net
+      m  -  Multiply-driven net
+
+                          Net         Driver     Tot Dynamic     Driver
+                          Switching   Internal   Power           Leakage
+Net                       Power       Power      (% Net/Tot)     Power    Attrs
+--------------------------------------------------------------------------------
+OUT1                         0.0120     0.1413     0.153 (8%)   1347683.0000
+--------------------------------------------------------------------------------
+Totals (1 net)              11.964nW  141.303nW  153.267nW (8%)    1.348uW
+
+
+  Attributes
+  ----------
+      h  -  Hierarchical cell
+
+                        Cell      Driven Net  Tot Dynamic      Cell
+                        Internal  Switching   Power            Leakage
+Cell                    Power     Power       (% Cell/Tot)     Power      Attrs
+--------------------------------------------------------------------------------
+U2                         0.1413    0.0120      0.153 (92%)   1347683.0000  
+--------------------------------------------------------------------------------
+Totals (1 cell)          141.303nW  11.964nW   153.267nW (92%)    1.348uW
+
+
+
+  Attributes
+  ----------
+      h  -  Hierarchical cell
+      a  -  User annotated State/Path Dependent (SDPD) information
+      e  -  Estimated SDPD from user annotated non-SDPD switching activity
+      d  -  Estimated SDPD from default annotated non-SDPD switching activity
+
+               Toggling Source   State Pin Toggle Internal     Leakage
+Cell           Pin      of Path  Cond  Rate       Power        Power    Attrs
+--------------------------------------------------------------------------------
+   U2          A1                (A2')  0.0250   6.918e-03              d r
+   U2          A1                (A2')  0.0250   -3.972e-03             d f
+   U2          A1                       0.0250   6.918e-03              d r
+   U2          A1                       0.0250   -3.972e-03             d f
+   U2          A2                (A1')  0.0250      0.0216              d r
+   U2          A2                (A1')  0.0250   -1.964e-02             d f
+   U2          A2                       0.0250      0.0216              d r
+   U2          A2                       0.0250   -1.964e-02             d f
+   U2          Y        A1              0.0245      0.0232                r
+   U2          Y        A1              0.0245      0.0380                f
+   U2          Y        A2              0.0245      0.0343                r
+   U2          Y        A2              0.0245      0.0358                f
+   U2                            (A1' A2')                    11768.5645  
+   U2                            (A1' A2)                     533370.7500  
+   U2                            (A1 A2')                     221607.8750  
+   U2                            (A1 A2)                      580935.8750  
+   U2                            default                         0.0000  
+U2  (Cell Total)                                    0.1413    1347683.0000
+--------------------------------------------------------------------------------
+Totals (1 cell)                                   141.303nW      1.348uW
+1
