@@ -1,0 +1,195 @@
+Warning: Detected use of obsolete/unsupported feature.  The following
+	will not be available in a future release of the application:
+	elaborate -update. Use plain elaborate instead (CMD-100)
+Loading db file '/ecelib/linware/synopsys15/dc/libraries/syn/gtech.db'
+Loading db file '/ecelib/linware/synopsys15/dc/libraries/syn/standard.sldb'
+  Loading link library 'saed32lvt_tt1p05vn40c'
+  Loading link library 'saed32sram_tt1p05vn40c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:323: The initial value for signal 'adder_b_32' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:326: The initial value for signal 'adder1_cin' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:329: The initial value for signal 'adder1_sub' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:386: The initial value for signal 'in32' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:423: The initial value for signal 'adder2_cin' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:426: The initial value for signal 'adder2_sub' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[31] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[30] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[29] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[28] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[27] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[26] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[25] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[24] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[23] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[22] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[21] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[20] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[19] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[18] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[17] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[16] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[15] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[14] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[13] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[12] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[11] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[10] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[9] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[8] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[7] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[6] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[5] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[4] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[3] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[2] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[1] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:465: Floating pin 'b[0] of cell adder1x' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:475: Floating pin 'in1[4] of cell JalAddrMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:475: Floating pin 'in1[3] of cell JalAddrMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:475: Floating pin 'in1[2] of cell JalAddrMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:475: Floating pin 'in1[1] of cell JalAddrMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:475: Floating pin 'in1[0] of cell JalAddrMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[31] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[30] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[29] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[28] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[27] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[26] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[25] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[24] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[23] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[22] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[21] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[20] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[19] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[18] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[17] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[16] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[15] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[14] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[13] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[12] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[11] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[10] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[9] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[8] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[7] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[6] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[5] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[4] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[3] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[2] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[1] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/processor.vhd:477: Floating pin 'in3[0] of cell JalDataMuxx' connected to ground. (ELAB-294)
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'processor'.
+Information: Building the design 'pc'. (HDL-193)
+
+Inferred memory devices in process
+	in routine pc line 45 in file
+		'/users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/pc.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    addr_out_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'adder'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'rom2'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'shiftleft_26bit'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'concatination'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mux_5bit'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mux4'. (HDL-193)
+
+Inferred memory devices in process
+	in routine mux4 line 38 in file
+		'/users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/mux4.vhd'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|     mux4out_reg     | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'control'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'regfile'. (HDL-193)
+
+Inferred memory devices in process
+	in routine regfile line 49 in file
+		'/users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/regfile.vhd'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|       mem_reg       | Latch |  512  |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Statistics for MUX_OPs
+===========================================================
+| block name/line  | Inputs | Outputs | # sel inputs | MB |
+===========================================================
+|    regfile/61    |   32   |   32    |      5       | N  |
+|    regfile/66    |   32   |   32    |      5       | N  |
+===========================================================
+Presto compilation completed successfully.
+Information: Building the design 'sign_extension_16bit'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'sign_extension_5bit'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'shiftleft_32bit'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mux'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'shiftlui'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'alu'. (HDL-193)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/alu.vhd:40: Initial values for signals/variables are not supported for synthesis by default. They are ignored. (VHD-7)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/alu.vhd:40: Initial values for signals/variables are not supported for synthesis by default. They are ignored. (VHD-7)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/alu.vhd:40: Initial values for signals/variables are not supported for synthesis by default. They are ignored. (VHD-7)
+
+Statistics for case statements in always block at line 40 in file
+	'/users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/alu.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            52            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'andgate'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ram'. (HDL-193)
+Warning:  /users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/ram.vhd:47: Initial values for signals/variables are not supported for synthesis by default. They are ignored. (VHD-7)
+
+Inferred memory devices in process
+	in routine ram line 47 in file
+		'/users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/ram.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     mem_var_reg     | Flip-flop | 2072  |  Y  | N  | N  | N  | N  | N  | N  |
+|      dataO_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================
+| block name/line  | Inputs | Outputs | # sel inputs | MB |
+===========================================================
+|      ram/67      |  2048  |    8    |      11      | N  |
+===========================================================
+Presto compilation completed successfully.
+Information: Building the design 'shiftextend'. (HDL-193)
+
+Inferred memory devices in process
+	in routine shiftextend line 58 in file
+		'/users/ugrad2/2013/fall/tingyih/eecs112L/lab3/syn/mips_synth/design/shiftextend.vhd'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|      out32_reg      | Latch |  32   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully.
+1
